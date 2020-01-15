@@ -1,0 +1,6 @@
+D:\Programs\Project\C#-Basic\exercise01\prgConCsBasicOperators\bin\Debug\prgConCsBasicOperators.exe.config
+D:\Programs\Project\C#-Basic\exercise01\prgConCsBasicOperators\bin\Debug\prgConCsBasicOperators.exe
+D:\Programs\Project\C#-Basic\exercise01\prgConCsBasicOperators\bin\Debug\prgConCsBasicOperators.pdb
+D:\Programs\Project\C#-Basic\exercise01\prgConCsBasicOperators\obj\Debug\prgConCsBasicOperators.csprojAssemblyReference.cache
+D:\Programs\Project\C#-Basic\exercise01\prgConCsBasicOperators\obj\Debug\prgConCsBasicOperators.exe
+D:\Programs\Project\C#-Basic\exercise01\prgConCsBasicOperators\obj\Debug\prgConCsBasicOperators.pdb

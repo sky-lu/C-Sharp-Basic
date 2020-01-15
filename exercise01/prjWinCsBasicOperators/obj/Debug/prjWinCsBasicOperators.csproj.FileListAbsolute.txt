@@ -1,0 +1,8 @@
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsBasicOperators\bin\Debug\prjWinCsBasicOperators.exe.config
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsBasicOperators\bin\Debug\prjWinCsBasicOperators.exe
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsBasicOperators\bin\Debug\prjWinCsBasicOperators.pdb
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsBasicOperators\obj\Debug\prjWinCsBasicOperators.csprojAssemblyReference.cache
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsBasicOperators\obj\Debug\prjWinCsBasicOperators.Properties.Resources.resources
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsBasicOperators\obj\Debug\prjWinCsBasicOperators.csproj.GenerateResource.cache
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsBasicOperators\obj\Debug\prjWinCsBasicOperators.exe
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsBasicOperators\obj\Debug\prjWinCsBasicOperators.pdb
