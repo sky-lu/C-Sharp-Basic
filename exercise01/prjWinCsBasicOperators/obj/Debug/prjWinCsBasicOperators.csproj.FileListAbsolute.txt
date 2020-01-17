@@ -6,3 +6,5 @@ D:\Programs\Project\C#-Basic\exercise01\prjWinCsBasicOperators\obj\Debug\prjWinC
 D:\Programs\Project\C#-Basic\exercise01\prjWinCsBasicOperators\obj\Debug\prjWinCsBasicOperators.csproj.GenerateResource.cache
 D:\Programs\Project\C#-Basic\exercise01\prjWinCsBasicOperators\obj\Debug\prjWinCsBasicOperators.exe
 D:\Programs\Project\C#-Basic\exercise01\prjWinCsBasicOperators\obj\Debug\prjWinCsBasicOperators.pdb
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsBasicOperators\obj\Debug\prjWinCsBasicOperators.frmOperators.resources
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsBasicOperators\obj\Debug\prjWinCsBasicOperators.frmVideo.resources
