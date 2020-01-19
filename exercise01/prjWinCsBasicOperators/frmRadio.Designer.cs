@@ -34,10 +34,10 @@
             this.txtValue1 = new System.Windows.Forms.TextBox();
             this.txtValue2 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnAddition = new System.Windows.Forms.RadioButton();
-            this.btnSubstraction = new System.Windows.Forms.RadioButton();
-            this.btnDivision = new System.Windows.Forms.RadioButton();
             this.btnMultiplication = new System.Windows.Forms.RadioButton();
+            this.btnDivision = new System.Windows.Forms.RadioButton();
+            this.btnSubstraction = new System.Windows.Forms.RadioButton();
+            this.btnAddition = new System.Windows.Forms.RadioButton();
             this.Result = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -49,7 +49,7 @@
             this.label1.Location = new System.Drawing.Point(103, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(317, 45);
+            this.label1.Size = new System.Drawing.Size(306, 44);
             this.label1.TabIndex = 0;
             this.label1.Text = "CALCULATOR 2.0";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -103,29 +103,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Operators";
             // 
-            // btnAddition
+            // btnMultiplication
             // 
-            this.btnAddition.AutoSize = true;
-            this.btnAddition.Location = new System.Drawing.Point(41, 48);
-            this.btnAddition.Name = "btnAddition";
-            this.btnAddition.Size = new System.Drawing.Size(105, 28);
-            this.btnAddition.TabIndex = 0;
-            this.btnAddition.TabStop = true;
-            this.btnAddition.Text = "Addition";
-            this.btnAddition.UseVisualStyleBackColor = true;
-            this.btnAddition.CheckedChanged += new System.EventHandler(this.btnAddition_CheckedChanged);
-            // 
-            // btnSubstraction
-            // 
-            this.btnSubstraction.AutoSize = true;
-            this.btnSubstraction.Location = new System.Drawing.Point(246, 48);
-            this.btnSubstraction.Name = "btnSubstraction";
-            this.btnSubstraction.Size = new System.Drawing.Size(138, 28);
-            this.btnSubstraction.TabIndex = 1;
-            this.btnSubstraction.TabStop = true;
-            this.btnSubstraction.Text = "Substraction";
-            this.btnSubstraction.UseVisualStyleBackColor = true;
-            this.btnSubstraction.CheckedChanged += new System.EventHandler(this.btnSubstraction_CheckedChanged);
+            this.btnMultiplication.AutoSize = true;
+            this.btnMultiplication.Location = new System.Drawing.Point(246, 103);
+            this.btnMultiplication.Name = "btnMultiplication";
+            this.btnMultiplication.Size = new System.Drawing.Size(150, 28);
+            this.btnMultiplication.TabIndex = 3;
+            this.btnMultiplication.TabStop = true;
+            this.btnMultiplication.Text = "Multiplication";
+            this.btnMultiplication.UseVisualStyleBackColor = true;
+            this.btnMultiplication.CheckedChanged += new System.EventHandler(this.btnMultiplication_CheckedChanged);
             // 
             // btnDivision
             // 
@@ -139,24 +127,39 @@
             this.btnDivision.UseVisualStyleBackColor = true;
             this.btnDivision.CheckedChanged += new System.EventHandler(this.btnDivision_CheckedChanged);
             // 
-            // btnMultiplication
+            // btnSubstraction
             // 
-            this.btnMultiplication.AutoSize = true;
-            this.btnMultiplication.Location = new System.Drawing.Point(246, 103);
-            this.btnMultiplication.Name = "btnMultiplication";
-            this.btnMultiplication.Size = new System.Drawing.Size(150, 28);
-            this.btnMultiplication.TabIndex = 3;
-            this.btnMultiplication.TabStop = true;
-            this.btnMultiplication.Text = "Multiplication";
-            this.btnMultiplication.UseVisualStyleBackColor = true;
-            this.btnMultiplication.CheckedChanged += new System.EventHandler(this.btnMultiplication_CheckedChanged);
+            this.btnSubstraction.AutoSize = true;
+            this.btnSubstraction.Location = new System.Drawing.Point(246, 48);
+            this.btnSubstraction.Name = "btnSubstraction";
+            this.btnSubstraction.Size = new System.Drawing.Size(138, 28);
+            this.btnSubstraction.TabIndex = 1;
+            this.btnSubstraction.TabStop = true;
+            this.btnSubstraction.Text = "Substraction";
+            this.btnSubstraction.UseVisualStyleBackColor = true;
+            this.btnSubstraction.CheckedChanged += new System.EventHandler(this.btnSubstraction_CheckedChanged);
+            // 
+            // btnAddition
+            // 
+            this.btnAddition.AutoSize = true;
+            this.btnAddition.Location = new System.Drawing.Point(41, 48);
+            this.btnAddition.Name = "btnAddition";
+            this.btnAddition.Size = new System.Drawing.Size(105, 28);
+            this.btnAddition.TabIndex = 0;
+            this.btnAddition.TabStop = true;
+            this.btnAddition.Text = "Addition";
+            this.btnAddition.UseVisualStyleBackColor = true;
+            this.btnAddition.CheckedChanged += new System.EventHandler(this.btnAddition_CheckedChanged);
             // 
             // Result
             // 
+            this.Result.Enabled = false;
             this.Result.Location = new System.Drawing.Point(56, 391);
             this.Result.Name = "Result";
+            this.Result.ReadOnly = true;
             this.Result.Size = new System.Drawing.Size(400, 30);
             this.Result.TabIndex = 6;
+            this.Result.TextChanged += new System.EventHandler(this.Result_TextChanged);
             // 
             // frmRadio
             // 

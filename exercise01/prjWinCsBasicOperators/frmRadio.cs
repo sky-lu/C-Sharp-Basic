@@ -58,5 +58,15 @@ namespace prjWinCsBasicOperators
 
             Result.Text = " The multiplication of " + val1 + " and " + val2 + " is" + " " + (val1 * val2);
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Result_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
