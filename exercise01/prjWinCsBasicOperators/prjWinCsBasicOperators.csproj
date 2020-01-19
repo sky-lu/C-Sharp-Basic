@@ -52,6 +52,12 @@
     <Compile Include="frmOperators.Designer.cs">
       <DependentUpon>frmOperators.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRadio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRadio.Designer.cs">
+      <DependentUpon>frmRadio.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVideo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmOperators.resx">
       <DependentUpon>frmOperators.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRadio.resx">
+      <DependentUpon>frmRadio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVideo.resx">
       <DependentUpon>frmVideo.cs</DependentUpon>
