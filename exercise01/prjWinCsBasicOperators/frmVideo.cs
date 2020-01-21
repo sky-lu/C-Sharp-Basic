@@ -19,9 +19,57 @@ namespace prjWinCsBasicOperators
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-           // MessageBox.Show("Thanks for using our program!","Closing Message", MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+            // MessageBox.Show("Thanks for using our program!","Closing Message", MessageBoxButtons.OK,MessageBoxIcon.Information);
             //txtNumber.Text = "Test";
-            MessageBox.Show("Do you want to marry me?", "Your choice", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            String info;
+            String title = "Client Information";
+           
+            info = "Numbers : " + txtNumber.Text + "\n";
+            info = info + "Name : " + txtName.Text + "\n";
+            if (chkDelivery.Checked == true){ 
+                info = info + "Delivery : Yes" + "\n";
+                info = info + "Address :" + txtAddress.Text + "\n";
+            }
+            else
+            {
+                info = info + "Delivery : no\n";
+
+            }
+            info = info + "Add all the information valid ?";
+           
+            MessageBox.Show(info, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+           
+
+        }
+
+        private void frmVideo_Load(object sender, EventArgs e)
+        {
+            lblBigTitle.Text = "BLACKFLIX";
+            lblBigTitle.ForeColor = Color.Navy;
+            this.Text = "Video Store";
+            //lblAddress.Visible = false;
+            //txtAddress.Visible = false;
+            lblAddress.Visible = txtAddress.Visible = false;
+        }
+
+        private void chkDelivery_CheckedChanged(object sender, EventArgs e)
+        {
+            //if (chkDelivery.Checked == true)
+            //{
+            //    lblAddress.Visible = txtAddress.Visible = true;
+            //}
+            //else
+            //{
+            //    lblAddress.Visible = txtAddress.Visible = false;
+
+            //}
+            lblAddress.Visible = txtAddress.Visible = chkDelivery.Checked;
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

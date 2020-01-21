@@ -39,6 +39,7 @@
             this.btnSubstraction = new System.Windows.Forms.RadioButton();
             this.btnAddition = new System.Windows.Forms.RadioButton();
             this.Result = new System.Windows.Forms.TextBox();
+            this.lblResult = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -161,11 +162,20 @@
             this.Result.TabIndex = 6;
             this.Result.TextChanged += new System.EventHandler(this.Result_TextChanged);
             // 
+            // lblResult
+            // 
+            this.lblResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblResult.Location = new System.Drawing.Point(56, 450);
+            this.lblResult.Name = "lblResult";
+            this.lblResult.Size = new System.Drawing.Size(400, 34);
+            this.lblResult.TabIndex = 7;
+            // 
             // frmRadio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(512, 575);
+            this.Controls.Add(this.lblResult);
             this.Controls.Add(this.Result);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtValue2);
@@ -198,5 +208,6 @@
         private System.Windows.Forms.RadioButton btnSubstraction;
         private System.Windows.Forms.RadioButton btnAddition;
         private System.Windows.Forms.TextBox Result;
+        private System.Windows.Forms.Label lblResult;
     }
 }
