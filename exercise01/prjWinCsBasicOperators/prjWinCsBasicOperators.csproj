@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBasicOperators.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBasicOperators.Designer.cs">
+      <DependentUpon>frmBasicOperators.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmOperators.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmBasicOperators.resx">
+      <DependentUpon>frmBasicOperators.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmOperators.resx">
       <DependentUpon>frmOperators.cs</DependentUpon>
     </EmbeddedResource>
