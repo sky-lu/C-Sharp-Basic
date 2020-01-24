@@ -38,8 +38,12 @@
             this.chkDelivery = new System.Windows.Forms.CheckBox();
             this.lblAddress = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdiSingle = new System.Windows.Forms.RadioButton();
+            this.rdiMarried = new System.Windows.Forms.RadioButton();
+            this.rdiSeparated = new System.Windows.Forms.RadioButton();
+            this.rdiWidow = new System.Windows.Forms.RadioButton();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblBigTitle
@@ -135,35 +139,69 @@
             this.txtAddress.Size = new System.Drawing.Size(236, 55);
             this.txtAddress.TabIndex = 9;
             // 
-            // label1
+            // groupBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 295);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 20);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Marital Status";
+            this.groupBox1.Controls.Add(this.rdiWidow);
+            this.groupBox1.Controls.Add(this.rdiSeparated);
+            this.groupBox1.Controls.Add(this.rdiMarried);
+            this.groupBox1.Controls.Add(this.rdiSingle);
+            this.groupBox1.Location = new System.Drawing.Point(32, 312);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(334, 154);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Marital Status";
             // 
-            // checkedListBox1
+            // rdiSingle
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "Single",
-            "Married",
-            "Separated",
-            "Widow"});
-            this.checkedListBox1.Location = new System.Drawing.Point(130, 318);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(157, 92);
-            this.checkedListBox1.TabIndex = 11;
+            this.rdiSingle.AutoSize = true;
+            this.rdiSingle.Location = new System.Drawing.Point(98, 26);
+            this.rdiSingle.Name = "rdiSingle";
+            this.rdiSingle.Size = new System.Drawing.Size(82, 24);
+            this.rdiSingle.TabIndex = 0;
+            this.rdiSingle.TabStop = true;
+            this.rdiSingle.Text = "Single";
+            this.rdiSingle.UseVisualStyleBackColor = true;
+            // 
+            // rdiMarried
+            // 
+            this.rdiMarried.AutoSize = true;
+            this.rdiMarried.Location = new System.Drawing.Point(98, 56);
+            this.rdiMarried.Name = "rdiMarried";
+            this.rdiMarried.Size = new System.Drawing.Size(94, 24);
+            this.rdiMarried.TabIndex = 1;
+            this.rdiMarried.TabStop = true;
+            this.rdiMarried.Text = "Married";
+            this.rdiMarried.UseVisualStyleBackColor = true;
+            // 
+            // rdiSeparated
+            // 
+            this.rdiSeparated.AutoSize = true;
+            this.rdiSeparated.Location = new System.Drawing.Point(98, 86);
+            this.rdiSeparated.Name = "rdiSeparated";
+            this.rdiSeparated.Size = new System.Drawing.Size(115, 24);
+            this.rdiSeparated.TabIndex = 2;
+            this.rdiSeparated.TabStop = true;
+            this.rdiSeparated.Text = "Separated";
+            this.rdiSeparated.UseVisualStyleBackColor = true;
+            // 
+            // rdiWidow
+            // 
+            this.rdiWidow.AutoSize = true;
+            this.rdiWidow.Location = new System.Drawing.Point(98, 116);
+            this.rdiWidow.Name = "rdiWidow";
+            this.rdiWidow.Size = new System.Drawing.Size(85, 24);
+            this.rdiWidow.TabIndex = 3;
+            this.rdiWidow.TabStop = true;
+            this.rdiWidow.Text = "Widow";
+            this.rdiWidow.UseVisualStyleBackColor = true;
             // 
             // frmVideo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(552, 600);
-            this.Controls.Add(this.checkedListBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.lblAddress);
             this.Controls.Add(this.chkDelivery);
@@ -179,6 +217,8 @@
             this.Name = "frmVideo";
             this.Text = "frmVideo";
             this.Load += new System.EventHandler(this.frmVideo_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,7 +236,10 @@
         private System.Windows.Forms.CheckBox chkDelivery;
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.TextBox txtAddress;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rdiWidow;
+        private System.Windows.Forms.RadioButton rdiSeparated;
+        private System.Windows.Forms.RadioButton rdiMarried;
+        private System.Windows.Forms.RadioButton rdiSingle;
     }
 }

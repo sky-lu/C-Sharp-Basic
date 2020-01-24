@@ -36,8 +36,27 @@ namespace prjWinCsBasicOperators
                 info = info + "Delivery : no\n";
 
             }
+
+            if (rdiSingle.Checked)
+            {
+                info = info + "Marital Status : Single" + "\n";
+            }else if (rdiMarried.Checked)
+            {
+                info = info + "Marital Status : Married" + "\n";
+
+            }else if (rdiSeparated.Checked)
+            {
+                info = info + "Marital Status : Separated" + "\n";
+
+            }else if (rdiWidow.Checked)
+            {
+                info = info + "Marital Status : Widow" + "\n";
+
+            }
+
             info = info + "Add all the information valid ?";
-           
+
+
             MessageBox.Show(info, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
            
 

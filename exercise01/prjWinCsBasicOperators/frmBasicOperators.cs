@@ -77,19 +77,19 @@ namespace prjWinCsBasicOperators
 
             if (rdiAdd.Checked)
             {
-                lblResult.Text = "Addition of " + val1 + " and " + val2 + " is " + " " + (val1 + val2) + " \n " + lblResult.Text;
+                lblResult.Text = "Addition of " + val1 + " and " + val2 + " is " + " " + (val1 + val2);
             }
             if (rdiSub.Checked)
             {
-                lblResult.Text = "Subtraction of " + val1 + " and " + val2 + " is " + " " + (val1 - val2) + " \n " + lblResult.Text;
+                lblResult.Text = "Subtraction of " + val1 + " and " + val2 + " is " + " " + (val1 - val2);
             }
             if (rdiMult.Checked)
             {
-                lblResult.Text = "Multiplication of " + val1 + " and " + val2 + " is " + " " + (val1 * val2) + " \n " + lblResult.Text;
+                lblResult.Text = "Multiplication of " + val1 + " and " + val2 + " is " + " " + (val1 * val2);
             }
             if (rdiDiv.Checked)
             {
-                lblResult.Text ="Division of " + val1 + " and " + val2 + " is " + " " + (val1 / val2) + " \n " + lblResult.Text;
+                lblResult.Text ="Division of " + val1 + " and " + val2 + " is " + " " + (val1 / val2);
             }
           
         }
@@ -100,19 +100,19 @@ namespace prjWinCsBasicOperators
             Int32 val2 = Convert.ToInt32(txtValue2.Text);
             if (rdiGreat.Checked)
             {
-                lblResult.Text = val1 + " greater than " + val2 + " is " + " " + (val1 > val2) + " \n " + lblResult.Text;
+                lblResult.Text = val1 + " greater than " + val2 + " is " + " " + (val1 > val2);
             }
             if (rdiSmall.Checked)
             {
-                lblResult.Text = val1 + " smaller than " + val2 + " is " + " " + (val1 < val2) + " \n " + lblResult.Text;
+                lblResult.Text = val1 + " smaller than " + val2 + " is " + " " + (val1 < val2);
             }
             if (rdiEqual.Checked)
             {
-                lblResult.Text = val1 + " equal to " + val2 + " is " + " " + (val1 == val2) + " \n " + lblResult.Text;
+                lblResult.Text = val1 + " equal to " + val2 + " is " + " " + (val1 == val2);
             }
             if (rdiDiff.Checked)
             {
-                lblResult.Text = val1 + " different to " + val2 + " is " + " " + (val1 != val2) + " \n " + lblResult.Text;
+                lblResult.Text = val1 + " different to " + val2 + " is " + " " + (val1 != val2);
             }
         }
 
