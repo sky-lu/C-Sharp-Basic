@@ -52,6 +52,12 @@
     <Compile Include="frmBasicOperators.Designer.cs">
       <DependentUpon>frmBasicOperators.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListControls.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListControls.Designer.cs">
+      <DependentUpon>frmListControls.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmOperators.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmBasicOperators.resx">
       <DependentUpon>frmBasicOperators.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListControls.resx">
+      <DependentUpon>frmListControls.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmOperators.resx">
       <DependentUpon>frmOperators.cs</DependentUpon>

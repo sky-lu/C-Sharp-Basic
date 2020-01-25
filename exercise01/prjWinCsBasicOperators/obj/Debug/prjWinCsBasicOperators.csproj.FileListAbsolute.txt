@@ -10,3 +10,4 @@ D:\Programs\Project\C#-Basic\exercise01\prjWinCsBasicOperators\obj\Debug\prjWinC
 D:\Programs\Project\C#-Basic\exercise01\prjWinCsBasicOperators\obj\Debug\prjWinCsBasicOperators.frmVideo.resources
 D:\Programs\Project\C#-Basic\exercise01\prjWinCsBasicOperators\obj\Debug\prjWinCsBasicOperators.frmRadio.resources
 D:\Programs\Project\C#-Basic\exercise01\prjWinCsBasicOperators\obj\Debug\prjWinCsBasicOperators.frmBasicOperators.resources
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsBasicOperators\obj\Debug\prjWinCsBasicOperators.frmListControls.resources

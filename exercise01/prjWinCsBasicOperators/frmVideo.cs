@@ -39,21 +39,42 @@ namespace prjWinCsBasicOperators
 
             if (rdiSingle.Checked)
             {
-                info = info + "Marital Status : Single" + "\n";
+                //info = info + "Marital Status : Single" + "\n";
+                info = info + rdiSingle.Text + "\n";
             }else if (rdiMarried.Checked)
             {
-                info = info + "Marital Status : Married" + "\n";
+                //info = info + "Marital Status : Married" + "\n";
+                info = info + rdiMarried.Text + "\n";
 
             }else if (rdiSeparated.Checked)
             {
-                info = info + "Marital Status : Separated" + "\n";
+                //info = info + "Marital Status : Separated" + "\n";
+                info = info + rdiSeparated.Text + "\n";
 
             }else if (rdiWidow.Checked)
             {
-                info = info + "Marital Status : Widow" + "\n";
+                //info = info + "Marital Status : Widow" + "\n";
+                info = info + rdiWidow.Text + "\n";
 
             }
 
+
+            if (radVisa.Checked)
+            {
+                info = info + "Card : " + radVisa.Text + "\n" + "N :" + txtCard.Text + "\n";
+       
+            }
+            if (radMasterCard.Checked)
+            {
+                info = info + "Card : " + radMasterCard.Text + "\n" + "N :" + txtCard.Text + "\n";
+
+            }
+            if (radAMEX.Checked)
+            {
+                info = info + "Card : " + radAMEX.Text + "\n" + "N :" + txtCard.Text + "\n";
+
+            }
+            
             info = info + "Add all the information valid ?";
 
 
@@ -70,6 +91,7 @@ namespace prjWinCsBasicOperators
             //lblAddress.Visible = false;
             //txtAddress.Visible = false;
             lblAddress.Visible = txtAddress.Visible = false;
+      
         }
 
         private void chkDelivery_CheckedChanged(object sender, EventArgs e)
@@ -83,10 +105,46 @@ namespace prjWinCsBasicOperators
             //    lblAddress.Visible = txtAddress.Visible = false;
 
             //}
-            lblAddress.Visible = txtAddress.Visible = chkDelivery.Checked;
+            lblAddress.Visible = txtAddress.Visible = btnRent.Visible = chkDelivery.Checked;
+            
         }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radVisa_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radVisa.Checked)
+            {
+                txtCard.Focus();
+            }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radMasterCard_CheckedChanged(object sender, EventArgs e)
+        {
+            txtCard.Focus();
+
+        }
+
+        private void radAMEX_CheckedChanged(object sender, EventArgs e)
+        {
+            txtCard.Focus();
+
+        }
+
+        private void btnRent_Click(object sender, EventArgs e)
+        {
+            lblTitle.Visible = txtTitle.Visible = btnAdd.Visible = true;
+        }
+
+        private void lstMovies_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
