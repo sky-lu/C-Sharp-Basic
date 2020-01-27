@@ -40,21 +40,21 @@ namespace prjWinCsBasicOperators
             if (rdiSingle.Checked)
             {
                 //info = info + "Marital Status : Single" + "\n";
-                info = info + rdiSingle.Text + "\n";
+                info = info + "Status :" + rdiSingle.Text + "\n";
             }else if (rdiMarried.Checked)
             {
                 //info = info + "Marital Status : Married" + "\n";
-                info = info + rdiMarried.Text + "\n";
+                info = info + "Status : " + rdiMarried.Text + "\n";
 
             }else if (rdiSeparated.Checked)
             {
                 //info = info + "Marital Status : Separated" + "\n";
-                info = info + rdiSeparated.Text + "\n";
+                info = info + "Status :" + rdiSeparated.Text + "\n";
 
             }else if (rdiWidow.Checked)
             {
                 //info = info + "Marital Status : Widow" + "\n";
-                info = info + rdiWidow.Text + "\n";
+                info = info + "Status :" + rdiWidow.Text + "\n";
 
             }
 
@@ -74,7 +74,20 @@ namespace prjWinCsBasicOperators
                 info = info + "Card : " + radAMEX.Text + "\n" + "N :" + txtCard.Text + "\n";
 
             }
-            
+
+
+        
+
+            if (chkDelivery.Checked)
+            {
+                info = info + "Rented Movies :" + "\n" ;
+                for (int i = 0; i < lstMovies.Items.Count; i++)
+                {
+                    info = info + "-" + lstMovies.Items[i].ToString() + "\n";
+                }
+             
+            }
+
             info = info + "Add all the information valid ?";
 
 
@@ -142,11 +155,25 @@ namespace prjWinCsBasicOperators
         private void btnRent_Click(object sender, EventArgs e)
         {
             lblTitle.Visible = txtTitle.Visible = btnAdd.Visible = true;
+            txtTitle.Clear();
+            txtTitle.Focus();
         }
 
         private void lstMovies_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            lstMovies.Items.Add(txtTitle.Text);
+            lblTitle.Visible = txtTitle.Visible = btnAdd.Visible = false;
+
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            lstMovies.Items.RemoveAt(lstMovies.SelectedIndex);
         }
     }
 }

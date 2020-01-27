@@ -16,7 +16,7 @@ namespace prjWinCsBasicOperators
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmListControls());
+            Application.Run(new frmVideo());
         }
     }
 }

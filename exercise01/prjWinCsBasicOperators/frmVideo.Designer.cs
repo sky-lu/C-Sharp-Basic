@@ -44,17 +44,18 @@
             this.rdiMarried = new System.Windows.Forms.RadioButton();
             this.rdiSingle = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radVisa = new System.Windows.Forms.RadioButton();
-            this.radMasterCard = new System.Windows.Forms.RadioButton();
-            this.radAMEX = new System.Windows.Forms.RadioButton();
-            this.lblNumber = new System.Windows.Forms.Label();
             this.txtCard = new System.Windows.Forms.TextBox();
+            this.lblNumber = new System.Windows.Forms.Label();
+            this.radAMEX = new System.Windows.Forms.RadioButton();
+            this.radMasterCard = new System.Windows.Forms.RadioButton();
+            this.radVisa = new System.Windows.Forms.RadioButton();
             this.btnRent = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.lstMovies = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnReturn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -224,29 +225,21 @@
             this.groupBox2.Text = "Type of payment";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // radVisa
+            // txtCard
             // 
-            this.radVisa.AutoSize = true;
-            this.radVisa.Location = new System.Drawing.Point(98, 26);
-            this.radVisa.Name = "radVisa";
-            this.radVisa.Size = new System.Drawing.Size(67, 24);
-            this.radVisa.TabIndex = 0;
-            this.radVisa.TabStop = true;
-            this.radVisa.Text = "Visa";
-            this.radVisa.UseVisualStyleBackColor = true;
-            this.radVisa.CheckedChanged += new System.EventHandler(this.radVisa_CheckedChanged);
+            this.txtCard.Location = new System.Drawing.Point(98, 112);
+            this.txtCard.Name = "txtCard";
+            this.txtCard.Size = new System.Drawing.Size(195, 27);
+            this.txtCard.TabIndex = 4;
             // 
-            // radMasterCard
+            // lblNumber
             // 
-            this.radMasterCard.AutoSize = true;
-            this.radMasterCard.Location = new System.Drawing.Point(98, 56);
-            this.radMasterCard.Name = "radMasterCard";
-            this.radMasterCard.Size = new System.Drawing.Size(128, 24);
-            this.radMasterCard.TabIndex = 1;
-            this.radMasterCard.TabStop = true;
-            this.radMasterCard.Text = "MasterCard";
-            this.radMasterCard.UseVisualStyleBackColor = true;
-            this.radMasterCard.CheckedChanged += new System.EventHandler(this.radMasterCard_CheckedChanged);
+            this.lblNumber.AutoSize = true;
+            this.lblNumber.Location = new System.Drawing.Point(55, 115);
+            this.lblNumber.Name = "lblNumber";
+            this.lblNumber.Size = new System.Drawing.Size(34, 20);
+            this.lblNumber.TabIndex = 3;
+            this.lblNumber.Text = "N :";
             // 
             // radAMEX
             // 
@@ -260,21 +253,29 @@
             this.radAMEX.UseVisualStyleBackColor = true;
             this.radAMEX.CheckedChanged += new System.EventHandler(this.radAMEX_CheckedChanged);
             // 
-            // lblNumber
+            // radMasterCard
             // 
-            this.lblNumber.AutoSize = true;
-            this.lblNumber.Location = new System.Drawing.Point(55, 115);
-            this.lblNumber.Name = "lblNumber";
-            this.lblNumber.Size = new System.Drawing.Size(34, 20);
-            this.lblNumber.TabIndex = 3;
-            this.lblNumber.Text = "N :";
+            this.radMasterCard.AutoSize = true;
+            this.radMasterCard.Location = new System.Drawing.Point(98, 56);
+            this.radMasterCard.Name = "radMasterCard";
+            this.radMasterCard.Size = new System.Drawing.Size(128, 24);
+            this.radMasterCard.TabIndex = 1;
+            this.radMasterCard.TabStop = true;
+            this.radMasterCard.Text = "MasterCard";
+            this.radMasterCard.UseVisualStyleBackColor = true;
+            this.radMasterCard.CheckedChanged += new System.EventHandler(this.radMasterCard_CheckedChanged);
             // 
-            // txtCard
+            // radVisa
             // 
-            this.txtCard.Location = new System.Drawing.Point(98, 112);
-            this.txtCard.Name = "txtCard";
-            this.txtCard.Size = new System.Drawing.Size(195, 27);
-            this.txtCard.TabIndex = 4;
+            this.radVisa.AutoSize = true;
+            this.radVisa.Location = new System.Drawing.Point(98, 26);
+            this.radVisa.Name = "radVisa";
+            this.radVisa.Size = new System.Drawing.Size(67, 24);
+            this.radVisa.TabIndex = 0;
+            this.radVisa.TabStop = true;
+            this.radVisa.Text = "Visa";
+            this.radVisa.UseVisualStyleBackColor = true;
+            this.radVisa.CheckedChanged += new System.EventHandler(this.radVisa_CheckedChanged);
             // 
             // btnRent
             // 
@@ -315,6 +316,7 @@
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Visible = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lstMovies
             // 
@@ -335,11 +337,22 @@
             this.label5.TabIndex = 17;
             this.label5.Text = "Rented Movies";
             // 
+            // btnReturn
+            // 
+            this.btnReturn.Location = new System.Drawing.Point(446, 431);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(153, 50);
+            this.btnReturn.TabIndex = 18;
+            this.btnReturn.Text = "Return Selected Movie";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
             // frmVideo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(815, 600);
+            this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lstMovies);
             this.Controls.Add(this.btnAdd);
@@ -401,5 +414,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.ListBox lstMovies;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnReturn;
     }
 }
