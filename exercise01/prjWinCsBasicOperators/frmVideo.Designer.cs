@@ -56,6 +56,8 @@
             this.lstMovies = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnReturn = new System.Windows.Forms.Button();
+            this.cboSpecial = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -223,7 +225,6 @@
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Type of payment";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // txtCard
             // 
@@ -231,6 +232,7 @@
             this.txtCard.Name = "txtCard";
             this.txtCard.Size = new System.Drawing.Size(195, 27);
             this.txtCard.TabIndex = 4;
+            this.txtCard.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCard_KeyPress);
             // 
             // lblNumber
             // 
@@ -347,11 +349,31 @@
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
+            // cboSpecial
+            // 
+            this.cboSpecial.FormattingEnabled = true;
+            this.cboSpecial.Location = new System.Drawing.Point(436, 546);
+            this.cboSpecial.Name = "cboSpecial";
+            this.cboSpecial.Size = new System.Drawing.Size(121, 28);
+            this.cboSpecial.TabIndex = 19;
+            this.cboSpecial.SelectedIndexChanged += new System.EventHandler(this.cboSpecial_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(432, 509);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 20);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Today Special";
+            // 
             // frmVideo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(815, 600);
+            this.ClientSize = new System.Drawing.Size(815, 706);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cboSpecial);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lstMovies);
@@ -415,5 +437,7 @@
         private System.Windows.Forms.ListBox lstMovies;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.ComboBox cboSpecial;
+        private System.Windows.Forms.Label label1;
     }
 }

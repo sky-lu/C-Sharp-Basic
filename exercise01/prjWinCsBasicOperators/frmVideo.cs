@@ -104,7 +104,14 @@ namespace prjWinCsBasicOperators
             //lblAddress.Visible = false;
             //txtAddress.Visible = false;
             lblAddress.Visible = txtAddress.Visible = false;
-      
+
+            cboSpecial.Items.Add("Regular");
+            cboSpecial.Items.Add("Free PopCorn");
+            cboSpecial.Items.Add("2 for 1");
+            cboSpecial.SelectedIndex = 0;
+
+
+
         }
 
         private void chkDelivery_CheckedChanged(object sender, EventArgs e)
@@ -122,10 +129,7 @@ namespace prjWinCsBasicOperators
             
         }
 
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void radVisa_CheckedChanged(object sender, EventArgs e)
         {
@@ -135,10 +139,6 @@ namespace prjWinCsBasicOperators
             }
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private void radMasterCard_CheckedChanged(object sender, EventArgs e)
         {
@@ -166,14 +166,44 @@ namespace prjWinCsBasicOperators
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (txtTitle.Text != "")//do the validation
+            { 
             lstMovies.Items.Add(txtTitle.Text);
+            }
             lblTitle.Visible = txtTitle.Visible = btnAdd.Visible = false;
-
+            
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            lstMovies.Items.RemoveAt(lstMovies.SelectedIndex);
+            if (lstMovies.SelectedIndex >= 0) { 
+                lstMovies.Items.RemoveAt(lstMovies.SelectedIndex);
+            }
+        }
+
+        private void txtCard_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //if (e.KeyChar < '0' || e.KeyChar > '9')
+
+            if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false )
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void cboSpecial_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOK_MouseEnter(object sender, EventArgs e)
+        {
+            btnOK.BackColor = Color.Red;
+        }
+
+        private void btnOK_MouseLeave(object sender, EventArgs e)
+        {
+            btnOK.BackColor = DefaultBackColor;
         }
     }
 }
