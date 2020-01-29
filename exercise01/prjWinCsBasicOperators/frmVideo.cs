@@ -88,6 +88,16 @@ namespace prjWinCsBasicOperators
              
             }
 
+            info = info + "Special :" + cboSpecial.SelectedItem + "\n";
+            if(cboSpecial.Text == "2 for 1")
+            {
+                info = info + "Price : " + (lstMovies.Items.Count + 1) / 2 * 4 +"$" + "\n";
+            }
+            else
+            {
+                info = info + "Price : " + (lstMovies.Items.Count) * 4 +"$" + "\n";
+            }
+
             info = info + "Add all the information valid ?";
 
 
@@ -185,7 +195,7 @@ namespace prjWinCsBasicOperators
         {
             //if (e.KeyChar < '0' || e.KeyChar > '9')
 
-            if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false )
+            if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
             {
                 e.Handled = true;
             }
@@ -205,5 +215,7 @@ namespace prjWinCsBasicOperators
         {
             btnOK.BackColor = DefaultBackColor;
         }
+
+        
     }
 }
