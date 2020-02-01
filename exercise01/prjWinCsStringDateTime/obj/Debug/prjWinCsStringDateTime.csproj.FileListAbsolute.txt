@@ -1,0 +1,10 @@
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsStringDateTime\bin\Debug\prjWinCsStringDateTime.exe.config
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsStringDateTime\bin\Debug\prjWinCsStringDateTime.exe
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsStringDateTime\bin\Debug\prjWinCsStringDateTime.pdb
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsStringDateTime\obj\Debug\prjWinCsStringDateTime.csprojAssemblyReference.cache
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsStringDateTime\obj\Debug\prjWinCsStringDateTime.frmMain.resources
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsStringDateTime\obj\Debug\prjWinCsStringDateTime.Properties.Resources.resources
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsStringDateTime\obj\Debug\prjWinCsStringDateTime.csproj.GenerateResource.cache
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsStringDateTime\obj\Debug\prjWinCsStringDateTime.exe
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsStringDateTime\obj\Debug\prjWinCsStringDateTime.pdb
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsStringDateTime\obj\Debug\prjWinCsStringDateTime.frmBookString.resources
