@@ -24,7 +24,10 @@ namespace prjWinCsStringDateTime
 
         private void mnuQuit_Click(object sender, EventArgs e)
         {
-            
+            if(MessageBox.Show("Are you sure to quit the program ?","Closing program",MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void mnuBook_Click(object sender, EventArgs e)

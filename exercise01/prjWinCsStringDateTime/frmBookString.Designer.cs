@@ -69,6 +69,7 @@
             this.txtFullname.Name = "txtFullname";
             this.txtFullname.Size = new System.Drawing.Size(457, 30);
             this.txtFullname.TabIndex = 2;
+            this.txtFullname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFullname_KeyPress);
             // 
             // label3
             // 
@@ -180,7 +181,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmBookString";
             this.Text = "frmBookString";
             this.ResumeLayout(false);
