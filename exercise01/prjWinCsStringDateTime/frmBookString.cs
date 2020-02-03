@@ -70,14 +70,22 @@ namespace prjWinCsStringDateTime
             {
                 MessageBox.Show("please enter city, province, postal code");
                 txtCPPC.Focus();
-            }else if (info.IndexOf(',') == -1)
+            }
+            else if (info.IndexOf(',') == -1)
             {
                 MessageBox.Show("Please enter ','");
                 txtCPPC.Focus();
-            }else if (info.IndexOf(',') == 0)
+            }
+            else if (info.IndexOf(',') == 0)
             {
-                MessageBox.Show("Please enter full information");
+                MessageBox.Show("Please enter city");
                 txtCPPC.Focus();
+            }
+            else if (info.IndexOf(',') == info.Length - 1)
+            {
+                MessageBox.Show("Please enter postal code");
+                txtCPPC.Focus();
+
             }
             else
             {
