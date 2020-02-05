@@ -16,5 +16,12 @@ namespace prjWinCsStringDateTime
         {
             InitializeComponent();
         }
+
+        private void frmTimesheet_Load(object sender, EventArgs e)
+        {
+            DateTime myRV = new DateTime(1990, 10, 18);
+            MessageBox.Show(myRV.ToString());
+            
+        }
     }
 }

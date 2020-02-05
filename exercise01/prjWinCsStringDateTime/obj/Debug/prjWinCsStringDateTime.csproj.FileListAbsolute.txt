@@ -8,3 +8,4 @@ D:\Programs\Project\C#-Basic\exercise01\prjWinCsStringDateTime\obj\Debug\prjWinC
 D:\Programs\Project\C#-Basic\exercise01\prjWinCsStringDateTime\obj\Debug\prjWinCsStringDateTime.exe
 D:\Programs\Project\C#-Basic\exercise01\prjWinCsStringDateTime\obj\Debug\prjWinCsStringDateTime.pdb
 D:\Programs\Project\C#-Basic\exercise01\prjWinCsStringDateTime\obj\Debug\prjWinCsStringDateTime.frmBookString.resources
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsStringDateTime\obj\Debug\prjWinCsStringDateTime.frmTimesheet.resources

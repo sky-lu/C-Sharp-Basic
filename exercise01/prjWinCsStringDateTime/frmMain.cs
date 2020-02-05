@@ -36,5 +36,12 @@ namespace prjWinCsStringDateTime
             fb.MdiParent = this;
             fb.Show();
         }
+
+        private void mnuTimeSheet_Click(object sender, EventArgs e)
+        {
+            frmTimesheet ft = new frmTimesheet();
+            ft.MdiParent = this;
+            ft.Show();
+        }
     }
 }

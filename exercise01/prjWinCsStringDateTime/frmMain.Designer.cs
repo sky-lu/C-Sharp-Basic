@@ -88,6 +88,7 @@
             this.mnuTimeSheet.Name = "mnuTimeSheet";
             this.mnuTimeSheet.Size = new System.Drawing.Size(224, 26);
             this.mnuTimeSheet.Text = "TimeSheet";
+            this.mnuTimeSheet.Click += new System.EventHandler(this.mnuTimeSheet_Click);
             // 
             // mnuVideo
             // 
