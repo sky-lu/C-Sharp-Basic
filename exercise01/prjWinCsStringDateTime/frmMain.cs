@@ -43,5 +43,12 @@ namespace prjWinCsStringDateTime
             ft.MdiParent = this;
             ft.Show();
         }
+
+        private void functionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCalculator fc = new frmCalculator();
+            fc.MdiParent = this;
+            fc.Show();
+        }
     }
 }

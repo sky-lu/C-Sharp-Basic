@@ -70,7 +70,8 @@ namespace prjWinCsStringDateTime
                 m = m + 60;
                 h = h - 1;
             }
-
+           
+            
 
             //if(sin > sout)
             //{

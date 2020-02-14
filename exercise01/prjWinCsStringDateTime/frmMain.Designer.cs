@@ -36,6 +36,7 @@
             this.mnuTimeSheet = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuVideo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuQuit = new System.Windows.Forms.ToolStripMenuItem();
+            this.functionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +72,8 @@
             // 
             this.chaptersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuBook,
-            this.mnuTimeSheet});
+            this.mnuTimeSheet,
+            this.functionToolStripMenuItem});
             this.chaptersToolStripMenuItem.Name = "chaptersToolStripMenuItem";
             this.chaptersToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.chaptersToolStripMenuItem.Text = "Chapters";
@@ -103,6 +105,13 @@
             this.mnuQuit.Text = "Quit";
             this.mnuQuit.Click += new System.EventHandler(this.mnuQuit_Click);
             // 
+            // functionToolStripMenuItem
+            // 
+            this.functionToolStripMenuItem.Name = "functionToolStripMenuItem";
+            this.functionToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.functionToolStripMenuItem.Text = "Function";
+            this.functionToolStripMenuItem.Click += new System.EventHandler(this.functionToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -132,5 +141,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuTimeSheet;
         private System.Windows.Forms.ToolStripMenuItem mnuVideo;
         private System.Windows.Forms.ToolStripMenuItem mnuQuit;
+        private System.Windows.Forms.ToolStripMenuItem functionToolStripMenuItem;
     }
 }
