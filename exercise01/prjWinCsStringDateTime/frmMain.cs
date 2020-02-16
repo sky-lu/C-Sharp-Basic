@@ -46,9 +46,13 @@ namespace prjWinCsStringDateTime
 
         private void functionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCalculator fc = new frmCalculator();
-            fc.MdiParent = this;
-            fc.Show();
+            //frmCalculator fc = new frmCalculator();
+            //fc.MdiParent = this;
+            //fc.Show();
+
+            frmFunctionTest ft = new frmFunctionTest();
+            ft.MdiParent = this;
+            ft.Show();
         }
     }
 }
