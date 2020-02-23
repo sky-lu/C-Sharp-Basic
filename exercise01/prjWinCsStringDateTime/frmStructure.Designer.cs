@@ -40,13 +40,15 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lstNumbers = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.txtInfoGrade = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtInfoName = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.txtInfoNB = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtInfoName = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtInfoGrade = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -146,10 +148,13 @@
             this.lstNumbers.Name = "lstNumbers";
             this.lstNumbers.Size = new System.Drawing.Size(172, 142);
             this.lstNumbers.TabIndex = 10;
+            this.lstNumbers.SelectedIndexChanged += new System.EventHandler(this.lstNumbers_SelectedIndexChanged);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnDelete);
+            this.groupBox1.Controls.Add(this.btnSave);
+            this.groupBox1.Controls.Add(this.btnEdit);
             this.groupBox1.Controls.Add(this.txtInfoGrade);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtInfoName);
@@ -163,8 +168,51 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Student Information";
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(24, 153);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(61, 36);
+            this.btnEdit.TabIndex = 6;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // txtInfoGrade
+            // 
+            this.txtInfoGrade.Location = new System.Drawing.Point(108, 106);
+            this.txtInfoGrade.Name = "txtInfoGrade";
+            this.txtInfoGrade.Size = new System.Drawing.Size(142, 30);
+            this.txtInfoGrade.TabIndex = 5;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(21, 105);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(78, 23);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Grade   :";
+            // 
+            // txtInfoName
+            // 
+            this.txtInfoName.Location = new System.Drawing.Point(108, 70);
+            this.txtInfoName.Name = "txtInfoName";
+            this.txtInfoName.Size = new System.Drawing.Size(142, 30);
+            this.txtInfoName.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(21, 70);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(78, 23);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Name   :";
+            // 
             // txtInfoNB
             // 
+            this.txtInfoNB.BackColor = System.Drawing.SystemColors.Window;
             this.txtInfoNB.Location = new System.Drawing.Point(108, 33);
             this.txtInfoNB.Name = "txtInfoNB";
             this.txtInfoNB.Size = new System.Drawing.Size(142, 30);
@@ -179,46 +227,25 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Number:";
             // 
-            // label8
+            // btnSave
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(21, 70);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(78, 23);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Name   :";
+            this.btnSave.Location = new System.Drawing.Point(108, 153);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(61, 36);
+            this.btnSave.TabIndex = 7;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // txtInfoName
+            // btnDelete
             // 
-            this.txtInfoName.Location = new System.Drawing.Point(108, 70);
-            this.txtInfoName.Name = "txtInfoName";
-            this.txtInfoName.Size = new System.Drawing.Size(142, 30);
-            this.txtInfoName.TabIndex = 3;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(21, 105);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(78, 23);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "Grade   :";
-            // 
-            // txtInfoGrade
-            // 
-            this.txtInfoGrade.Location = new System.Drawing.Point(108, 106);
-            this.txtInfoGrade.Name = "txtInfoGrade";
-            this.txtInfoGrade.Size = new System.Drawing.Size(142, 30);
-            this.txtInfoGrade.TabIndex = 5;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(24, 153);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 36);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(189, 153);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(73, 36);
+            this.btnDelete.TabIndex = 8;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // frmStructure
             // 
@@ -269,6 +296,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtInfoName;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnSave;
     }
 }
