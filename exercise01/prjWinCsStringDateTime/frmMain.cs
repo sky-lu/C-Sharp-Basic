@@ -54,5 +54,12 @@ namespace prjWinCsStringDateTime
             ft.MdiParent = this;
             ft.Show();
         }
+
+        private void stuctureToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmStructure fs = new frmStructure();
+            fs.MdiParent = this;
+            fs.Show();
+        }
     }
 }
