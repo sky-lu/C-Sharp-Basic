@@ -12,3 +12,4 @@ D:\Programs\Project\C#-Basic\exercise01\prjWinCsStringDateTime\obj\Debug\prjWinC
 D:\Programs\Project\C#-Basic\exercise01\prjWinCsStringDateTime\obj\Debug\prjWinCsStringDateTime.frmCalculator.resources
 D:\Programs\Project\C#-Basic\exercise01\prjWinCsStringDateTime\obj\Debug\prjWinCsStringDateTime.frmFunctionTest.resources
 D:\Programs\Project\C#-Basic\exercise01\prjWinCsStringDateTime\obj\Debug\prjWinCsStringDateTime.frmStructure.resources
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsStringDateTime\obj\Debug\prjWinCsStringDateTime.frmFile.resources

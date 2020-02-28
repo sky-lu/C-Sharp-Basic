@@ -35,9 +35,10 @@
             this.mnuBook = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTimeSheet = new System.Windows.Forms.ToolStripMenuItem();
             this.functionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stuctureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuVideo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuQuit = new System.Windows.Forms.ToolStripMenuItem();
-            this.stuctureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +76,8 @@
             this.mnuBook,
             this.mnuTimeSheet,
             this.functionToolStripMenuItem,
-            this.stuctureToolStripMenuItem});
+            this.stuctureToolStripMenuItem,
+            this.fileToolStripMenuItem});
             this.chaptersToolStripMenuItem.Name = "chaptersToolStripMenuItem";
             this.chaptersToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.chaptersToolStripMenuItem.Text = "Chapters";
@@ -101,6 +103,13 @@
             this.functionToolStripMenuItem.Text = "Function";
             this.functionToolStripMenuItem.Click += new System.EventHandler(this.functionToolStripMenuItem_Click);
             // 
+            // stuctureToolStripMenuItem
+            // 
+            this.stuctureToolStripMenuItem.Name = "stuctureToolStripMenuItem";
+            this.stuctureToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.stuctureToolStripMenuItem.Text = "Stucture";
+            this.stuctureToolStripMenuItem.Click += new System.EventHandler(this.stuctureToolStripMenuItem_Click);
+            // 
             // mnuVideo
             // 
             this.mnuVideo.Name = "mnuVideo";
@@ -114,12 +123,12 @@
             this.mnuQuit.Text = "Quit";
             this.mnuQuit.Click += new System.EventHandler(this.mnuQuit_Click);
             // 
-            // stuctureToolStripMenuItem
+            // fileToolStripMenuItem
             // 
-            this.stuctureToolStripMenuItem.Name = "stuctureToolStripMenuItem";
-            this.stuctureToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.stuctureToolStripMenuItem.Text = "Stucture";
-            this.stuctureToolStripMenuItem.Click += new System.EventHandler(this.stuctureToolStripMenuItem_Click);
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -152,5 +161,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuQuit;
         private System.Windows.Forms.ToolStripMenuItem functionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stuctureToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
     }
 }

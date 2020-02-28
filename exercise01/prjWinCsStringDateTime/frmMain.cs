@@ -61,5 +61,12 @@ namespace prjWinCsStringDateTime
             fs.MdiParent = this;
             fs.Show();
         }
+
+        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFile ff = new frmFile();
+            ff.MdiParent = this;
+            ff.Show();
+        }
     }
 }
