@@ -1,0 +1,50 @@
+﻿Bill Gates
+1
+10
+2000
+98
+Steve Jobs
+23
+12
+1999
+97
+Ali Baba
+18
+10
+1998
+99
+Neymar dos Santos
+14
+11
+1998
+94
+Ave Maria
+3
+8
+2001
+88
+Mark Tom
+25
+7
+1997
+91
+Alex Alli
+6
+10
+2000
+89
+Saha Baba
+20
+9
+1998
+87
+Helen Tom
+11
+11
+1998
+80
+Helen rose
+1
+6
+1999
+89

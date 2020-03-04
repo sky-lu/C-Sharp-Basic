@@ -14,7 +14,7 @@ namespace prjCalculator
     {
 
         public double n1, n2, result;
-        public String op;
+        
 
         public frmCalculator()
         {
@@ -25,18 +25,33 @@ namespace prjCalculator
         //and the entered number is displayed in the lable.
         private void ShowNumbers(int num)
         {
-            if(lblResult.Text == "0")
+            if(lblResultDown.Text == "0")
             {
-                lblResult.Text = num.ToString();
+                lblResultDown.Text = num.ToString();
             }
             else
             {
-                lblResult.Text = lblResult.Text + num;
+                lblResultDown.Text = lblResultDown.Text + num;
+            }
+        }
+
+        private void Compute(Char op)
+        {
+            String up = lblResultUp.Text;
+            String down = lblResultDown.Text;
+            if(up.IndexOf("+") == -1 && up.IndexOf("-") == -1 && up.IndexOf("*") == -1 && up.IndexOf("/") == -1) { 
+                lblResultUp.Text = lblResultDown.Text + op ;
+            }
+            if(up.IndexOf("+") == up.Length - 1 || up.IndexOf("-") == up.Length - 1 ||
+                up.IndexOf("*") == up.Length - 1 || up.IndexOf("/") == up.Length - 1)
+            {
+
             }
         }
         private void frmCalculator_Load(object sender, EventArgs e)
         {
-            lblResult.Text = Convert.ToString(0);
+            //When the form load ,the lable shows 0;
+            lblResultDown.Text = Convert.ToString(0);
         }
 
         private void btn1_Click(object sender, EventArgs e)
@@ -86,14 +101,41 @@ namespace prjCalculator
 
         private void btnSign_Click(object sender, EventArgs e)
         {
-            double temp = Convert.ToDouble(lblResult.Text);
+            // for the button(+/-), if it's 0 ,it does not show sign; if it is positive,then show negative;
+            // if it is negative,then show positive. 
+            double temp = Convert.ToDouble(lblResultDown.Text);
             if(temp == 0)
             {
-                lblResult.Text = "0";
+                lblResultDown.Text = "0";
             }else
             {
-                lblResult.Text = (-temp).ToString();
+                lblResultDown.Text = (-temp).ToString();
             }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Compute('+');
+        }
+
+        private void btnSquare_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSubtract_Click(object sender, EventArgs e)
+        {
+            Compute('-');
+        }
+
+        private void btnMultiplication_Click(object sender, EventArgs e)
+        {
+            Compute('*');
+        }
+
+        private void btnDivide_Click(object sender, EventArgs e)
+        {
+            Compute('/');
         }
 
         private void btn0_Click(object sender, EventArgs e)
@@ -103,7 +145,10 @@ namespace prjCalculator
 
         private void btnDot_Click(object sender, EventArgs e)
         {
-            lblResult.Text += ".";
+            // if the lable already has the ".", "." won't show again.
+            if (lblResultDown.Text.IndexOf(".") == -1) { 
+                lblResultDown.Text += ".";
+            }
         }
     }
 }
