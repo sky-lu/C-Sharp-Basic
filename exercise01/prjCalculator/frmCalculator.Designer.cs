@@ -65,6 +65,7 @@
             this.btnPercent.TabIndex = 0;
             this.btnPercent.Text = "%";
             this.btnPercent.UseVisualStyleBackColor = true;
+            this.btnPercent.Click += new System.EventHandler(this.btnPercent_Click);
             // 
             // btnCube
             // 
@@ -75,6 +76,7 @@
             this.btnCube.TabIndex = 1;
             this.btnCube.Text = "Cube";
             this.btnCube.UseVisualStyleBackColor = true;
+            this.btnCube.Click += new System.EventHandler(this.btnCube_Click);
             // 
             // btnClear
             // 
@@ -85,6 +87,7 @@
             this.btnClear.TabIndex = 2;
             this.btnClear.Text = "C";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnBackspace
             // 
@@ -95,6 +98,7 @@
             this.btnBackspace.TabIndex = 3;
             this.btnBackspace.Text = "⬅";
             this.btnBackspace.UseVisualStyleBackColor = true;
+            this.btnBackspace.Click += new System.EventHandler(this.btnBackspace_Click);
             // 
             // btnReciprocal
             // 
@@ -105,6 +109,7 @@
             this.btnReciprocal.TabIndex = 4;
             this.btnReciprocal.Text = "1/x";
             this.btnReciprocal.UseVisualStyleBackColor = true;
+            this.btnReciprocal.Click += new System.EventHandler(this.btnReciprocal_Click);
             // 
             // btnSquare
             // 
@@ -126,6 +131,7 @@
             this.btnRoot.TabIndex = 6;
             this.btnRoot.Text = "Root";
             this.btnRoot.UseVisualStyleBackColor = true;
+            this.btnRoot.Click += new System.EventHandler(this.btnRoot_Click);
             // 
             // btnDivide
             // 

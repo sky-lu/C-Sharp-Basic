@@ -12,9 +12,21 @@ namespace prjCalculator
 {
     public partial class frmCalculator : Form
     {
+        
 
         public double n1, n2, result;
-        
+
+        public bool calcOperatorIsFirst = true;
+
+        public string calcTempNumber, calcExpression = null;
+
+        public double calcPrevious, calcNext, calcResult = 0.0;
+
+        public int calcCount = 0;
+
+        public string[] calcUnits = new string[3];
+
+
 
         public frmCalculator()
         {
@@ -25,28 +37,53 @@ namespace prjCalculator
         //and the entered number is displayed in the lable.
         private void ShowNumbers(int num)
         {
-            if(lblResultDown.Text == "0")
+            /*if(calcOperatorIsEmpty != false)
             {
                 lblResultDown.Text = num.ToString();
             }
             else
             {
-                lblResultDown.Text = lblResultDown.Text + num;
+
+                lblResultDown.Text = Convert.ToDouble(lblResultDown.Text + num).ToString();
+                Console.WriteLine(lblResultDown.Text);
             }
+            calcTempNumber = lblResultDown.Text;*/
+            lblResultDown.Text = Convert.ToDouble(calcTempNumber + num).ToString();
+            calcTempNumber = lblResultDown.Text;
+
         }
 
         private void Compute(Char op)
         {
-            String up = lblResultUp.Text;
-            String down = lblResultDown.Text;
-            if(up.IndexOf("+") == -1 && up.IndexOf("-") == -1 && up.IndexOf("*") == -1 && up.IndexOf("/") == -1) { 
-                lblResultUp.Text = lblResultDown.Text + op ;
-            }
-            if(up.IndexOf("+") == up.Length - 1 || up.IndexOf("-") == up.Length - 1 ||
-                up.IndexOf("*") == up.Length - 1 || up.IndexOf("/") == up.Length - 1)
-            {
+            calcExpression += calcTempNumber + op;
+            lblResultUp.Text = calcExpression;
 
+            calcPrevious = Convert.ToDouble(calcTempNumber);
+            calcUnits[calcCount] = calcTempNumber;
+
+            calcCount++;
+            if (calcCount > 2)
+            {
+                calcCount = 0;
+                calcUnits[calcCount] = (Convert.ToDouble(calcUnits[0]) + Convert.ToDouble(calcUnits[2])).ToString();
+                //calcUnits[1] = op.ToString();
             }
+            
+            calcTempNumber = null;
+
+            Console.WriteLine("calcUnit[0]: " + calcUnits[0]);
+            Console.WriteLine("calcUnit[1]: " + calcUnits[1]);
+            Console.WriteLine("calcUnit[2]: " + calcUnits[2]);
+
+            //compute
+            if (calcOperatorIsFirst == false)
+            {
+                
+            }
+            calcOperatorIsFirst = false;
+            calcCount++;
+            //calcCount = calcCount > 2 ? 0 : calcCount;
+
         }
         private void frmCalculator_Load(object sender, EventArgs e)
         {
@@ -120,7 +157,9 @@ namespace prjCalculator
 
         private void btnSquare_Click(object sender, EventArgs e)
         {
-
+            Double temp = Convert.ToDouble(lblResultDown.Text);
+            lblResultUp.Text += " Sqr( " + temp + " )";
+            lblResultDown.Text = (temp * temp).ToString();
         }
 
         private void btnSubtract_Click(object sender, EventArgs e)
@@ -136,6 +175,68 @@ namespace prjCalculator
         private void btnDivide_Click(object sender, EventArgs e)
         {
             Compute('/');
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            lblResultDown.Text = "0";
+            lblResultUp.Text = "";
+        }
+
+        private void btnBackspace_Click(object sender, EventArgs e)
+        {
+            lblResultDown.Text = "0";
+        }
+
+        private void btnCube_Click(object sender, EventArgs e)
+        {
+            Double temp = Convert.ToDouble(lblResultDown.Text);
+            lblResultUp.Text += " Cube( " + temp + " )";
+            lblResultDown.Text = (temp * temp * temp).ToString();
+        }
+
+        private void btnReciprocal_Click(object sender, EventArgs e)
+        {
+            Double temp = Convert.ToDouble(lblResultDown.Text);
+            lblResultUp.Text += "1/(" + temp + ")";
+            if (temp == 0)
+            {
+                lblResultDown.Text = "Cannot divide";
+               
+            }
+            else
+            {
+                lblResultDown.Text = (1 / temp).ToString();
+            }
+        }
+
+        private void btnRoot_Click(object sender, EventArgs e)
+        {
+            Double temp = Convert.ToDouble(lblResultDown.Text);
+            lblResultUp.Text += "√(" + temp + ")";
+            if (temp < 0)
+            {
+                lblResultDown.Text = "Invalid input";
+            }
+            else
+            {
+                lblResultDown.Text = Math.Sqrt(temp).ToString();
+            }
+
+        }
+
+        private void btnPercent_Click(object sender, EventArgs e)
+        {
+            Double temp = Convert.ToDouble(lblResultDown.Text);
+            if(lblResultUp.Text == "")
+            {
+                lblResultDown.Text = "0";
+            }
+            else
+            {
+                lblResultDown.Text = (temp / 100).ToString();
+                lblResultUp.Text += lblResultDown.Text;
+            }
         }
 
         private void btn0_Click(object sender, EventArgs e)
