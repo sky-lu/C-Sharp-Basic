@@ -193,6 +193,7 @@
             this.btnDelete.TabIndex = 15;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
@@ -238,7 +239,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmFile";
-            this.Text = "frmFile";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.frmFile_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

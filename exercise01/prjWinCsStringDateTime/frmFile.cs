@@ -25,7 +25,7 @@ namespace prjWinCsStringDateTime
             public Single Average;
         }
         Student[] tabStuds = new Student[50];
-        Int32 current, nbStud;
+        Int16 current, nbStud;
         String mode = "";
 
         private Int16 FileToArray()
@@ -48,7 +48,30 @@ namespace prjWinCsStringDateTime
             return i;
         }
 
-        
+        private void Array2txt(Int16 anyIndex)
+        {
+            txtFullName.Text = tabStuds[anyIndex].Name;
+            datBirthday.Value = tabStuds[anyIndex].Birthdate;
+            txtAverage.Text = tabStuds[anyIndex].Average.ToString();
+            lblInfo.Text = " Student " + (anyIndex + 1) + " on a total of " + nbStud;
+        }
+
+        private void ActivateButtons(Button anyButton)
+        {
+            if(anyButton == btnCancel || anyButton == btnSave)
+            {
+                btnSave.Enabled = btnCancel.Enabled = false;
+                btnAdd.Enabled = btnEdit.Enabled = btnDelete.Enabled = btnFirst.Enabled = btnPrevious.Enabled =
+                    btnNext.Enabled = btnLast.Enabled = true;
+
+            }
+            else
+            {
+                btnAdd.Enabled = btnEdit.Enabled = btnDelete.Enabled = btnFirst.Enabled = btnPrevious.Enabled =
+                    btnNext.Enabled = btnLast.Enabled = false;
+                btnSave.Enabled = btnCancel.Enabled = true;
+            }
+        }
         private void frmFile_Load(object sender, EventArgs e)
         {
             nbStud = FileToArray();
@@ -78,21 +101,15 @@ namespace prjWinCsStringDateTime
         {
             if(nbStud > 0) { 
                 current = 0 ;
-                txtFullName.Text = tabStuds[current].Name;
-                datBirthday.Value = tabStuds[current].Birthdate;
-                txtAverage.Text = tabStuds[current].Average.ToString();
-                lblInfo.Text = " Student 1 " + "on a total of " + nbStud;
+                Array2txt(current);
             }
         }
 
         private void btnLast_Click(object sender, EventArgs e)
         {
             if(nbStud > 0) { 
-                current = nbStud - 1;
-                txtFullName.Text = tabStuds[current].Name;
-                datBirthday.Value = tabStuds[current].Birthdate;
-                txtAverage.Text = tabStuds[current].Average.ToString();
-                lblInfo.Text = " Student " + nbStud + " on a total of " + nbStud;
+                current = Convert.ToInt16(nbStud - 1);
+                Array2txt(current);
             }
         }
 
@@ -100,11 +117,8 @@ namespace prjWinCsStringDateTime
         {
             if(current > 0)
             {
-                current = current - 1;
-                txtFullName.Text = tabStuds[current].Name;
-                datBirthday.Value = tabStuds[current].Birthdate;
-                txtAverage.Text = tabStuds[current].Average.ToString();
-                lblInfo.Text = " Student " + (current + 1) + " on a total of " + nbStud;
+                current--;
+                Array2txt(current);
             }
         }
 
@@ -112,35 +126,34 @@ namespace prjWinCsStringDateTime
         {
             if(current < nbStud - 1)
             {
-                current = current + 1;
-                txtFullName.Text = tabStuds[current].Name;
-                datBirthday.Value = tabStuds[current].Birthdate;
-                txtAverage.Text = tabStuds[current].Average.ToString();
-                lblInfo.Text = " Student " + (current+1) + " on a total of " + nbStud;
+                current++;
+                Array2txt(current);
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)//(Cancel-button)
         {
             //Activates buttons
-            btnAdd.Enabled = true;
-            btnEdit.Enabled = true;
-            btnDelete.Enabled = true;
-            btnSave.Enabled = false;
-            btnCancel.Enabled = false;
-            btnFirst.Enabled = btnPrevious.Enabled = btnNext.Enabled = btnLast.Enabled = true;
+            //btnAdd.Enabled = true;
+            //btnEdit.Enabled = true;
+            //btnDelete.Enabled = true;
+            //btnSave.Enabled = false;
+            //btnCancel.Enabled = false;
+            //btnFirst.Enabled = btnPrevious.Enabled = btnNext.Enabled = btnLast.Enabled = true;
+            ActivateButtons(btnCancel);
+            Array2txt(current);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             //Activates buttons
-            btnAdd.Enabled = false;
-            btnEdit.Enabled = false;
-            btnDelete.Enabled = false;
-            btnSave.Enabled = true;
-            btnCancel.Enabled = true;
-            btnFirst.Enabled = btnPrevious.Enabled = btnNext.Enabled = btnLast.Enabled = false;
-
+            //btnAdd.Enabled = false;
+            //btnEdit.Enabled = false;
+            //btnDelete.Enabled = false;
+            //btnSave.Enabled = true;
+            //btnCancel.Enabled = true;
+            //btnFirst.Enabled = btnPrevious.Enabled = btnNext.Enabled = btnLast.Enabled = false;
+            ActivateButtons(btnAdd);
             mode = "add";
             txtFullName.Clear();
             txtFullName.Focus();
@@ -156,19 +169,20 @@ namespace prjWinCsStringDateTime
             txtFullName.Focus();
             lblInfo.Text = "EDITNG MODE";
 
-            btnAdd.Enabled = false;
-            btnEdit.Enabled = false;
-            btnDelete.Enabled = false;
-            btnSave.Enabled = true;
-            btnCancel.Enabled = true;
-            btnFirst.Enabled = btnPrevious.Enabled = btnNext.Enabled = btnLast.Enabled = false;
+            //btnAdd.Enabled = false;
+            //btnEdit.Enabled = false;
+            //btnDelete.Enabled = false;
+            //btnSave.Enabled = true;
+            //btnCancel.Enabled = true;
+            //btnFirst.Enabled = btnPrevious.Enabled = btnNext.Enabled = btnLast.Enabled = false;
+            ActivateButtons(btnEdit);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             if(mode == "add")
             {
-                if(nbStud < (50 - 1))
+                if(nbStud < (50 - 1))//nbStud < 50
                 {
                     current = nbStud;
                     nbStud++;
@@ -184,12 +198,40 @@ namespace prjWinCsStringDateTime
             mode = "";
             Array2txt(current);
 
-            btnAdd.Enabled = true;
-            btnEdit.Enabled = true;
-            btnDelete.Enabled = true;
-            btnSave.Enabled = false;
-            btnCancel.Enabled = false;
-            btnFirst.Enabled = btnPrevious.Enabled = btnNext.Enabled = btnLast.Enabled = true;
+            //btnAdd.Enabled = true;
+            //btnEdit.Enabled = true;
+            //btnDelete.Enabled = true;
+            //btnSave.Enabled = false;
+            //btnCancel.Enabled = false;
+            //btnFirst.Enabled = btnPrevious.Enabled = btnNext.Enabled = btnLast.Enabled = true;
+            ActivateButtons(btnSave);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult drTemp = MessageBox.Show("Are you sure to delete this student?", "Delete information", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if(drTemp == DialogResult.Yes)
+            {
+                for(Int32 i = current; i < nbStud-1; i++)
+                {
+                    tabStuds[i].Name = tabStuds[i + 1].Name;
+                    tabStuds[i].Birthdate = tabStuds[i + 1].Birthdate;
+                    tabStuds[i].Average = tabStuds[i + 1].Average;
+                }
+                nbStud--;
+                if(current == nbStud)
+                {
+                    txtFullName.Text = tabStuds[current - 1].Name;
+                    datBirthday.Value = tabStuds[current - 1].Birthdate;
+                    txtAverage.Text = tabStuds[current - 1].Average.ToString();
+                    lblInfo.Text = " Student " + current + " on a total of " + nbStud;
+                }
+                else { 
+                    Array2txt(current);
+                }
+            }
+            
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
