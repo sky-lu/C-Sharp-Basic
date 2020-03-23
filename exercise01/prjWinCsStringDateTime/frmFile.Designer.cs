@@ -138,6 +138,7 @@
             this.datBirthday.Name = "datBirthday";
             this.datBirthday.Size = new System.Drawing.Size(312, 25);
             this.datBirthday.TabIndex = 9;
+            this.datBirthday.ValueChanged += new System.EventHandler(this.datBirthday_ValueChanged);
             // 
             // label4
             // 
@@ -239,7 +240,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmFile";
-            this.Text = " ";
+            this.Text = "frmFile";
             this.Load += new System.EventHandler(this.frmFile_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

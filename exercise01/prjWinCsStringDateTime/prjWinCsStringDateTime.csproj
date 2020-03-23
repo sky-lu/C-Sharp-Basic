@@ -137,6 +137,7 @@
     <Content Include="bin\Debug\College.txt" />
     <Content Include="bin\Debug\FodesFriends.txt" />
     <Content Include="Lasalle.txt" />
+    <Content Include="luran.txt" />
     <Content Include="Test.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

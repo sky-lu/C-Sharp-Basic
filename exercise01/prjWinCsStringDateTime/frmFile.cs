@@ -234,6 +234,11 @@ namespace prjWinCsStringDateTime
 
         }
 
+        private void datBirthday_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 

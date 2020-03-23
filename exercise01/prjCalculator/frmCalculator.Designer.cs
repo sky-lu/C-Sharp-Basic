@@ -54,6 +54,8 @@
             this.btnEqual = new System.Windows.Forms.Button();
             this.lblResultDown = new System.Windows.Forms.Label();
             this.lblResultUp = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnPercent
@@ -322,35 +324,42 @@
             // 
             // lblResultDown
             // 
-            this.lblResultDown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblResultDown.Font = new System.Drawing.Font("Microsoft YaHei", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblResultDown.Location = new System.Drawing.Point(31, 73);
+            this.lblResultDown.Location = new System.Drawing.Point(-1, 46);
             this.lblResultDown.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblResultDown.Name = "lblResultDown";
             this.lblResultDown.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblResultDown.Size = new System.Drawing.Size(210, 28);
+            this.lblResultDown.Size = new System.Drawing.Size(245, 28);
             this.lblResultDown.TabIndex = 24;
             this.lblResultDown.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblResultUp
             // 
-            this.lblResultUp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblResultUp.Font = new System.Drawing.Font("Microsoft YaHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblResultUp.Location = new System.Drawing.Point(31, 45);
+            this.lblResultUp.Location = new System.Drawing.Point(2, 9);
             this.lblResultUp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblResultUp.Name = "lblResultUp";
             this.lblResultUp.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblResultUp.Size = new System.Drawing.Size(210, 28);
+            this.lblResultUp.Size = new System.Drawing.Size(242, 28);
             this.lblResultUp.TabIndex = 25;
             this.lblResultUp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lblResultUp);
+            this.panel1.Controls.Add(this.lblResultDown);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(248, 88);
+            this.panel1.TabIndex = 26;
             // 
             // frmCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(273, 370);
-            this.Controls.Add(this.lblResultUp);
-            this.Controls.Add(this.lblResultDown);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnEqual);
             this.Controls.Add(this.btnDot);
             this.Controls.Add(this.btn0);
@@ -380,6 +389,7 @@
             this.Name = "frmCalculator";
             this.Text = "frmCalculator";
             this.Load += new System.EventHandler(this.frmCalculator_Load);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -412,5 +422,6 @@
         private System.Windows.Forms.Button btnEqual;
         private System.Windows.Forms.Label lblResultDown;
         private System.Windows.Forms.Label lblResultUp;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -33,6 +33,7 @@ namespace prjWinCsStringDateTime
 
         }
         private bool Exist (String number)
+        // Check if the student already exists
         {
             foreach(Student st in listStuds)
             {
@@ -78,6 +79,8 @@ namespace prjWinCsStringDateTime
             //}
            
             if(i < 20) { 
+                // You should check if the number is over the size of the array & if the number you add 
+                // exists.
                 String number = txtNumber.Text.Trim();
                 if (Exist(number))
                 {

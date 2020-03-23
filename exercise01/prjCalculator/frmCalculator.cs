@@ -14,7 +14,7 @@ namespace prjCalculator
     {
 
 
-        public char opChar = '\0';
+        public char opChar;
 
         public double n1, n2 = 0;
 
@@ -32,7 +32,7 @@ namespace prjCalculator
         private void ShowNumbers(char num)
         {
 
-            lblResultDown.Text = calcTempNumber = calcTempNumber + num;
+            lblResultDown.Text = calcTempNumber = Convert.ToDouble(calcTempNumber + num).ToString();
 
             if (calcSwitch == false)
             {
@@ -46,38 +46,41 @@ namespace prjCalculator
 
         private void Compute(Char op)
         {
-            switch (opChar)
-            {
-                case '+':
-                    n1 += n2;
-                    break;
-                case '-':
-                    n1-= n2;
-                    break;
+            // When the first operator comes, it will not excute the switch part.
+                switch (opChar)
+                {
+                    case '+':
+                        n1 += n2;
+                        break;
+                    case '-':
+                        n1-= n2;
+                        break;
 
-                case 'x':
-                    n1 *= n2;
-                    break;
+                    case 'x':
+                        n1 *= n2;
+                        break;
 
-                case '/':
-                    n1 /= n2;
-                    break;
+                    case '/':
+                        n1 /= n2;
+                        break;
 
-                case '=':
-                    lblResultUp.Text = n1.ToString();
-                    break;
+                    case '=':
+                        lblResultUp.Text = n1.ToString();
+                        break;
 
-                default:
-                    break;
+                    default:
+                        break;
                     
-            }
+                }
+           
+            
+                lblResultDown.Text = n1.ToString();
+                lblResultUp.Text += calcTempNumber + op;
 
-            lblResultDown.Text = n1.ToString();
-            lblResultUp.Text += calcTempNumber + op;
-
-            opChar = op;
-            calcSwitch = true;
-            calcTempNumber = null;
+                opChar = op;
+                calcSwitch = true;
+                calcTempNumber = null;
+           
             
 
         }
@@ -137,7 +140,7 @@ namespace prjCalculator
             if (calcSwitch == false)
             {
 
-                lblResultUp.Text += (-n1).ToString();
+                lblResultUp.Text = (-n1).ToString();
                 lblResultDown.Text = (-n1).ToString();
                 n1 = -n1;
             }
@@ -160,15 +163,17 @@ namespace prjCalculator
             
             if (calcSwitch == false)
             {
-                
-                lblResultUp.Text += $"sqr({n1})";
-                n1 = Math.Pow(n1, 2);
+                //https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/
+                //format strings (references)
+
+                lblResultUp.Text = $"sqr({n1})";
+                n1 = n1 * n1;
                 lblResultDown.Text = n1.ToString();
             }
             else
             {
                 lblResultUp.Text += $"sqr({n2})";
-                n2 = Math.Pow(n2, 2);
+                n2 = n2 * n2;
                 lblResultDown.Text = n2.ToString();
             }
             calcTempNumber = null;
@@ -197,63 +202,126 @@ namespace prjCalculator
             opChar = '\0';
             calcSwitch = false;
             calcTempNumber = null;
-            n1 = n2 = 0.0;
+            n1 = n2 = 0;
 
         }
 
         private void btnBackspace_Click(object sender, EventArgs e)
         {
-            lblResultDown.Text = "0";
+           if(calcTempNumber != null)
+            {
+                n2 = 0;
+                lblResultDown.Text = n2.ToString();
+                calcTempNumber = null;
+            }
         }
 
         private void btnCube_Click(object sender, EventArgs e)
         {
-            Double temp = Convert.ToDouble(lblResultDown.Text);
-            lblResultUp.Text += " Cube( " + temp + " )";
-            lblResultDown.Text = (temp * temp * temp).ToString();
+
+            if (calcSwitch == false)
+            {
+
+                lblResultUp.Text = $"Cube({n1})";
+                n1 = n1 * n1 * n1;
+                lblResultDown.Text = n1.ToString();
+            }
+            else
+            {
+                lblResultUp.Text += $"Cube({n2})";
+                n2 = n2 * n2 * n2;
+                lblResultDown.Text = n2.ToString();
+            }
+            calcTempNumber = null;
         }
 
         private void btnReciprocal_Click(object sender, EventArgs e)
         {
-            Double temp = Convert.ToDouble(lblResultDown.Text);
-            lblResultUp.Text += "1/(" + temp + ")";
-            if (temp == 0)
+            if (calcSwitch == false)
             {
-                lblResultDown.Text = "Cannot divide";
-               
+                lblResultUp.Text = $"1/({n1})";
+                if ( n1 != 0) { 
+                    n1 = 1 / n1;
+                    lblResultDown.Text = n1.ToString();
+                }
+                else
+                {
+                    lblResultDown.Text = " Cannot divide ";
+                }
             }
             else
             {
-                lblResultDown.Text = (1 / temp).ToString();
+                lblResultUp.Text += $"1/({n2})";
+                if (n2 != 0) { 
+                    n2 = 1 / n2;
+                    lblResultDown.Text = n2.ToString();
+                }
+                else
+                {
+                    lblResultDown.Text = " Cannot divide ";
+                }
             }
+            calcTempNumber = null;
         }
 
         private void btnRoot_Click(object sender, EventArgs e)
         {
-            Double temp = Convert.ToDouble(lblResultDown.Text);
-            lblResultUp.Text += "√(" + temp + ")";
-            if (temp < 0)
+            if (calcSwitch == false)
             {
-                lblResultDown.Text = "Invalid input";
+                lblResultUp.Text = $"√({n1})";
+                if (n1 >= 0)
+                {
+                    n1 = Math.Sqrt(n1);
+                    lblResultDown.Text = n1.ToString();
+                }
+                else
+                {
+                    lblResultDown.Text = " Invalid input ";
+                }
             }
             else
             {
-                lblResultDown.Text = Math.Sqrt(temp).ToString();
+                lblResultUp.Text += $"√({n2})";
+                if (n2 >= 0)
+                {
+                    n2 = Math.Sqrt(n2);
+                    lblResultDown.Text = n2.ToString();
+                }
+                else
+                {
+                    lblResultDown.Text = " Invalid input ";
+                }
             }
+            calcTempNumber = null;
 
         }
 
         private void btnPercent_Click(object sender, EventArgs e)
         {
-            Double temp = Convert.ToDouble(lblResultDown.Text);
-            if(lblResultUp.Text == "")
+            if (calcSwitch == false)
             {
-                lblResultDown.Text = "0";
+                n1 = n2 = 0;
+                lblResultDown.Text = lblResultUp.Text = "0";
             }
             else
             {
-                lblResultDown.Text = (temp / 100).ToString();
+                switch (opChar)
+                {
+                    case '+':
+                    case '-':
+                        n2 = n1 *  n2 * 0.01;
+                        break;
+                    case 'x':
+                    case '/':
+                        n2 =  n2 * 0.01;
+                        break;
+                    default :
+                        break;
+                }
+
+                lblResultDown.Text = n2.ToString();
                 lblResultUp.Text += lblResultDown.Text;
+                calcTempNumber = null;
             }
         }
 

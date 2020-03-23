@@ -47,6 +47,8 @@ namespace prjWinCsStringDateTime
                 firstname = firstname.Trim();
                 lastname = fullname.Substring(0, fullname.IndexOf(','));
                 lastname = lastname.Trim();
+
+                //Show the name in the lable ,first letter capital,the other letters lower case.
                 lblFirstname.Text = firstname.Substring(0,1).ToUpper() + firstname.Substring(1).ToLower();
                 lblLastname.Text = lastname.Substring(0,1).ToUpper() + lastname.Substring(1).ToLower();
             }
