@@ -1,0 +1,10 @@
+D:\Programs\Project\C#-Basic\exercise01\prjWinCSObjectOP\bin\Debug\prjWinCSObjectOP.exe.config
+D:\Programs\Project\C#-Basic\exercise01\prjWinCSObjectOP\bin\Debug\prjWinCSObjectOP.exe
+D:\Programs\Project\C#-Basic\exercise01\prjWinCSObjectOP\bin\Debug\prjWinCSObjectOP.pdb
+D:\Programs\Project\C#-Basic\exercise01\prjWinCSObjectOP\obj\Debug\prjWinCSObjectOP.csprojAssemblyReference.cache
+D:\Programs\Project\C#-Basic\exercise01\prjWinCSObjectOP\obj\Debug\prjWinCSObjectOP.Properties.Resources.resources
+D:\Programs\Project\C#-Basic\exercise01\prjWinCSObjectOP\obj\Debug\prjWinCSObjectOP.csproj.GenerateResource.cache
+D:\Programs\Project\C#-Basic\exercise01\prjWinCSObjectOP\obj\Debug\prjWinCSObjectOP.exe
+D:\Programs\Project\C#-Basic\exercise01\prjWinCSObjectOP\obj\Debug\prjWinCSObjectOP.pdb
+D:\Programs\Project\C#-Basic\exercise01\prjWinCSObjectOP\obj\Debug\prjWinCSObjectOP.frmStruct2Class.resources
+D:\Programs\Project\C#-Basic\exercise01\prjWinCSObjectOP\obj\Debug\prjWinCSObjectOP.frmClass2Struct.resources
