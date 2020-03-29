@@ -22,7 +22,20 @@ namespace prjWinCSObjectOP
             String info = Hour + " : " + Minute + " : " + Second;
             return info;
         }
-
+         
+        public String ToStandard()
+        {
+            if (Hour < 12)
+            {
+                String info = Hour + " : " + Minute + " : " + Second + " AM ";
+                return info;
+            }
+            else
+            {
+                String info = (Hour - 12).ToString() + " : " + Minute + " : " + Second + " PM ";
+                return info;
+            }
+        }
         public void Adjust(Int16 aHour, Int16 aMinute, Int16 aSecond)
         {
             Hour = aHour;

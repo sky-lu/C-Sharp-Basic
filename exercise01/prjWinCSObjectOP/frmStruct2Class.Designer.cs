@@ -30,14 +30,14 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtHour = new System.Windows.Forms.TextBox();
-            this.txtMinute = new System.Windows.Forms.TextBox();
-            this.txtSecond = new System.Windows.Forms.TextBox();
-            this.btnClear = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.txtSecond = new System.Windows.Forms.TextBox();
+            this.txtMinute = new System.Windows.Forms.TextBox();
+            this.txtHour = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnDUniversal = new System.Windows.Forms.Button();
             this.btnDStandard = new System.Windows.Forms.Button();
             this.lblUniversal = new System.Windows.Forms.Label();
@@ -73,53 +73,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "New Appointment";
             // 
-            // label2
+            // btnCreate
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 23);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Enter Hour :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 100);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(123, 23);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Enter Minute :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 149);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(126, 23);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Enter Second :";
-            // 
-            // txtHour
-            // 
-            this.txtHour.Location = new System.Drawing.Point(170, 55);
-            this.txtHour.Name = "txtHour";
-            this.txtHour.Size = new System.Drawing.Size(100, 30);
-            this.txtHour.TabIndex = 2;
-            // 
-            // txtMinute
-            // 
-            this.txtMinute.Location = new System.Drawing.Point(170, 97);
-            this.txtMinute.Name = "txtMinute";
-            this.txtMinute.Size = new System.Drawing.Size(100, 30);
-            this.txtMinute.TabIndex = 5;
-            // 
-            // txtSecond
-            // 
-            this.txtSecond.Location = new System.Drawing.Point(170, 142);
-            this.txtSecond.Name = "txtSecond";
-            this.txtSecond.Size = new System.Drawing.Size(100, 30);
-            this.txtSecond.TabIndex = 6;
+            this.btnCreate.Location = new System.Drawing.Point(115, 195);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(167, 34);
+            this.btnCreate.TabIndex = 7;
+            this.btnCreate.Text = "Create or Adjust";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // btnClear
             // 
@@ -130,15 +92,53 @@
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             // 
-            // btnCreate
+            // txtSecond
             // 
-            this.btnCreate.Location = new System.Drawing.Point(115, 195);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(167, 34);
-            this.btnCreate.TabIndex = 7;
-            this.btnCreate.Text = "Create or Adjust";
-            this.btnCreate.UseVisualStyleBackColor = true;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            this.txtSecond.Location = new System.Drawing.Point(170, 142);
+            this.txtSecond.Name = "txtSecond";
+            this.txtSecond.Size = new System.Drawing.Size(100, 30);
+            this.txtSecond.TabIndex = 6;
+            // 
+            // txtMinute
+            // 
+            this.txtMinute.Location = new System.Drawing.Point(170, 97);
+            this.txtMinute.Name = "txtMinute";
+            this.txtMinute.Size = new System.Drawing.Size(100, 30);
+            this.txtMinute.TabIndex = 5;
+            // 
+            // txtHour
+            // 
+            this.txtHour.Location = new System.Drawing.Point(170, 55);
+            this.txtHour.Name = "txtHour";
+            this.txtHour.Size = new System.Drawing.Size(100, 30);
+            this.txtHour.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 149);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(126, 23);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Enter Second :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 100);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(123, 23);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Enter Minute :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(105, 23);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Enter Hour :";
             // 
             // btnDUniversal
             // 
@@ -158,6 +158,7 @@
             this.btnDStandard.TabIndex = 9;
             this.btnDStandard.Text = "Display in Standard >>";
             this.btnDStandard.UseVisualStyleBackColor = true;
+            this.btnDStandard.Click += new System.EventHandler(this.btnDStandard_Click);
             // 
             // lblUniversal
             // 
@@ -189,7 +190,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmStruct2Class";
             this.Text = "frmStruct2Class";
             this.Load += new System.EventHandler(this.frmStruct2Class_Load);

@@ -39,6 +39,22 @@ namespace prjWinCSObjectOP
             String info = anyTime.Hour + " : " + anyTime.Minute + " : " + anyTime.Second;
             return info;
         }
+        private String DisplayStandard(Time anyTime)
+        {
+            String info;
+            if (anyTime.Hour < 12)
+            {
+                info = anyTime.Hour + " : " + anyTime.Minute + " : " + anyTime.Second  + " AM ";
+                return info;
+            }
+            else
+            {
+                info = (anyTime.Hour - 12 ).ToString() + " : " + anyTime.Minute + " : " + anyTime.Second + " PM ";
+                return info;
+            }
+
+            
+        }
         private void frmStruct2Class_Load(object sender, EventArgs e)
         {
 
@@ -56,6 +72,11 @@ namespace prjWinCSObjectOP
         private void btnDUniversal_Click(object sender, EventArgs e)
         {
             lblUniversal.Text = DisplayUniversal(current);
+        }
+
+        private void btnDStandard_Click(object sender, EventArgs e)
+        {
+            lblStandard.Text = DisplayStandard(current);
         }
     }
 }
