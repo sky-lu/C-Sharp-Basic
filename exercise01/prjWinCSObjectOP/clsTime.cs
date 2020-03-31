@@ -8,8 +8,17 @@ namespace prjWinCSObjectOP
 {
     class clsTime
     {
-        // Public properties
-        public Int16 Hour;
+        // private fields that will store the value of properties
+        private Int16 varHour;
+        private Int16 varMinute;
+        private Int16 varSecond;
+
+        //public properties as function to be able to do validation
+        public Int16 Hour
+        {
+            get { return 0; }
+            set { }
+        }
         public Int16 Minute;
         public Int16 Second;
 
@@ -17,31 +26,41 @@ namespace prjWinCSObjectOP
 
 
         //public methods or functions
-        public String ToUniversal()
-        {
-            String info = Hour + " : " + Minute + " : " + Second;
-            return info;
-        }
+    //    public String ToUniversal()
+    //    {
+    //        String info = Hour + " : " + Minute + " : " + Second;
+    //        return info;
+    //    }
          
-        public String ToStandard()
-        {
-            if (Hour < 12)
-            {
-                String info = Hour + " : " + Minute + " : " + Second + " AM ";
-                return info;
-            }
-            else
-            {
-                String info = (Hour - 12).ToString() + " : " + Minute + " : " + Second + " PM ";
-                return info;
-            }
-        }
-        public void Adjust(Int16 aHour, Int16 aMinute, Int16 aSecond)
-        {
-            Hour = aHour;
-            Minute = aMinute;
-            Second = aSecond;
-        }
+    //    public String ToStandard()
+    //    {
+    //        //String info;
+    //        //if (Hour < 12)
+    //        //{
+    //        //    info = Hour + " : " + Minute + " : " + Second + " AM ";
+    //        //    return info;
+    //        //}
+    //        //else
+    //        //{
+    //        //    info = (Hour - 12).ToString() + " : " + Minute + " : " + Second + " PM ";
+    //        //    return info;
+    //        //}
+    //        return ((Hour > 12) ? Hour - 12 : Hour).ToString() + ":" + Minute.ToString() + ":" + Second.ToString() + ((Hour > 12) ? " PM" : " AM");
+    //    }
+    //    public void Adjust(Int16 aHour, Int16 aMinute, Int16 aSecond)
+    //    {
+    //        if (aHour < 24 && aHour >= 0)
+    //        {
+    //            Hour = aHour;
+    //        }
+    //        else
+    //        {
+    //            Hour = 1;
+    //        }
+            
+    //        Minute = (aMinute < 60 && aMinute >= 0) ? aMinute : (Int16)0;
+    //        Second = (aSecond < 60 && aSecond >= 0) ? aSecond : (Int16)0;
+    //    }
 
-    }
+    //}
 }

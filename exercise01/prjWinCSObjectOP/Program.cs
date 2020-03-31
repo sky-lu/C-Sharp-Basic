@@ -16,7 +16,7 @@ namespace prjWinCSObjectOP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmStruct2Class());
+            Application.Run(new frmTest());
         }
     }
 }
