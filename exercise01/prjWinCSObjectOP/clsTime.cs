@@ -62,5 +62,5 @@ namespace prjWinCSObjectOP
     //        Second = (aSecond < 60 && aSecond >= 0) ? aSecond : (Int16)0;
     //    }
 
-    //}
+    }
 }
