@@ -20,11 +20,16 @@ namespace prjWinCSObjectOP
         private void frmTest_Load(object sender, EventArgs e)
         {
             //clsTime RV = new clsTime();
-            clsDate RV = new clsDate();
-            RV.Initialize(-18, -10, -1990);
-            MessageBox.Show(RV.DisplayShort());
-            MessageBox.Show(RV.DisplayLong());
+            //clsDate RV = new clsDate();
+            //RV.Initialize(-18, -10, -1990);
+            //MessageBox.Show(RV.DisplayShort());
+            //MessageBox.Show(RV.DisplayLong());
 
+            clsStudent ST1 = new clsStudent();
+            ST1.Register("ST001", "Marco Polo", 23, 11, 2000);
+           
+            ST1.ToGrade(90);
+            label1.Text = ST1.Display();
 
         }
     }

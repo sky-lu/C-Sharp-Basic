@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsDate.cs" />
+    <Compile Include="clsStudent.cs" />
     <Compile Include="clsTime.cs" />
     <Compile Include="frmClass2Struct.cs">
       <SubType>Form</SubType>
