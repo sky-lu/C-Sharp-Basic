@@ -66,8 +66,10 @@ namespace prjWinCSObjectOP
             DateTime tmp = new DateTime(Year, Month, Day);
             info = tabDays[(Int32)tmp.DayOfWeek];
 
-
-
+            String[] tabMonths = {"January", "February", "March", "April", "May", "June", "July", "August","September",
+            "October", "November", "December"};
+            info = info + "  " +  Day + " " + tabMonths[(Int32)tmp.Month - 1] + " " + Year;
+            
             return info;
         }
     }

@@ -19,8 +19,12 @@ namespace prjWinCSObjectOP
 
         private void frmTest_Load(object sender, EventArgs e)
         {
-            clsTime RV = new clsTime();
-            
+            //clsTime RV = new clsTime();
+            clsDate RV = new clsDate();
+            RV.Initialize(-18, -10, -1990);
+            MessageBox.Show(RV.DisplayShort());
+            MessageBox.Show(RV.DisplayLong());
+
 
         }
     }
