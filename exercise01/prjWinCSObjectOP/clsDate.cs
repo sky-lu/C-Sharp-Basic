@@ -12,14 +12,48 @@ namespace prjWinCSObjectOP
         private Int16 varDay;
         private Int16 varMonth;
         private Int16 varYear;
+        
+        // Constructors, event that is triggered when the object is created with the "new" keyword
+        //Constructor 1, without parameters
+        public clsDate()
+        {
+            varDay = 1;
+            varMonth = 1;
+            varYear = 1;
+        }
 
+        //Constructor 2, with 1 parameter
+        public clsDate (Int16 aDay)
+        {
+            Day = aDay;
+            varMonth = Convert.ToInt16(DateTime.Today.Month);
+            varYear = Convert.ToInt16(DateTime.Today.Year);
+        }
+
+        //Constructor 3, with 2 parameter
+        public clsDate(Int16 aDay, Int16 aMonth)
+        {
+            Day = aDay;
+            Month = aMonth;
+            varYear = Convert.ToInt16(DateTime.Today.Year);
+        }
+
+        //Constructor 4, with 3 parameter
+        public clsDate(Int16 aDay, Int16 aMonth, Int16 aYear)
+        {
+            Day = aDay;
+            Month = aMonth;
+            Year = aYear;
+        }
+
+        //Declaration of public access methods to properties
         public Int16 Day
         {
-            get
+            get //access for reading
             {
                 return varDay;
             }
-            set
+            set //access for writing
             {
                 varDay = (value > 0 && value < 32) ? value : (Int16)DateTime.Today.Day;
             }
@@ -68,7 +102,7 @@ namespace prjWinCSObjectOP
 
             String[] tabMonths = {"January", "February", "March", "April", "May", "June", "July", "August","September",
             "October", "November", "December"};
-            info = info + "  " +  Day + " " + tabMonths[(Int32)tmp.Month - 1] + " " + Year;
+            info = info + "  " +  Day + " " + tabMonths[Month - 1] + " " + Year;
             
             return info;
         }

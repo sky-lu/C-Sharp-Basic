@@ -26,10 +26,25 @@ namespace prjWinCSObjectOP
             //MessageBox.Show(RV.DisplayLong());
 
             clsStudent ST1 = new clsStudent();
-            ST1.Register("ST001", "Marco Polo", 23, 11, 2000);
-           
-            ST1.ToGrade(90);
-            label1.Text = ST1.Display();
+            
+            //ST1.Register("ST001", "Marco Polo", 23, 11, 2000);
+
+            //ST1.ToGrade(90);
+            //label1.Text = ST1.Display();
+
+
+
+
+
+
+
+            clsDate RV = new clsDate();
+            //RV.Initialize(99, -10, -2015);
+
+           // DateTime RV2 = new DateTime();
+
+            
+            MessageBox.Show(RV.ToString());
 
         }
     }

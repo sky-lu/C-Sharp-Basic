@@ -12,9 +12,15 @@ namespace prjWinCSObjectOP
         private String varNumber;
         private String varName;
         private Single varAverage;
-        private Int16 varAge;
-        public clsDate Birthdate = new clsDate();
+        //private Int16 varAge; // we do not need to store the value of the age ,because it is calculated from birthday.
+        private clsDate varBirthdate ;
 
+        public clsStudent()
+        {
+            varNumber = varName = "Not defined";
+            varBirthdate = new clsDate();
+            varAverage = -1;
+        }
         public String Number
         {
             get { return varNumber; }
@@ -25,15 +31,19 @@ namespace prjWinCSObjectOP
             get { return varName; }
             set { varName = (value == null) ? "Invalide Name" : value; }
         }
+
+        public clsDate Birthdate
+        {
+            get { return varBirthdate; }
+            set { varBirthdate = value; }
+        }
         public Single Average
         {
             get { return varAverage; }
-            set { varAverage = (value >= 0 && value <= 100) ? value : 0; }
         }
-        public Int16 Age
+        public Int16 Age // Read only propertity, without the set
         {
-            get { return varAge = Convert.ToInt16(DateTime.Today.Year - Birthdate.Year); }
-            set { varAge = value; }
+            get { return Convert.ToInt16(DateTime.Today.Year - Birthdate.Year); }
         }
 
 
@@ -41,15 +51,18 @@ namespace prjWinCSObjectOP
         {
             Number = aNumber;
             Name = aName;
-            Birthdate.Day = aDay;
-            Birthdate.Month = aMonth;
-            Birthdate.Year = aYear;
+
+            Birthdate = new clsDate(aDay, aMonth, aYear);
+            varAverage = 0;
+            //Birthdate.Day = aDay;
+            //Birthdate.Month = aMonth;
+            //Birthdate.Year = aYear;
         }
 
-        public Single ToGrade(Single aAverage)
+        public void ToGrade(Single aAverage)
         {
-            Average = aAverage;
-            return Average;
+            varAverage = (aAverage >= 0 && aAverage <= 100)? aAverage : varAverage;
+            
         }
 
         public String Display()
