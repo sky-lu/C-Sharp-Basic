@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsDate.cs" />
+    <Compile Include="clsEmployee.cs" />
     <Compile Include="clsStudent.cs" />
     <Compile Include="clsTime.cs" />
     <Compile Include="frmClass2Struct.cs">
@@ -54,6 +55,12 @@
     </Compile>
     <Compile Include="frmClass2Struct.Designer.cs">
       <DependentUpon>frmClass2Struct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmployee.Designer.cs">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="frmStruct2Class.cs">
       <SubType>Form</SubType>
@@ -71,6 +78,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmClass2Struct.resx">
       <DependentUpon>frmClass2Struct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployee.resx">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStruct2Class.resx">
       <DependentUpon>frmStruct2Class.cs</DependentUpon>

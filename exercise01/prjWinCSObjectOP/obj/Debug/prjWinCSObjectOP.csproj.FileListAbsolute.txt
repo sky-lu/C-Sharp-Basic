@@ -9,3 +9,4 @@ D:\Programs\Project\C#-Basic\exercise01\prjWinCSObjectOP\obj\Debug\prjWinCSObjec
 D:\Programs\Project\C#-Basic\exercise01\prjWinCSObjectOP\obj\Debug\prjWinCSObjectOP.frmStruct2Class.resources
 D:\Programs\Project\C#-Basic\exercise01\prjWinCSObjectOP\obj\Debug\prjWinCSObjectOP.frmClass2Struct.resources
 D:\Programs\Project\C#-Basic\exercise01\prjWinCSObjectOP\obj\Debug\prjWinCSObjectOP.frmTest.resources
+D:\Programs\Project\C#-Basic\exercise01\prjWinCSObjectOP\obj\Debug\prjWinCSObjectOP.frmEmployee.resources

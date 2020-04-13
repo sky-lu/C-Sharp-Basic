@@ -25,8 +25,8 @@ namespace prjWinCSObjectOP
             //MessageBox.Show(RV.DisplayShort());
             //MessageBox.Show(RV.DisplayLong());
 
-            clsStudent ST1 = new clsStudent();
-            
+            //clsStudent ST1 = new clsStudent();
+
             //ST1.Register("ST001", "Marco Polo", 23, 11, 2000);
 
             //ST1.ToGrade(90);
@@ -34,17 +34,20 @@ namespace prjWinCSObjectOP
 
 
 
-
-
-
-
-            clsDate RV = new clsDate();
+            //clsDate RV = new clsDate();
             //RV.Initialize(99, -10, -2015);
 
-           // DateTime RV2 = new DateTime();
+            // DateTime RV2 = new DateTime();
 
-            
-            MessageBox.Show(RV.ToString());
+
+            // MessageBox.Show(RV.ToString());
+
+            clsEmployee Ep1 = new clsEmployee();
+            Ep1.Hire("E001", "Marco Polo", 23, 11, 2000);
+            MessageBox.Show(Ep1.Display());
+            Ep1.Promote();
+            MessageBox.Show(Ep1.Display());
+
 
         }
     }
