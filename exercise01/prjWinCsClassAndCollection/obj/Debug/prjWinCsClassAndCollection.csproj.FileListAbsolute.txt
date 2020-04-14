@@ -1,0 +1,9 @@
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsClassAndCollection\bin\Debug\prjWinCsClassAndCollection.exe.config
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsClassAndCollection\bin\Debug\prjWinCsClassAndCollection.exe
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsClassAndCollection\bin\Debug\prjWinCsClassAndCollection.pdb
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsClassAndCollection\obj\Debug\prjWinCsClassAndCollection.csprojAssemblyReference.cache
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsClassAndCollection\obj\Debug\prjWinCsClassAndCollection.frmCollection.resources
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsClassAndCollection\obj\Debug\prjWinCsClassAndCollection.Properties.Resources.resources
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsClassAndCollection\obj\Debug\prjWinCsClassAndCollection.csproj.GenerateResource.cache
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsClassAndCollection\obj\Debug\prjWinCsClassAndCollection.exe
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsClassAndCollection\obj\Debug\prjWinCsClassAndCollection.pdb

@@ -8,12 +8,32 @@ namespace prjWinCSObjectOP
 {
     class clsEmployee
     {
+        //fields
         private String varNumber;
         private String varName;
         private clsDate varBirthdate;
         private String varType;
-        private Single varSalary;
+        private Decimal varSalary;
 
+        //constructor(if i have to store,the propertity need the field,otherwise,we don't need the private field
+        public clsEmployee()
+        {
+            varNumber = varName = "Not defined";
+            varBirthdate = new clsDate();
+            varType = "None";
+            varSalary = 0;
+        }
+
+        public clsEmployee(String aNumber, String aName, Int16 aDay, Int16 aMonth, Int16 aYear, String aType, Decimal aSalary)
+        {
+            varNumber = aNumber;
+            varName = aName;
+            varBirthdate = new clsDate(aDay, aMonth, aYear);
+            varType = aType;
+            varSalary = aSalary;
+        }
+
+         //getter and setter(read only,we just need get
         public String Number
         {
             get { return varNumber; }
@@ -30,7 +50,7 @@ namespace prjWinCSObjectOP
         {
             get { return varType; }
         }
-        public Single Salary
+        public Decimal Salary
         {
             get { if (Type == "Standard") { 
                     varSalary = 40000; 
@@ -52,37 +72,42 @@ namespace prjWinCSObjectOP
             varName = aName;
             varBirthdate = new clsDate(aDay, aMonth, aYear);
             varType = "Standard";
+            varSalary = 40000;
         }
 
-        public void Promote()
+        public bool Promote()
         {
             String type = Type;
             if (type == "Standard")
             {
                 varType = "Developer";
+                varSalary = 60000;
+                return true;
             }else if(type == "Developer")
             {
                 varType = "Analyst";
-            }else if (type == "Analyst")
-            {
-                varType = "Analyst";
+                varSalary = 80000;
+                return true;
             }
+            return false;
         }
-        public void Demote()
+        public bool Demote()
         {
             String type = Type;
-            if (type == "Standard")
+            
+            if (type == "Developer")
             {
                 varType = "Standard";
-            }
-            else if (type == "Developer")
-            {
-                varType = "Standard";
+                varSalary = 40000;
+                return true;
             }
             else if (type == "Analyst")
             {
                 varType = "Developer";
+                varSalary = 60000;
+                return true;
             }
+            return false;
         }
         public void Fire()
         {
@@ -93,8 +118,8 @@ namespace prjWinCSObjectOP
         public String Display()
         {
             String info;
-            info = " Number: " + Number + "\n" + " Name: " + Name + "\n" + " Birthdate: " + Birthdate.DisplayShort() + "\n"
-                + " Type: " + Type + "\n" + " Salary: " + Salary + " $ ";
+            info = " Number: " + varNumber + "\n" + " Name: " + varName + "\n" + " Birthdate: " + varBirthdate.DisplayShort() + "\n"
+                + " Type: " + varType + "\n" + " Salary: " + varSalary + " $ ";
             return info;
         }
 

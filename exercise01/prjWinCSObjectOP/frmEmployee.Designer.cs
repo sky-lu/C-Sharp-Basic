@@ -30,19 +30,19 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtNumber = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
             this.dTPBirthdate = new System.Windows.Forms.DateTimePicker();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtNumber = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnHire = new System.Windows.Forms.Button();
-            this.btnPromote = new System.Windows.Forms.Button();
-            this.btnDemote = new System.Windows.Forms.Button();
-            this.btnFire = new System.Windows.Forms.Button();
-            this.btnDisplay = new System.Windows.Forms.Button();
             this.lblInfo = new System.Windows.Forms.Label();
+            this.btnDisplay = new System.Windows.Forms.Button();
+            this.btnFire = new System.Windows.Forms.Button();
+            this.btnDemote = new System.Windows.Forms.Button();
+            this.btnPromote = new System.Windows.Forms.Button();
+            this.btnHire = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -53,9 +53,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(233, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(216, 37);
+            this.label1.Size = new System.Drawing.Size(215, 37);
             this.label1.TabIndex = 0;
-            this.label1.Text = "INFOOEV INC.";
+            this.label1.Text = "INFODEV INC.";
             // 
             // groupBox1
             // 
@@ -72,23 +72,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Employee\'s infos";
             // 
-            // label2
+            // dTPBirthdate
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 23);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Number:";
+            this.dTPBirthdate.Location = new System.Drawing.Point(121, 111);
+            this.dTPBirthdate.Name = "dTPBirthdate";
+            this.dTPBirthdate.Size = new System.Drawing.Size(219, 30);
+            this.dTPBirthdate.TabIndex = 5;
             // 
-            // label3
+            // txtName
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 72);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 23);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Name:";
+            this.txtName.Location = new System.Drawing.Point(123, 69);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(217, 30);
+            this.txtName.TabIndex = 4;
+            // 
+            // txtNumber
+            // 
+            this.txtNumber.Location = new System.Drawing.Point(123, 33);
+            this.txtNumber.Name = "txtNumber";
+            this.txtNumber.Size = new System.Drawing.Size(217, 30);
+            this.txtNumber.TabIndex = 3;
             // 
             // label4
             // 
@@ -100,26 +103,23 @@
             this.label4.Text = "Birthdate:";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // txtNumber
+            // label3
             // 
-            this.txtNumber.Location = new System.Drawing.Point(123, 33);
-            this.txtNumber.Name = "txtNumber";
-            this.txtNumber.Size = new System.Drawing.Size(217, 30);
-            this.txtNumber.TabIndex = 3;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(27, 72);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 23);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Name:";
             // 
-            // txtName
+            // label2
             // 
-            this.txtName.Location = new System.Drawing.Point(123, 69);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(217, 30);
-            this.txtName.TabIndex = 4;
-            // 
-            // dTPBirthdate
-            // 
-            this.dTPBirthdate.Location = new System.Drawing.Point(121, 111);
-            this.dTPBirthdate.Name = "dTPBirthdate";
-            this.dTPBirthdate.Size = new System.Drawing.Size(219, 30);
-            this.dTPBirthdate.TabIndex = 5;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(27, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 23);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Number:";
             // 
             // groupBox2
             // 
@@ -136,45 +136,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Actions";
             // 
-            // btnHire
+            // lblInfo
             // 
-            this.btnHire.Location = new System.Drawing.Point(22, 53);
-            this.btnHire.Name = "btnHire";
-            this.btnHire.Size = new System.Drawing.Size(93, 37);
-            this.btnHire.TabIndex = 0;
-            this.btnHire.Text = "Hire";
-            this.btnHire.UseVisualStyleBackColor = true;
-            this.btnHire.Click += new System.EventHandler(this.btnHire_Click);
-            // 
-            // btnPromote
-            // 
-            this.btnPromote.Location = new System.Drawing.Point(22, 105);
-            this.btnPromote.Name = "btnPromote";
-            this.btnPromote.Size = new System.Drawing.Size(93, 37);
-            this.btnPromote.TabIndex = 1;
-            this.btnPromote.Text = "Promote";
-            this.btnPromote.UseVisualStyleBackColor = true;
-            this.btnPromote.Click += new System.EventHandler(this.btnPromote_Click);
-            // 
-            // btnDemote
-            // 
-            this.btnDemote.Location = new System.Drawing.Point(22, 159);
-            this.btnDemote.Name = "btnDemote";
-            this.btnDemote.Size = new System.Drawing.Size(93, 37);
-            this.btnDemote.TabIndex = 2;
-            this.btnDemote.Text = "Demote";
-            this.btnDemote.UseVisualStyleBackColor = true;
-            this.btnDemote.Click += new System.EventHandler(this.btnDemote_Click);
-            // 
-            // btnFire
-            // 
-            this.btnFire.Location = new System.Drawing.Point(22, 212);
-            this.btnFire.Name = "btnFire";
-            this.btnFire.Size = new System.Drawing.Size(93, 37);
-            this.btnFire.TabIndex = 3;
-            this.btnFire.Text = "Fire";
-            this.btnFire.UseVisualStyleBackColor = true;
-            this.btnFire.Click += new System.EventHandler(this.btnFire_Click);
+            this.lblInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblInfo.Location = new System.Drawing.Point(158, 94);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(191, 197);
+            this.lblInfo.TabIndex = 5;
             // 
             // btnDisplay
             // 
@@ -186,13 +154,45 @@
             this.btnDisplay.UseVisualStyleBackColor = true;
             this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
             // 
-            // lblInfo
+            // btnFire
             // 
-            this.lblInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblInfo.Location = new System.Drawing.Point(158, 94);
-            this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(191, 197);
-            this.lblInfo.TabIndex = 5;
+            this.btnFire.Location = new System.Drawing.Point(22, 212);
+            this.btnFire.Name = "btnFire";
+            this.btnFire.Size = new System.Drawing.Size(93, 37);
+            this.btnFire.TabIndex = 3;
+            this.btnFire.Text = "Fire";
+            this.btnFire.UseVisualStyleBackColor = true;
+            this.btnFire.Click += new System.EventHandler(this.btnFire_Click);
+            // 
+            // btnDemote
+            // 
+            this.btnDemote.Location = new System.Drawing.Point(22, 159);
+            this.btnDemote.Name = "btnDemote";
+            this.btnDemote.Size = new System.Drawing.Size(93, 37);
+            this.btnDemote.TabIndex = 2;
+            this.btnDemote.Text = "Demote";
+            this.btnDemote.UseVisualStyleBackColor = true;
+            this.btnDemote.Click += new System.EventHandler(this.btnDemote_Click);
+            // 
+            // btnPromote
+            // 
+            this.btnPromote.Location = new System.Drawing.Point(22, 105);
+            this.btnPromote.Name = "btnPromote";
+            this.btnPromote.Size = new System.Drawing.Size(93, 37);
+            this.btnPromote.TabIndex = 1;
+            this.btnPromote.Text = "Promote";
+            this.btnPromote.UseVisualStyleBackColor = true;
+            this.btnPromote.Click += new System.EventHandler(this.btnPromote_Click);
+            // 
+            // btnHire
+            // 
+            this.btnHire.Location = new System.Drawing.Point(22, 53);
+            this.btnHire.Name = "btnHire";
+            this.btnHire.Size = new System.Drawing.Size(93, 37);
+            this.btnHire.TabIndex = 0;
+            this.btnHire.Text = "Hire";
+            this.btnHire.UseVisualStyleBackColor = true;
+            this.btnHire.Click += new System.EventHandler(this.btnHire_Click);
             // 
             // frmEmployee
             // 
