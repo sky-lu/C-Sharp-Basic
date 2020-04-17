@@ -8,25 +8,32 @@ namespace prjWinCsClassAndCollection
 {
     class clsStudent
     {
-        private String vName;
-        private String vTelephone;
-        private Single vGrade;
         
-        public clsStudent(String aName, String aTel, Single aGrade)
+        private String vNumber;
+        private String vName;
+        private Single vGrade;
+
+        public clsStudent()
         {
+            Number = "Not defined";
+            Name = "Not defined";
+            Grade = -1;
+        }
+        public clsStudent(String aNumber, String aName, Single aGrade)
+        {
+            Number = aNumber;
             Name = aName;
-            Telephone = aTel;
             Grade = aGrade;
         }
         
         public string Name { get => vName; set => vName = value; }
-        public string Telephone { get => vTelephone; set => vTelephone = value; }
+        public string Number { get => vNumber; set => vNumber = value; }
         public Single Grade { get => vGrade; set => vGrade = value; }
 
         public String Display()
         {
             String info;
-            info = " Name: " + vName + " \nTelephone: " + vTelephone + " \nGrade: " + vGrade;
+            info = " Name: " + vName + " \nNumber: " + vNumber + " \nGrade: " + vGrade;
             return info;
         }
     }
