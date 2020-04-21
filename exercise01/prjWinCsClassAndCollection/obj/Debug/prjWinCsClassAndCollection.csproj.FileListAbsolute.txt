@@ -7,3 +7,4 @@ D:\Programs\Project\C#-Basic\exercise01\prjWinCsClassAndCollection\obj\Debug\prj
 D:\Programs\Project\C#-Basic\exercise01\prjWinCsClassAndCollection\obj\Debug\prjWinCsClassAndCollection.csproj.GenerateResource.cache
 D:\Programs\Project\C#-Basic\exercise01\prjWinCsClassAndCollection\obj\Debug\prjWinCsClassAndCollection.exe
 D:\Programs\Project\C#-Basic\exercise01\prjWinCsClassAndCollection\obj\Debug\prjWinCsClassAndCollection.pdb
+D:\Programs\Project\C#-Basic\exercise01\prjWinCsClassAndCollection\obj\Debug\prjWinCsClassAndCollection.frmATM.resources

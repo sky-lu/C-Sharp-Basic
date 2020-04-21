@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsStudent.cs" />
+    <Compile Include="frmATM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmATM.Designer.cs">
+      <DependentUpon>frmATM.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCollection.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +61,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmATM.resx">
+      <DependentUpon>frmATM.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCollection.resx">
       <DependentUpon>frmCollection.cs</DependentUpon>
     </EmbeddedResource>
