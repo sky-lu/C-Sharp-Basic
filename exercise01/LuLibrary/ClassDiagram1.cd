@@ -10,7 +10,7 @@
   <Class Name="LuLibrary.clsCourse">
     <Position X="4.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAEAEAEAAAQAAAAMAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAIAAAAAAACAAEAEAEAAAQAAAAMAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>clsCourse.cs</FileName>
     </TypeIdentifier>
   </Class>

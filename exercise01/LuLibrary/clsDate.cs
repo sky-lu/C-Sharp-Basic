@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace prjWinCSObjectOP
+namespace LuLibrary
 {
-    class clsDate
+    public class clsDate
     {
         // declaration of private field that will hold the values of properties
         private Int16 varDay;

@@ -7,48 +7,56 @@ namespace LuLibrary
     public class clsStudent
     {
         private string vName;
-       
-        private clsDate vBirthdate;
         private string vNumber;
+        private clsDate vBirthdate;
 
 
-        public clsStudent(string aNumber, string aName, short aDay, short aMonth, short aYear)
+        public clsStudent(string aNumber, string aName, Int16 aDay, Int16 aMonth, Int16 aYear)
         {
-            throw new System.NotImplementedException();
+            Name = aName;
+            Number = aNumber;
+            Birthdate = new clsDate(aDay, aMonth, aYear);
+
         }
 
         public clsStudent()
         {
-            throw new System.NotImplementedException();
+
+            Name = "Not defined";
+            Number = "Not defined";
+            Birthdate = new clsDate();
         }
 
         public string Number
         {
-            get => default;
+            get => vNumber;
             set
             {
+                vNumber = value;
             }
         }
 
         public string Name
         {
-            get => default;
+            get => vName;
             set
             {
+                vName = value;
             }
         }
 
         public clsDate Birthdate
         {
-            get => default;
+            get => vBirthdate;
             set
             {
+                vBirthdate = value;
             }
         }
 
         public string Display()
         {
-            throw new System.NotImplementedException();
-        }
+            return "\nNumber:" + Number + "\nName:" + Name + "\nBirthdate:" + Birthdate.DisplayShort();
+         }
     }
 }

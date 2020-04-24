@@ -1,0 +1,8 @@
+D:\Programs\Project\C#-Basic\exercise01\LuLibrary\obj\Debug\netstandard2.0\LuLibrary.csprojAssemblyReference.cache
+D:\Programs\Project\C#-Basic\exercise01\LuLibrary\obj\Debug\netstandard2.0\LuLibrary.AssemblyInfoInputs.cache
+D:\Programs\Project\C#-Basic\exercise01\LuLibrary\obj\Debug\netstandard2.0\LuLibrary.AssemblyInfo.cs
+D:\Programs\Project\C#-Basic\exercise01\LuLibrary\bin\Debug\netstandard2.0\LuLibrary.deps.json
+D:\Programs\Project\C#-Basic\exercise01\LuLibrary\bin\Debug\netstandard2.0\LuLibrary.dll
+D:\Programs\Project\C#-Basic\exercise01\LuLibrary\bin\Debug\netstandard2.0\LuLibrary.pdb
+D:\Programs\Project\C#-Basic\exercise01\LuLibrary\obj\Debug\netstandard2.0\LuLibrary.dll
+D:\Programs\Project\C#-Basic\exercise01\LuLibrary\obj\Debug\netstandard2.0\LuLibrary.pdb
