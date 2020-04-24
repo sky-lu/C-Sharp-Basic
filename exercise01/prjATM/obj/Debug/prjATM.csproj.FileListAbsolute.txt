@@ -1,0 +1,9 @@
+D:\Programs\Project\C#-Basic\exercise01\prjATM\bin\Debug\prjATM.exe.config
+D:\Programs\Project\C#-Basic\exercise01\prjATM\bin\Debug\prjATM.exe
+D:\Programs\Project\C#-Basic\exercise01\prjATM\bin\Debug\prjATM.pdb
+D:\Programs\Project\C#-Basic\exercise01\prjATM\obj\Debug\prjATM.csprojAssemblyReference.cache
+D:\Programs\Project\C#-Basic\exercise01\prjATM\obj\Debug\prjATM.frmGab.resources
+D:\Programs\Project\C#-Basic\exercise01\prjATM\obj\Debug\prjATM.Properties.Resources.resources
+D:\Programs\Project\C#-Basic\exercise01\prjATM\obj\Debug\prjATM.csproj.GenerateResource.cache
+D:\Programs\Project\C#-Basic\exercise01\prjATM\obj\Debug\prjATM.exe
+D:\Programs\Project\C#-Basic\exercise01\prjATM\obj\Debug\prjATM.pdb
