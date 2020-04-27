@@ -1,0 +1,8 @@
+D:\Programs\Project\C#-Basic\exercise01\ATMLib\bin\Debug\netstandard2.0\ATMLib.deps.json
+D:\Programs\Project\C#-Basic\exercise01\ATMLib\bin\Debug\netstandard2.0\ATMLib.dll
+D:\Programs\Project\C#-Basic\exercise01\ATMLib\bin\Debug\netstandard2.0\ATMLib.pdb
+D:\Programs\Project\C#-Basic\exercise01\ATMLib\obj\Debug\netstandard2.0\ATMLib.csprojAssemblyReference.cache
+D:\Programs\Project\C#-Basic\exercise01\ATMLib\obj\Debug\netstandard2.0\ATMLib.AssemblyInfoInputs.cache
+D:\Programs\Project\C#-Basic\exercise01\ATMLib\obj\Debug\netstandard2.0\ATMLib.AssemblyInfo.cs
+D:\Programs\Project\C#-Basic\exercise01\ATMLib\obj\Debug\netstandard2.0\ATMLib.dll
+D:\Programs\Project\C#-Basic\exercise01\ATMLib\obj\Debug\netstandard2.0\ATMLib.pdb

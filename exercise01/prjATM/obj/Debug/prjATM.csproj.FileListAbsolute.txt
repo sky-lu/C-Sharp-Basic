@@ -7,3 +7,6 @@ D:\Programs\Project\C#-Basic\exercise01\prjATM\obj\Debug\prjATM.Properties.Resou
 D:\Programs\Project\C#-Basic\exercise01\prjATM\obj\Debug\prjATM.csproj.GenerateResource.cache
 D:\Programs\Project\C#-Basic\exercise01\prjATM\obj\Debug\prjATM.exe
 D:\Programs\Project\C#-Basic\exercise01\prjATM\obj\Debug\prjATM.pdb
+D:\Programs\Project\C#-Basic\exercise01\prjATM\bin\Debug\ATMLib.dll
+D:\Programs\Project\C#-Basic\exercise01\prjATM\bin\Debug\ATMLib.pdb
+D:\Programs\Project\C#-Basic\exercise01\prjATM\obj\Debug\prjATM.csproj.CopyComplete

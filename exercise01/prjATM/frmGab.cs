@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ATMLib;
 
 namespace prjATM
 {
@@ -22,20 +23,37 @@ namespace prjATM
 
         }
 
+        clsATM myATM = new clsATM();
         private void frmGab_Load(object sender, EventArgs e)
         {
             this.Height = 203;
-            this.FormBorderStyle = FormBorderStyle.None;
+            //this.FormBorderStyle = FormBorderStyle.None;
+            myATM.Fill();
+
         }
 
         private void btnReadCard_Click(object sender, EventArgs e)
         {
-            this.Height = 364;
+            
+            string number = txtNumber.Text.Trim().ToUpper();
+            if (myATM.Clients.ContainsKey(number) == false)
+            {
+                txtNumber.Text = "";
+                txtNumber.Focus();
+                MessageBox.Show("The number does not exist, start again!");
+            }
+            else
+            {
+                this.Height = 364;
+                txtPin.Focus();
+                lblValidationInfo.Text = " WELCOME, " + myATM.Clients[number].Name.ToUpper();
+                lblValidationInfo.ForeColor = Color.Red;
+            }
         }
 
         private void btnPinValidate_Click(object sender, EventArgs e)
         {
-            this.Height = 497;
+            ;            this.Height = 497;
         }
 
         private void btnAccountType_Click(object sender, EventArgs e)
