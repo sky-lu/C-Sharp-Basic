@@ -145,6 +145,7 @@
             // 
             this.txtPin.Location = new System.Drawing.Point(236, 66);
             this.txtPin.Name = "txtPin";
+            this.txtPin.PasswordChar = '*';
             this.txtPin.Size = new System.Drawing.Size(304, 27);
             this.txtPin.TabIndex = 4;
             // 
@@ -176,6 +177,7 @@
             this.lstAccountType.Name = "lstAccountType";
             this.lstAccountType.Size = new System.Drawing.Size(288, 27);
             this.lstAccountType.TabIndex = 3;
+            this.lstAccountType.SelectedIndexChanged += new System.EventHandler(this.lstAccountType_SelectedIndexChanged);
             // 
             // btnAccountType
             // 
@@ -268,6 +270,7 @@
             this.radWithdraw.TabStop = true;
             this.radWithdraw.Text = "WITHDRAW";
             this.radWithdraw.UseVisualStyleBackColor = true;
+            this.radWithdraw.CheckedChanged += new System.EventHandler(this.radWithdraw_CheckedChanged);
             // 
             // radDeposit
             // 
@@ -280,6 +283,7 @@
             this.radDeposit.TabStop = true;
             this.radDeposit.Text = "DEPOSIT";
             this.radDeposit.UseVisualStyleBackColor = true;
+            this.radDeposit.CheckedChanged += new System.EventHandler(this.radDeposit_CheckedChanged);
             // 
             // btnTransactionType
             // 
@@ -343,7 +347,6 @@
             this.Name = "frmGab";
             this.Text = "frmGab";
             this.Load += new System.EventHandler(this.frmGab_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmGab_Paint);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

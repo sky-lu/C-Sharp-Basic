@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
 
 namespace ATMLib
 {
@@ -9,13 +10,13 @@ namespace ATMLib
         private string vNumber;
         private string vName;
         private string vPin;
-        private Dictionary<string, clsAccount> vAccounts;
+        private Dictionary<string, List<clsAccount>> vAccounts;
 
 
         public clsClient()
         {
             vNumber = vName = vPin = "Not defined";
-            vAccounts = new Dictionary<string, clsAccount>();
+            vAccounts = new Dictionary<string, List<clsAccount>>();
         }
 
         public clsClient(string aNumber, string aName)
@@ -23,17 +24,17 @@ namespace ATMLib
             Number = aNumber;
             Name = aName;
             Pin = "Not defined";
-            vAccounts = new Dictionary<string, clsAccount>();
+            vAccounts = new Dictionary<string, List<clsAccount>>();
         }
         public clsClient(string aNumber, string aName,  string aPin)
         {
             Number = aNumber;
             Name = aName;
             Pin = aPin;
-            vAccounts = new Dictionary<string, clsAccount>();
+            vAccounts = new Dictionary<string, List<clsAccount>>();
         }
 
-        public Dictionary<string, clsAccount> Accounts
+        public Dictionary<string, List<clsAccount>> Accounts
         {
             get => vAccounts;
             set
@@ -76,7 +77,42 @@ namespace ATMLib
 
         public string Display()
         {
-            return " WELCOME, " + Name;
+            string info = " \nNumber: " + Number + " \nName: " + Name + " \nPin: "
+                          + Pin + " \nAll the accounts of this client\n";
+            //foreach (clsAccount account in Accounts.Values)
+            //{
+            //    info += 
+            //}
+            return info;
+        }
+
+        public void Fill()
+        {
+            StreamReader myFile = new StreamReader("Accounts.txt");
+            while (!myFile.EndOfStream)
+            {
+                string AccountNumber = myFile.ReadLine();
+                string ClientNumber = myFile.ReadLine();
+                string type = myFile.ReadLine();
+                Int16 day = Convert.ToInt16(myFile.ReadLine());
+                Int16 month = Convert.ToInt16(myFile.ReadLine());
+                Int16 year = Convert.ToInt16(myFile.ReadLine());
+                decimal balance = Convert.ToDecimal(myFile.ReadLine());
+                clsAccount account = new clsAccount(AccountNumber, type, day, month, year, balance);
+                List<clsAccount> myAccount = new List<clsAccount>();
+                myAccount.Add(account);
+                if (Accounts.ContainsKey(ClientNumber))
+                {
+                    Accounts[ClientNumber].Add(account);
+                }
+                else {
+                    
+                    Accounts.Add(ClientNumber, myAccount);
+                }
+                account = null;
+            }
+
+            myFile.Close();
         }
     }
 }

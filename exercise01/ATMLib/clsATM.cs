@@ -59,7 +59,13 @@ namespace ATMLib
 
         public string Display()
         {
-            throw new System.NotImplementedException();
+            string info = " \nNumber: " + Number + " \nCompany: " + Company
+                           + "\nAll the clients of this ATM\n";
+            foreach (clsClient client in Clients.Values)
+            {
+                info += client.Display();
+            }
+            return info;
         }
 
         public void Fill()
@@ -76,6 +82,8 @@ namespace ATMLib
 
             }
             myFile.Close();
+
+            
         }
         public void Open()
         {
