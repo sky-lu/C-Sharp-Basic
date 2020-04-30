@@ -64,11 +64,11 @@ namespace ATMLib
 
         public string Consult()
         {
-            return " NUMBER: " + Number + " \nTYPE: " + Type + " \nOPEN DATE: "
+            return " NUMBER: " + Number + " \nTYPE: " + Type.ToUpper() + " \nOPEN DATE: "
                    + OpenDate.Display() + " \nBALANCE: " + Balance.ToString();
         }
 
-        public bool Deposit(Int16 temp)
+        public bool Deposit(Int32 temp)
         {
             if(temp >= 2 && temp <= 20000)
             {
@@ -78,15 +78,16 @@ namespace ATMLib
 
         }
 
-        public bool Open(clsAccount aAccount)
+        public void Open(string aNumber, string aType, Int16 aDay, Int16 aMonth, Int16 aYear, decimal aBalance)
         {
-             
-           
-            return false;
+            Number = aNumber;
+            Type = aType;
+            Balance = aBalance;
+            OpenDate = new clsDate(aDay, aMonth, aYear);
 
         }
 
-        public Int16 Withdraw(Int16 temp)
+        public Int32 Withdraw(Int32 temp)
         {
             if(temp > Balance)
             {

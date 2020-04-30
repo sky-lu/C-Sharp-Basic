@@ -85,9 +85,10 @@ namespace ATMLib
 
             
         }
-        public void Open()
+        public void Open(string Number, string Company)
         {
-            throw new System.NotImplementedException();
+            this.Number = Number;
+            this.Company = Company;
         }
     }
 }

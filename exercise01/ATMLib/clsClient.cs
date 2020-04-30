@@ -70,19 +70,22 @@ namespace ATMLib
             }
         }
 
-        public bool Create()
+        public void Create(string aNumber, string aName, string aPin)
         {
-            return false;
+            Number = aNumber;
+            Name = aName;
+            Pin = aPin;
         }
 
         public string Display()
         {
             string info = " \nNumber: " + Number + " \nName: " + Name + " \nPin: "
                           + Pin + " \nAll the accounts of this client\n";
-            //foreach (clsAccount account in Accounts.Values)
-            //{
-            //    info += 
-            //}
+            List<clsAccount> accounts = Accounts[Number];
+            foreach (clsAccount item in accounts)
+            {
+                info += item.Consult();
+            }
             return info;
         }
 
