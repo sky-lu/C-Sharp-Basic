@@ -1,0 +1,60 @@
+﻿Et-072
+Bill Gates
+21
+3
+2000
+93
+ET-073
+Marco Polo
+18
+10
+1998
+95
+ET-074
+Steve Jobs
+23
+12
+1999
+97
+ET-075
+Ali Baba
+18
+10
+1998
+99
+ET-076
+Neymar dos Santos
+14
+11
+1998
+94
+ET-077
+Ave Maria
+3
+8
+2001
+88
+ET-078
+Mark Tom
+25
+7
+1997
+91
+ET-079
+Alex Alli
+6
+10
+2000
+89
+ET-080
+Saha Baba
+20
+9
+1998
+87
+ET-081
+Helen Tom
+11
+11
+1998
+80

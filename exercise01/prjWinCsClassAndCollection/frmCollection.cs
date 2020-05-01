@@ -145,6 +145,12 @@ namespace prjWinCsClassAndCollection
             listStuds.Remove(lblNumber.Text);
             lstNumbers.Items.Remove(lblNumber.Text);
             lstNumbers.SelectedIndex = -1;
+           
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
