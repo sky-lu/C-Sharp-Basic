@@ -149,6 +149,7 @@
             this.txtPin.PasswordChar = '*';
             this.txtPin.Size = new System.Drawing.Size(304, 27);
             this.txtPin.TabIndex = 4;
+            this.txtPin.TextChanged += new System.EventHandler(this.txtPin_TextChanged);
             // 
             // label3
             // 

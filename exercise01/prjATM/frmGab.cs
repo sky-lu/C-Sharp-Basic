@@ -187,6 +187,11 @@ namespace prjATM
             }
         }
 
+        private void txtPin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void lstAccountType_SelectedIndexChanged(object sender, EventArgs e)
         {
             number = txtNumber.Text.Trim().ToUpper();

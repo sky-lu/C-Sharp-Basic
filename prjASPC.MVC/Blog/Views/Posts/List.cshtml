@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "List";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Honglin Blog</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+ </head>
+<body>
+    <div style="width:1000px; margin:20px auto;">
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Cras justo odio
+                <button type="button" class="btn btn-info float-right">Modify</button>
+                <button type="button" class="btn btn-danger float-right">Delete</button>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Dapibus ac facilisis in
+                <button type="button" class="btn btn-info">Modify</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Morbi leo risus
+                <button type="button" class="btn btn-info">Modify</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+            </li>
+        </ul>
+        <div style="margin-top:20px;">
+            <button type="button" class="btn btn-primary">Add</button>
+        </div>
+    </div>
+</body>
+</html>

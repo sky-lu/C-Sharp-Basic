@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+    ViewData["BgImage"] = "Contact.jpg";
+    ViewData["SlogoBig"] = "Contact Me";
+    ViewData["SlogoSmall"] = "Have questions? I have answers.";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <p style="font-size:20px;margin-top:45px;margin-bottom:30px">Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</p>
+            <form id="contactform">
+                <div class="form-group">
+                    <label for="name">NAME:</label><span id="errorname" style="color:red;float:right"></span>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="email">EMAIL ADDRESS:</label><span id="erroremail" style="color:red;float:right"></span>
+                    <input type="text" class="form-control" id="email" name="email" />
+                </div>
+                <div class="form-group">
+                    <label for="phone">PHONE NUMBER:</label><span id="errorphone" style="color:red;float:right"></span>
+                    <input type="text" class="form-control" id="phone" name="phone" />
+                </div>
+                <div class="form-group">
+                    <label for="message">MESSAGE:</label><span id="errormessage" style="color:red;float:right"></span>
+                    <input type="text" class="form-control" id="message" name="message">
+                </div>
+                <div style="margin-bottom:30px;margin-top:30px">
+                    <input class="btn btn-success" value="SEND" type="button" id="send" />
+                </div>
+            </form>
+
+        </div>
+        <div class="col-sm-2">
+        </div>
+    </div>
+</div>
+
+
