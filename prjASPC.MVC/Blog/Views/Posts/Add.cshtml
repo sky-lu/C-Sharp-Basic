@@ -13,15 +13,15 @@
 
 </head>
 <body>
-    <form style="width:1000px; margin:20px auto;">
+    <form style="width:1000px; margin:20px auto;" action="/posts/submit" method="post">
         <div class="form-group">
             <label for="PostTitle">Post title</label>
-            <input type="text" class="form-control" id="PostTitle">
+            <input type="text" class="form-control" id="PostTitle" name="PostTitle">
         </div>
 
         <div class="form-group">
             <label for="PostContext">Post context</label>
-            <textarea class="form-control" id="PostContext" rows="15"></textarea>
+            <textarea class="form-control" id="PostContext" rows="15" name="PostContext"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
