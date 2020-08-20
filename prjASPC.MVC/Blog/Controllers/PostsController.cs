@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.IO;
 using System.Collections;
 using Microsoft.AspNetCore.Http;
+using MySql.Data.MySqlClient;
 
 namespace Blog.Controllers
 {
@@ -31,16 +32,60 @@ namespace Blog.Controllers
             return View("Add");
         }
 
-        public Boolean Submit(string PostTitle)
+        public Boolean Submit(string PostTitle, string PostContext)
         {
-            //string postTitle = collection["PostTitle"];
-            //string postContext = collection["PostContext"];
-            string myInsertQuery = "INSERT INTO users (email, password) Values({PostTitle}, 'lalllalalal')";
+            string myConnectionString = "Database=blog_db;Data Source=localhost;User Id=root;Password=";
+            MySqlConnection myConnection = new MySqlConnection(myConnectionString);
+            string publishDate = DateTime.Today.Year.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Day.ToString();
 
-            System.Console.WriteLine(PostTitle);
-            //System.Console.WriteLine(postContext);
+            string myInsertQuery = $"INSERT INTO posts (title, publish_date, context, user_id) Values('{PostTitle}', '{publishDate}', '{PostContext}', 1)";
 
+            //System.Console.WriteLine(myInsertQuery);
+            MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
+            myCommand.Connection = myConnection;
+            myConnection.Open();
+            myCommand.ExecuteNonQuery();
+            myCommand.Connection.Close();
+            
             return true;
+        }
+
+        public IActionResult Select()
+        {
+            string myConnectionString = "Database=blog_db;Data Source=localhost;User Id=root;Password=";
+            MySqlConnection myConnection = new MySqlConnection(myConnectionString);
+
+            string mySelectQuery = "SELECT id, title, publish_date FROM posts WHERE publish_date >= '2020-07-19'";
+
+            MySqlCommand myCommand = new MySqlCommand(mySelectQuery, myConnection);
+            myConnection.Open();
+            
+            MySqlDataReader myReader;
+            myReader = myCommand.ExecuteReader();
+
+            
+            ArrayList al = new ArrayList();
+            try
+            {
+                while (myReader.Read())
+                {
+                    Hashtable ht = new Hashtable();
+                    ht.Add("id", myReader.GetString(0));
+                    ht.Add("title", myReader.GetString(1));
+                    ht.Add("publish_date", myReader.GetString(2));
+                    Console.WriteLine(myReader.GetString(1));
+                    al.Add(ht);
+                }
+            }
+            finally
+            {
+                myReader.Close();
+                myConnection.Close();
+            }
+            
+
+            ViewBag.data = al;
+            return View("Index");
         }
     }
 }
