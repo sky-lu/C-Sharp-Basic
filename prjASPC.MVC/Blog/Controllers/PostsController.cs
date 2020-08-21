@@ -14,17 +14,97 @@ namespace Blog.Controllers
     {
         public IActionResult Index()
         {
+            string myConnectionString = "Database=blog_db;Data Source=localhost;User Id=root;Password=";
+            MySqlConnection myConnection = new MySqlConnection(myConnectionString);
+
+            string mySelectQuery = "SELECT id, title, publish_date FROM posts WHERE publish_date >= '2020-07-19'";
+
+            MySqlCommand myCommand = new MySqlCommand(mySelectQuery, myConnection);
+            myConnection.Open();
+
+            MySqlDataReader myReader;
+            myReader = myCommand.ExecuteReader();
+
+
+            ArrayList al = new ArrayList();
+            try
+            {
+                while (myReader.Read())
+                {
+                    Hashtable ht = new Hashtable();
+                    ht.Add("id", myReader.GetString(0));
+                    ht.Add("title", myReader.GetString(1));
+                    ht.Add("publish_date", myReader.GetString(2));
+                    //Console.WriteLine(myReader.GetString(1));
+                    al.Add(ht);
+                }
+            }
+            finally
+            {
+                myReader.Close();
+                myConnection.Close();
+            }
+
+
+            ViewBag.data = al;
+
             return View();
         }
 
-        public IActionResult Detail()
+        public IActionResult Detail(int id)
         {
+            string myConnectionString = "Database=blog_db;Data Source=localhost;User Id=root;Password=";
+            MySqlConnection myConnection = new MySqlConnection(myConnectionString);
+
+            string mySelectQuery = $"SELECT title, context FROM posts WHERE id = {id}";
+
+            MySqlCommand myCommand = new MySqlCommand(mySelectQuery, myConnection);
+            myConnection.Open();
+
+            MySqlDataReader myReader;
+            myReader = myCommand.ExecuteReader();
+            try { 
+                while (myReader.Read()) { 
+
+                    ViewBag.titleBlog = myReader.GetString(0);
+                    ViewBag.context = myReader.GetString(1);
+                }
+            }
+            finally
+            {
+                myReader.Close();
+                myConnection.Close();
+            }
             return View("samplePost");
         }
 
         public IActionResult List()
         {
-            return View("List");
+            string myConnectionString = "Database=blog_db;Data Source=localhost;User Id=root;Password=";
+            MySqlConnection myConnection = new MySqlConnection(myConnectionString);
+
+            string mySelectQuery = "SELECT title FROM posts";
+
+            MySqlCommand myCommand = new MySqlCommand(mySelectQuery, myConnection);
+            myConnection.Open();
+
+            MySqlDataReader myReader;
+            myReader = myCommand.ExecuteReader();
+            ArrayList al = new ArrayList();
+            try
+            {
+                while (myReader.Read())
+                {
+                    al.Add(myReader.GetString(0));
+                }
+            }
+            finally
+            {
+                myReader.Close();
+                myConnection.Close();
+            }
+            ViewBag.data = al;
+            return View();
         }
         
         public IActionResult Add()
@@ -50,42 +130,6 @@ namespace Blog.Controllers
             return true;
         }
 
-        public IActionResult Select()
-        {
-            string myConnectionString = "Database=blog_db;Data Source=localhost;User Id=root;Password=";
-            MySqlConnection myConnection = new MySqlConnection(myConnectionString);
-
-            string mySelectQuery = "SELECT id, title, publish_date FROM posts WHERE publish_date >= '2020-07-19'";
-
-            MySqlCommand myCommand = new MySqlCommand(mySelectQuery, myConnection);
-            myConnection.Open();
-            
-            MySqlDataReader myReader;
-            myReader = myCommand.ExecuteReader();
-
-            
-            ArrayList al = new ArrayList();
-            try
-            {
-                while (myReader.Read())
-                {
-                    Hashtable ht = new Hashtable();
-                    ht.Add("id", myReader.GetString(0));
-                    ht.Add("title", myReader.GetString(1));
-                    ht.Add("publish_date", myReader.GetString(2));
-                    Console.WriteLine(myReader.GetString(1));
-                    al.Add(ht);
-                }
-            }
-            finally
-            {
-                myReader.Close();
-                myConnection.Close();
-            }
-            
-
-            ViewBag.data = al;
-            return View("Index");
-        }
+        
     }
 }
