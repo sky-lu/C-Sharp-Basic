@@ -83,7 +83,7 @@ namespace Blog.Controllers
             string myConnectionString = "Database=blog_db;Data Source=localhost;User Id=root;Password=";
             MySqlConnection myConnection = new MySqlConnection(myConnectionString);
 
-            string mySelectQuery = "SELECT title FROM posts";
+            string mySelectQuery = "SELECT id, title FROM posts";
 
             MySqlCommand myCommand = new MySqlCommand(mySelectQuery, myConnection);
             myConnection.Open();
@@ -95,7 +95,11 @@ namespace Blog.Controllers
             {
                 while (myReader.Read())
                 {
-                    al.Add(myReader.GetString(0));
+                    Hashtable ht = new Hashtable();
+                    ht.Add("id", myReader.GetString(0));
+                    ht.Add("title", myReader.GetString(1));
+                    //Console.WriteLine(myReader.GetString(1));
+                    al.Add(ht);
                 }
             }
             finally
@@ -104,7 +108,7 @@ namespace Blog.Controllers
                 myConnection.Close();
             }
             ViewBag.data = al;
-            return View();
+            return View("List");
         }
         
         public IActionResult Add()
@@ -130,6 +134,20 @@ namespace Blog.Controllers
             return true;
         }
 
-        
+        public IActionResult Delete(int id)
+        {
+            string myConnectionString = "Database=blog_db;Data Source=localhost;User Id=root;Password=";
+            MySqlConnection myConnection = new MySqlConnection(myConnectionString);
+            string myInsertQuery = $"DELETE FROM posts WHERE id = {id}";
+            MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
+            myCommand.Connection = myConnection;
+            myConnection.Open();
+            myCommand.ExecuteNonQuery();
+            myCommand.Connection.Close();
+
+            return this.List();
+        }
+
+
     }
 }
