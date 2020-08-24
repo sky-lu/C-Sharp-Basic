@@ -1,6 +1,7 @@
 ﻿@{
     Layout = null;
     ViewData["Title"] = "Add";
+    string r = null;
 }
 
 <!DOCTYPE html>
@@ -13,16 +14,30 @@
 
 </head>
 <body>
-    <form style="width:1000px; margin:20px auto;" action="/posts/submit" method="post">
+
+    
+
+    @if (ViewBag.idBlog == null)
+    {
+        r = "Submit";
+    } else
+    {
+        r = "Update";
+    }
+    <form style="width:1000px; margin:20px auto;" action="/posts/@r" method="post">
+
         <div class="form-group">
             <label for="PostTitle">Post title</label>
-            <input type="text" class="form-control" id="PostTitle" name="PostTitle">
+            <input type="text" class="form-control" id="PostTitle" name="PostTitle" value="@ViewBag.titleBlog">
         </div>
 
         <div class="form-group">
             <label for="PostContext">Post context</label>
-            <textarea class="form-control" id="PostContext" rows="15" name="PostContext"></textarea>
+            <textarea class="form-control" id="PostContext" rows="15" name="PostContext">@ViewBag.context</textarea>
         </div>
+        @if(r == "Update"){
+            <input type="hidden" name="id"  value="@ViewBag.idBlog" />
+        }
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </body>

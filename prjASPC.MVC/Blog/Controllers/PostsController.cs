@@ -116,7 +116,7 @@ namespace Blog.Controllers
             return View("Add");
         }
 
-        public Boolean Submit(string PostTitle, string PostContext)
+        public void Submit(string PostTitle, string PostContext)
         {
             string myConnectionString = "Database=blog_db;Data Source=localhost;User Id=root;Password=";
             MySqlConnection myConnection = new MySqlConnection(myConnectionString);
@@ -130,8 +130,8 @@ namespace Blog.Controllers
             myConnection.Open();
             myCommand.ExecuteNonQuery();
             myCommand.Connection.Close();
-            
-            return true;
+
+            Response.Redirect("/posts/list");
         }
 
         public IActionResult Delete(int id)
@@ -148,6 +148,48 @@ namespace Blog.Controllers
             return this.List();
         }
 
+        public IActionResult Edit(int id)
+        {
+            string myConnectionString = "Database=blog_db;Data Source=localhost;User Id=root;Password=";
+            MySqlConnection myConnection = new MySqlConnection(myConnectionString);
+            string mySelectQuery = $"SELECT title, context FROM posts WHERE id = {id}";
+            MySqlCommand myCommand = new MySqlCommand(mySelectQuery, myConnection);
+            myConnection.Open();
+
+            MySqlDataReader myReader;
+            myReader = myCommand.ExecuteReader();
+            try
+            {
+                while (myReader.Read())
+                {
+                    ViewBag.idBlog = id;
+                    ViewBag.titleBlog = myReader.GetString(0);
+                    ViewBag.context = myReader.GetString(1);
+                }
+            }
+            finally
+            {
+                myReader.Close();
+                myConnection.Close();
+            }
+
+            return View("add");
+        }
+
+        public void Update(string PostTitle, string PostContext, int id)
+        {
+            string myConnectionString = "Database=blog_db;Data Source=localhost;User Id=root;Password=";
+            MySqlConnection myConnection = new MySqlConnection(myConnectionString);
+            string myInsertQuery = $"UPDATE posts set title = '{PostTitle}', context = '{PostContext}' WHERE id = {id}";
+            MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
+            myCommand.Connection = myConnection;
+            myConnection.Open();
+            myCommand.ExecuteNonQuery();
+            myCommand.Connection.Close();
+
+            //Redirect("/posts/list");
+            Response.Redirect("/posts/list");
+        }
 
     }
 }
