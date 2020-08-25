@@ -131,3 +131,4 @@ D:\Programs\Project\C#-Basic\prjASPC.MVC\Blog\bin\Debug\netcoreapp3.1\runtimes\u
 D:\Programs\Project\C#-Basic\prjASPC.MVC\Blog\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 D:\Programs\Project\C#-Basic\prjASPC.MVC\Blog\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 D:\Programs\Project\C#-Basic\prjASPC.MVC\Blog\obj\Debug\netcoreapp3.1\Blog.MvcApplicationPartsAssemblyInfo.cache
+D:\Programs\Project\C#-Basic\prjASPC.MVC\Blog\obj\Debug\netcoreapp3.1\Razor\Views\Contact\List.cshtml.g.cs
