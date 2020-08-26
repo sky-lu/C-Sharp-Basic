@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
+using System.Collections;
+using Microsoft.AspNetCore.Http;
 
 namespace Blog.Controllers
 {
@@ -16,7 +18,38 @@ namespace Blog.Controllers
 
         public IActionResult List()
         {
-            return View();
+            string myConnectionString = "Database=blog_db;Data Source=localhost;User Id=root;Password=";
+            MySqlConnection myConnection = new MySqlConnection(myConnectionString);
+
+            string mySelectQuery = "SELECT id, name, email, phone, message FROM contacts";
+
+            MySqlCommand myCommand = new MySqlCommand(mySelectQuery, myConnection);
+            myConnection.Open();
+
+            MySqlDataReader myReader;
+            myReader = myCommand.ExecuteReader();
+            ArrayList al = new ArrayList();
+            try
+            {
+                while (myReader.Read())
+                {
+                    Hashtable ht = new Hashtable();
+                    ht.Add("id", myReader.GetString(0));
+                    ht.Add("name", myReader.GetString(1));
+                    ht.Add("email", myReader.GetString(2));
+                    ht.Add("phone", myReader.GetString(3));
+                    ht.Add("message", myReader.GetString(4));
+                    al.Add(ht);
+                }
+            }
+            finally
+            {
+                myReader.Close();
+                myConnection.Close();
+            }
+            ViewBag.data = al;
+
+            return View("List");
         }
 
         public void ContactSubmit(string name, string email, string phone, string message)

@@ -10,7 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Honglin Blog</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>  
 </head>
 <body>
     <table class="table table-striped">
@@ -24,15 +26,28 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto@gmail.com</td>
-                <td>18724020915</td>
-                <td><a class="btn btn-info" href="#" role="button">Detail</a></td>
-            </tr>
-            
+            @foreach (var item in ViewBag.data)
+            {
+                <tr>
+                    <th scope="row">@item["id"]</th>
+                    <td>@item["name"]</td>
+                    <td>@item["email"]</td>
+                    <td>@item["phone"]</td>
+                    <td>
+                        <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom" data-content= "@item["message"]">
+                            Detail
+                        </button>
+                    </td>
+                </tr>
+            }
+
         </tbody>
     </table>
+
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="popover"]').popover();
+        });
+    </script>
 </body>
 </html>

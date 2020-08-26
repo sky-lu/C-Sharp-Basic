@@ -1,4 +1,5 @@
 ﻿@{
+    
     Layout = null;
     ViewData["Title"] = "Add";
     string r = null;
@@ -11,20 +12,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Honglin Blog</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="/lib/richtexteditor/rte_theme_default.css" />
+    <script type="text/javascript" src="/lib/richtexteditor/rte.js"></script>
+    <script type="text/javascript" src='/lib/richtexteditor/plugins/all_plugins.js'></script>
 
 </head>
 <body>
 
-    
+
 
     @if (ViewBag.idBlog == null)
     {
         r = "Submit";
-    } else
+    }
+    else
     {
         r = "Update";
     }
-    <form style="width:1000px; margin:20px auto;" action="/posts/@r" method="post">
+    <form style="width:1000px; margin:20px auto;" action="/posts/@r" onsubmit="setText();" method="post">
 
         <div class="form-group">
             <label for="PostTitle">Post title</label>
@@ -33,13 +38,35 @@
 
         <div class="form-group">
             <label for="PostContext">Post context</label>
-            <textarea class="form-control" id="PostContext" rows="15" name="PostContext">@ViewBag.context</textarea>
+            @*<textarea class="form-control" id="PostContext" rows="15" name="PostContext">@ViewBag.context</textarea>*@
+        <div id="div_editor1">
+            @Html.Raw(ViewBag.context)
         </div>
-        @if(r == "Update"){
-            <input type="hidden" name="id"  value="@ViewBag.idBlog" />
+        </div>
+        <input type="hidden" name="PostContext" />
+
+        @if (r == "Update")
+        {
+            <input type="hidden" name="id" value="@ViewBag.idBlog" />
         }
-        <button type="submit" class="btn btn-primary">Submit</button>
+
+        <input type="hidden" name="PostContext" />
+        <input type="submit" class="btn btn-primary" value="Submit" />
     </form>
+
+    <script>
+        var editor1 = new RichTextEditor("#div_editor1");
+        //editor1.setHTMLCode("Use inline HTML or setHTMLCode to init the default content.");
+        //editor1.setHTMLCode("@ViewBag.context");
+       
+        function setText() {
+           
+            document.getElementsByName("PostContext")[0].value = editor1.getHTMLCode();
+
+            return true;
+        }
+
+    </script>
 </body>
 
 </html>

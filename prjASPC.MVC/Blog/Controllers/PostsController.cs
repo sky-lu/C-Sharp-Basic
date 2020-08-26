@@ -7,6 +7,7 @@ using System.IO;
 using System.Collections;
 using Microsoft.AspNetCore.Http;
 using MySql.Data.MySqlClient;
+using System.Web;
 
 namespace Blog.Controllers
 {
@@ -118,6 +119,7 @@ namespace Blog.Controllers
 
         public void Submit(string PostTitle, string PostContext)
         {
+            //PostContext = HttpUtility.HtmlEncode(PostContext);
             string myConnectionString = "Database=blog_db;Data Source=localhost;User Id=root;Password=";
             MySqlConnection myConnection = new MySqlConnection(myConnectionString);
             string publishDate = DateTime.Today.Year.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Day.ToString();
@@ -164,8 +166,12 @@ namespace Blog.Controllers
                 {
                     ViewBag.idBlog = id;
                     ViewBag.titleBlog = myReader.GetString(0);
+
+                    //ViewBag.context = HttpUtility.HtmlDecode(myReader.GetString(1));
                     ViewBag.context = myReader.GetString(1);
+                   
                 }
+                
             }
             finally
             {
