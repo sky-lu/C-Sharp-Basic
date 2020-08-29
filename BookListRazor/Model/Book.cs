@@ -17,3 +17,4 @@ namespace BookListRazor.Model
         public string Author { get; set; }
     }
 }
+ 
