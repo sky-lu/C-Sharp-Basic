@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lab1_ConnectedModel.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,11 @@ namespace Lab1_ConnectedModel.BLL
         public string LastName { get => lastName; set => lastName = value; }
 
         public string JobTitle { get => jobTitle; set => jobTitle = value; }
+
+        public void SaveEmployee(Employee emp)
+        {
+            EmployeeDB.SaveRecord(emp);
+        }
 
     }
 }

@@ -1,0 +1,10 @@
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Lab1_ConnectedModel\obj\Debug\Lab1_ConnectedModel.csprojAssemblyReference.cache
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Lab1_ConnectedModel\obj\Debug\Lab1_ConnectedModel.GUI.FormEmployee.resources
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Lab1_ConnectedModel\obj\Debug\Lab1_ConnectedModel.Properties.Resources.resources
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Lab1_ConnectedModel\obj\Debug\Lab1_ConnectedModel.csproj.GenerateResource.cache
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Lab1_ConnectedModel\bin\Debug\Lab1_ConnectedModel.exe.config
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Lab1_ConnectedModel\bin\Debug\Lab1_ConnectedModel.exe
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Lab1_ConnectedModel\bin\Debug\Lab1_ConnectedModel.pdb
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Lab1_ConnectedModel\obj\Debug\Lab1_ConnectedModel.exe
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Lab1_ConnectedModel\obj\Debug\Lab1_ConnectedModel.pdb
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Lab1_ConnectedModel\obj\Debug\Lab1_ConnectedModel.GUI.FormTest.resources
