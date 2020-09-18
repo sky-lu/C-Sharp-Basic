@@ -65,5 +65,65 @@ namespace Lab1_ConnectedModel.DAL
             }
             return listEmp;
         }
+
+        public static void UpdateRecord(Employee emp)
+        {
+            SqlConnection connDB = UtilityDB.ConnectDB();
+            SqlCommand cmdUpdate = new SqlCommand();
+            cmdUpdate.CommandText = "UPDATE Employees SET FirstName = @FirstName, LastName = @LastName, JobTitle = @JobTitle WHERE EmployeeId = @EmployeeId";
+            cmdUpdate.Parameters.AddWithValue("@EmployeeId", emp.EmployeeId);
+            cmdUpdate.Parameters.AddWithValue("@FirstName", emp.FirstName);
+            cmdUpdate.Parameters.AddWithValue("@LastName", emp.LastName);
+            cmdUpdate.Parameters.AddWithValue("@JobTitle", emp.JobTitle);
+            cmdUpdate.Connection = connDB;
+            cmdUpdate.ExecuteNonQuery();
+            connDB.Close();
+        }
+
+        public static void DeleteRecord(int empId)
+        {
+            SqlConnection connDB = UtilityDB.ConnectDB();
+            SqlCommand cmdDelete = new SqlCommand();
+            cmdDelete.CommandText = "DELETE FROM Employees WHERE EmployeeId = @EmployeeId ";
+            cmdDelete.Parameters.AddWithValue("@EmployeeId", empId);
+            cmdDelete.Connection = connDB;
+            cmdDelete.ExecuteNonQuery();
+            connDB.Close();
+
+        }
+        public static List<Employee> GetRecordList(int index, string name)
+        {
+            string colName = null;
+            string paramName = null;
+            switch (index)
+            {
+                case 1:
+                    colName = "FirstName";
+                    break;
+                case 2:
+                    colName = "LastName";
+                    break;
+                default:
+                    break;
+            }
+            paramName = "@" + colName;
+
+            List<Employee> listEmp = new List<Employee>();
+            SqlConnection connDB = UtilityDB.ConnectDB();
+            SqlCommand cmdSelect = new SqlCommand($"SELECT * FROM Employees WHERE {colName} = {paramName}", connDB);
+            cmdSelect.Parameters.AddWithValue(paramName, name);
+            SqlDataReader sqlReader = cmdSelect.ExecuteReader();
+            Employee emp;
+            while (sqlReader.Read())
+            {
+                emp = new Employee();
+                emp.EmployeeId = Convert.ToInt32(sqlReader["EmployeeId"]);
+                emp.FirstName = sqlReader["FirstName"].ToString();
+                emp.LastName = sqlReader["LastName"].ToString();
+                emp.JobTitle = sqlReader["JobTitle"].ToString();
+                listEmp.Add(emp);
+            }
+            return listEmp;
+        }
     }
 }

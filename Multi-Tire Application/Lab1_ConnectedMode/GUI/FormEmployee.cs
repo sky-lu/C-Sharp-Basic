@@ -83,6 +83,11 @@ namespace Lab1_ConnectedModel.GUI
             emp1.LastName = txtLastName.Text.Trim();
             emp1.JobTitle = txtJobTitle.Text.Trim();
             emp1.SaveEmployee(emp1);
+            txtEmployeeID.Clear();
+            txtEmployeeID.Focus();
+            txtFirstName.Clear();
+            txtLastName.Clear();
+            txtJobTitle.Clear();
             MessageBox.Show("Employee info saved successfully", "Confirmation");
 
         }
@@ -107,6 +112,139 @@ namespace Lab1_ConnectedModel.GUI
             else
             {
                 MessageBox.Show("There is no employee now!", "Confirmation");
+            }
+        }
+
+        private void comboBoxSearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int indexSelected = comboBoxSearch.SelectedIndex;
+            switch (indexSelected)
+            {
+                case 0:
+                    labelinfo.Text = "Please enter Employee Id";
+                    txtSearch.Clear();
+                    txtSearch.Focus();
+                    break;
+                case 1:
+                    labelinfo.Text = "Please enter First Name";
+                    txtSearch.Clear();
+                    txtSearch.Focus();
+                    break;
+                case 2:
+                    labelinfo.Text = "Please enter Last Name";
+                    txtSearch.Clear();
+                    txtSearch.Focus();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            int indexSelected = comboBoxSearch.SelectedIndex;
+            if (indexSelected == 0) { 
+                string tempId = txtSearch.Text.Trim();
+                if (!Validator.IsValidId(tempId, 4))
+                {
+                    MessageBox.Show("Invalid Employee Id", "Error");
+                    txtSearch.Clear();
+                    txtSearch.Focus();
+                    return;
+                }
+                Employee emp = new Employee();
+                emp = emp.GetEmployee(Convert.ToInt32(tempId));
+                if (emp != null)
+                {
+                    txtEmployeeID.Text = emp.EmployeeId.ToString();
+                    txtFirstName.Text = emp.FirstName;
+                    txtLastName.Text = emp.LastName;
+                    txtJobTitle.Text = emp.JobTitle;
+                    //return;
+                }
+                else
+                {
+                    MessageBox.Show("This EmployeeId doesn't exit!", "Confirmation");
+                }
+            }
+            else if (indexSelected == 1 || indexSelected == 2)
+            {
+                int index = indexSelected;
+                string tempName = txtSearch.Text.Trim();
+                if (!Validator.IsValidName(tempName))
+                {
+                    MessageBox.Show("Invalid Name", "Error");
+                    txtSearch.Clear();
+                    txtSearch.Focus();
+                    return;
+                }
+                Employee emp = new Employee();
+                List<Employee> listEmp = new List<Employee>();
+                listEmp = emp.GetEmployeeList(index, tempName);
+                listViewEmployees.Items.Clear();
+                if (listEmp != null)
+                {
+                    foreach (Employee anEmp in listEmp)
+                    {
+                        ListViewItem item = new ListViewItem(anEmp.EmployeeId.ToString());
+                        item.SubItems.Add(anEmp.FirstName);
+                        item.SubItems.Add(anEmp.LastName);
+                        item.SubItems.Add(anEmp.JobTitle);
+                        listViewEmployees.Items.Add(item);
+                    }
+                    //return;
+                }
+                if (listEmp.Count == 0)
+                {
+                    MessageBox.Show("This Name doesn't exit!", "Confirmation");
+                    return;
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Please select option first!", "Error");
+                return;
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            Employee emp = new Employee();
+            emp.EmployeeId = Convert.ToInt32(txtEmployeeID.Text);
+            emp.FirstName = txtFirstName.Text;
+            emp.LastName = txtLastName.Text;
+            emp.JobTitle = txtJobTitle.Text;
+            emp.UpdateEmployee(emp);
+            txtEmployeeID.Clear();
+            txtEmployeeID.Focus();
+            txtFirstName.Clear();
+            txtLastName.Clear();
+            txtJobTitle.Clear();
+            MessageBox.Show("This Employee has been updated successfully!", "Confirmation");
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Are you sure to delete this employee?", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            
+            if (result == DialogResult.Yes)
+            {
+                int temId = Convert.ToInt32(txtEmployeeID.Text);
+                Employee emp = new Employee();
+                emp.DeleteEmployee(temId);
+                txtEmployeeID.Clear();
+                txtFirstName.Clear();
+                txtLastName.Clear();
+                txtJobTitle.Clear();
+                txtSearch.Clear();
+                MessageBox.Show("This employee has been deleted!", "Confirmation");
+                return;
+            }
+            else if(result == DialogResult.No)
+            {
+                txtSearch.Focus();
+                return;
             }
         }
     }

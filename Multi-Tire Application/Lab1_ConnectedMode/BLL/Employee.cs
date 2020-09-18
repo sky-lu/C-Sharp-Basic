@@ -52,5 +52,20 @@ namespace Lab1_ConnectedModel.BLL
             return EmployeeDB.GetRecordList();
         }
 
+        public void UpdateEmployee(Employee emp)
+        {
+            EmployeeDB.UpdateRecord(emp);
+        }
+
+        public void DeleteEmployee(int eId)
+        {
+            EmployeeDB.DeleteRecord(eId);
+        }
+
+        public List<Employee> GetEmployeeList(int index, string name)
+        {
+            return EmployeeDB.GetRecordList(index, name);
+        }
+
     }
 }

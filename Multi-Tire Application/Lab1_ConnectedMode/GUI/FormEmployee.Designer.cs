@@ -51,6 +51,7 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.labelinfo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -147,6 +148,7 @@
             this.btnUpdate.TabIndex = 10;
             this.btnUpdate.Text = "&Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -156,11 +158,12 @@
             this.btnDelete.TabIndex = 11;
             this.btnDelete.Text = "&Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(293, 282);
+            this.label6.Location = new System.Drawing.Point(293, 329);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 23);
             this.label6.TabIndex = 12;
@@ -168,35 +171,38 @@
             // 
             // comboBoxSearch
             // 
+            this.comboBoxSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSearch.FormattingEnabled = true;
             this.comboBoxSearch.Items.AddRange(new object[] {
             "EmployeeID",
             "FirstName",
             "LastName"});
-            this.comboBoxSearch.Location = new System.Drawing.Point(400, 279);
+            this.comboBoxSearch.Location = new System.Drawing.Point(400, 326);
             this.comboBoxSearch.Name = "comboBoxSearch";
             this.comboBoxSearch.Size = new System.Drawing.Size(165, 31);
             this.comboBoxSearch.TabIndex = 13;
+            this.comboBoxSearch.SelectedIndexChanged += new System.EventHandler(this.comboBoxSearch_SelectedIndexChanged);
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(589, 279);
+            this.txtSearch.Location = new System.Drawing.Point(589, 326);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(240, 30);
             this.txtSearch.TabIndex = 14;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(879, 270);
+            this.btnSearch.Location = new System.Drawing.Point(879, 317);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(122, 45);
             this.btnSearch.TabIndex = 15;
             this.btnSearch.Text = "S&earch";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnList
             // 
-            this.btnList.Location = new System.Drawing.Point(462, 331);
+            this.btnList.Location = new System.Drawing.Point(462, 378);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(195, 45);
             this.btnList.TabIndex = 16;
@@ -206,7 +212,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(907, 576);
+            this.btnExit.Location = new System.Drawing.Point(907, 623);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(122, 45);
             this.btnExit.TabIndex = 17;
@@ -225,7 +231,7 @@
             this.listViewEmployees.FullRowSelect = true;
             this.listViewEmployees.GridLines = true;
             this.listViewEmployees.HideSelection = false;
-            this.listViewEmployees.Location = new System.Drawing.Point(275, 397);
+            this.listViewEmployees.Location = new System.Drawing.Point(275, 444);
             this.listViewEmployees.Name = "listViewEmployees";
             this.listViewEmployees.Size = new System.Drawing.Size(619, 168);
             this.listViewEmployees.TabIndex = 18;
@@ -252,11 +258,22 @@
             this.columnHeader4.Text = "Job Title";
             this.columnHeader4.Width = 215;
             // 
+            // labelinfo
+            // 
+            this.labelinfo.AutoSize = true;
+            this.labelinfo.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.labelinfo.Location = new System.Drawing.Point(597, 300);
+            this.labelinfo.Name = "labelinfo";
+            this.labelinfo.Size = new System.Drawing.Size(0, 23);
+            this.labelinfo.TabIndex = 19;
+            // 
             // FormEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 811);
+            this.ControlBox = false;
+            this.Controls.Add(this.labelinfo);
             this.Controls.Add(this.listViewEmployees);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnList);
@@ -277,6 +294,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormEmployee";
             this.Text = "Employee Form";
@@ -311,5 +329,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Label labelinfo;
     }
 }
