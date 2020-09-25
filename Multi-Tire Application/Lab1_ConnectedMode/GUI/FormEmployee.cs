@@ -196,7 +196,7 @@ namespace Lab1_ConnectedModel.GUI
                 }
                 if (listEmp.Count == 0)
                 {
-                    MessageBox.Show("This Name doesn't exit!", "Confirmation");
+                    MessageBox.Show("This Name doesn't exist!", "Confirmation");
                     return;
                 }
 

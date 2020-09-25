@@ -71,7 +71,7 @@ namespace Lab1_ConnectedModel.DAL
             SqlConnection connDB = UtilityDB.ConnectDB();
             SqlCommand cmdUpdate = new SqlCommand();
             cmdUpdate.CommandText = "UPDATE Employees SET FirstName = @FirstName, LastName = @LastName, JobTitle = @JobTitle WHERE EmployeeId = @EmployeeId";
-            cmdUpdate.Parameters.AddWithValue("@EmployeeId", emp.EmployeeId);
+            cmdUpdate.Parameters.AddWithValue("@EmployeeId", emp.EmployeeId);//if you change the id, you have to check first if there is duplicated id;
             cmdUpdate.Parameters.AddWithValue("@FirstName", emp.FirstName);
             cmdUpdate.Parameters.AddWithValue("@LastName", emp.LastName);
             cmdUpdate.Parameters.AddWithValue("@JobTitle", emp.JobTitle);
