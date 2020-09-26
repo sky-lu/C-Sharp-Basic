@@ -31,6 +31,9 @@ namespace Hi_Tech_Order_Management.GUI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+
+            
+
             string userId = txtUserId.Text.Trim();
             if (Validator.IsEmpty(userId))
             {
@@ -42,14 +45,61 @@ namespace Hi_Tech_Order_Management.GUI
             {
                 MessageBox.Show("Invalid User Id !", "Error");
                 txtUserId.Clear();
+                txtPassword.Clear();
                 txtUserId.Focus();
-                return;
+                return; 
             }
 
             User tempUser = new User();
             tempUser = tempUser.GetUser(Convert.ToInt32(userId));
+           
 
-
+            if (tempUser != null)
+            {
+                
+                string password = txtPassword.Text.Trim();
+                if (password == "")
+                {
+                    MessageBox.Show("Please enter the password!", "Error");
+                    txtPassword.Focus();
+                    return;
+                }
+                else if (password == tempUser.Password)
+                {
+                    string jobTitle = tempUser.JobTitle;
+                    string display = "Login Successfully !" + "\r\n" + "This user's job title is :" + jobTitle;
+                    MessageBox.Show(display, "Login Confirmation");
+                    txtUserId.Clear();
+                    txtUserId.Focus();
+                    txtPassword.Clear();
+                    return;
+                }
+                else
+                {
+                    txtPassword.Clear();
+                    txtPassword.Focus();
+                    var result = MessageBox.Show("The password is not correct, try again!", "error", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        txtPassword.Focus();
+                        
+                    }
+                    else
+                    {
+                        txtUserId.Clear();
+                        txtUserId.Focus();
+                        return;
+                    }
+                }
+            }
+            else
+            {
+                txtUserId.Clear();
+                txtUserId.Focus();
+                txtPassword.Clear();
+                MessageBox.Show("This user doesn't exist!", "Error");
+                return;
+            }
         }
     }
 }

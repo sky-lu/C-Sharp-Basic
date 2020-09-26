@@ -13,6 +13,7 @@ namespace Hi_Tech_Order_Management.BLL
         private string password;
         private string jobTitle;
         private string userStatus;
+       
 
         public User()
         {
@@ -30,6 +31,8 @@ namespace Hi_Tech_Order_Management.BLL
             this.userStatus = userStatus;
         }
 
+        
+
         public int UserId { get => userId; set => userId = value; }
         public string Password { get => password; set => password = value; }
 
@@ -38,10 +41,15 @@ namespace Hi_Tech_Order_Management.BLL
 
         public string UserStatus { get => userStatus; set => userStatus = value; }
 
+        
+
         public User GetUser(int id)
         {
             return UserDB.GetRecord(id);
         }
+
+        
+        
 
 
     }
