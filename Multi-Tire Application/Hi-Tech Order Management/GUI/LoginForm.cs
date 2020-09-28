@@ -56,6 +56,15 @@ namespace Hi_Tech_Order_Management.GUI
 
             if (tempUser != null)
             {
+                if (!User.LoginErrorCount.ContainsKey(tempUser.UserId)) { 
+                    User.LoginErrorCount.Add(tempUser.UserId, 0);
+                }
+                System.Console.WriteLine(User.LoginErrorCount[tempUser.UserId]);
+                if (User.LoginErrorCount[tempUser.UserId] > 2)
+                {
+                    MessageBox.Show("You've tried 3 times, please contact the administrator!", "Error");
+                    return;
+                }
                 
                 string password = txtPassword.Text.Trim();
                 if (password == "")
@@ -79,6 +88,7 @@ namespace Hi_Tech_Order_Management.GUI
                     txtPassword.Clear();
                     txtPassword.Focus();
                     var result = MessageBox.Show("The password is not correct, try again!", "error", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    User.LoginErrorCount[tempUser.UserId] += 1;
                     if (result == DialogResult.Yes)
                     {
                         txtPassword.Focus();

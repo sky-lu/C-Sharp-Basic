@@ -13,6 +13,7 @@ namespace Hi_Tech_Order_Management.BLL
         private string password;
         private string jobTitle;
         private string userStatus;
+        private static Dictionary<Int32, Int32> loginErrorCount = new Dictionary<Int32, Int32>();
        
 
         public User()
@@ -41,7 +42,9 @@ namespace Hi_Tech_Order_Management.BLL
 
         public string UserStatus { get => userStatus; set => userStatus = value; }
 
-        
+        public static Dictionary<Int32, Int32> LoginErrorCount { get => loginErrorCount; set => loginErrorCount = value; }
+
+
 
         public User GetUser(int id)
         {
