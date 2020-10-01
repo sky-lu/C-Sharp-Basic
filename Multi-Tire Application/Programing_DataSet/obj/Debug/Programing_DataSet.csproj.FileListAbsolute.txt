@@ -1,0 +1,6 @@
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Programing_DataSet\bin\Debug\Programing_DataSet.exe.config
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Programing_DataSet\bin\Debug\Programing_DataSet.exe
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Programing_DataSet\bin\Debug\Programing_DataSet.pdb
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Programing_DataSet\obj\Debug\Programing_DataSet.csprojAssemblyReference.cache
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Programing_DataSet\obj\Debug\Programing_DataSet.exe
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Programing_DataSet\obj\Debug\Programing_DataSet.pdb
