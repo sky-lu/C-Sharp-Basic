@@ -122,7 +122,7 @@ namespace Programing_DataSet
             //420 - P25 - AS Introduction to Object Programing 75
             //420 - P34 - AS Advanced Object Programming 60
             //420 - P46 - AS Event Programming 90
-            //420P55 - AS Internet Programming I 75
+            //420 - P55 - AS Internet Programming I 75
             dtCourses.Rows.Add("420 - P16 - AS", "Structured Programming", 90);
             dtCourses.Rows.Add("420 - P25 - AS", "Introduction to Object Programing", 75);
             dtCourses.Rows.Add("420 - P34 - AS", "Advanced Object Programming", 60);
@@ -141,12 +141,18 @@ namespace Programing_DataSet
             //Hints: Take a look at Constraints collection and the ForeignKeyConstraint class.
             dtStudentCourses.Columns.Add("StudentId", typeof(Int32)); 
             dtStudentCourses.Columns.Add("CourseCode", typeof(string));
-            
-            ForeignKeyConstraint fkeyConstraint1 = new ForeignKeyConstraint(dtStudents.Columns["StudentId"], dtStudentCourses.Columns["StudentId"]);
-            ForeignKeyConstraint fkeyConstraint2 = new ForeignKeyConstraint(dtCourses.Columns["CourseCode"], dtStudentCourses.Columns["CourseCode"]);
+
+            dtStudentCourses.PrimaryKey = new DataColumn[] {dtStudentCourses.Columns["StudentId"],dtStudentCourses.Columns["CourseCode"] };
+            //relationships
+            DataRelation drSToSC = new DataRelation("SToSC", dtStudents.Columns["StudentId"], dtStudentCourses.Columns["StudentId"]);
+            DataRelation drCToSC = new DataRelation("CToSC", dtCourses.Columns["CourseCode"], dtStudentCourses.Columns["CourseCode"]);
+            dsCollege.Relations.Add(drSToSC);
+            dsCollege.Relations.Add(drCToSC);
+            //ForeignKeyConstraint fkeyConstraint1 = new ForeignKeyConstraint(dtStudents.Columns["StudentId"], dtStudentCourses.Columns["StudentId"]);
+            //ForeignKeyConstraint fkeyConstraint2 = new ForeignKeyConstraint(dtCourses.Columns["CourseCode"], dtStudentCourses.Columns["CourseCode"]);
              
-            dtStudentCourses.Constraints.Add(fkeyConstraint1);
-            dtStudentCourses.Constraints.Add(fkeyConstraint2);
+            //dtStudentCourses.Constraints.Add(fkeyConstraint1);
+            //dtStudentCourses.Constraints.Add(fkeyConstraint2);
             Console.WriteLine("\n\n" + "=========================================================================================");
 
             foreach (DataColumn dc in dtStudentCourses.Columns)
@@ -180,25 +186,42 @@ namespace Programing_DataSet
             //Question 12
             //Write a code segment to display all the courses registered by a given student.
             //For example: List all the courses for the student John Abbot.
-            string expression = "FirstName = 'John' and LastName = 'Abbot'";
-            DataRow[] foundRows = dtStudents.Select(expression);
-            for(int i=0; i < foundRows.Length; i++)
-            {
-                Int32 stId = Convert.ToInt32(foundRows[i][0]);
-                string expression1 = $"StudentId = {stId}";
-                DataRow[] foundRows1 = dtStudentCourses.Select(expression1);
-                for (int j=0; j < foundRows1.Length; j++)
-                {
-                    string courseCode = foundRows1[j][1].ToString();
-                    string expression2 = $"CourseCode = '{courseCode}'";
-                    DataRow[] foundRows2 = dtCourses.Select(expression2);
-                    foreach (DataRow dr in foundRows2)
-                    {
-                        Console.WriteLine("\n\n\n\t" + dr["CourseCode"] + "\t\t" + dr["CourseTitle"] + "\t\t" + dr["TotalHour"]);
-                    }
-                }
+            // StudentId = 1111111
+            // in Rows (Collection, Find(key)
+            ////string expression = "FirstName = 'John' and LastName = 'Abbot'";
+            ////DataRow[] foundRows = dtStudents.Select(expression);
+            ////for(int i=0; i < foundRows.Length; i++)
+            ////{
+            ////    Int32 stId = Convert.ToInt32(foundRows[i][0]);
+            ////    string expression1 = $"StudentId = {stId}";
+            ////    DataRow[] foundRows1 = dtStudentCourses.Select(expression1);
+            ////    for (int j=0; j < foundRows1.Length; j++)
+            ////    {
+            ////        string courseCode = foundRows1[j][1].ToString();
+            ////        string expression2 = $"CourseCode = '{courseCode}'";
+            ////        DataRow[] foundRows2 = dtCourses.Select(expression2);
+            ////        foreach (DataRow dr in foundRows2)
+            ////        {
+            ////            Console.WriteLine("\n\n\n\t" + dr["CourseCode"] + "\t\t" + dr["CourseTitle"] + "\t\t" + dr["TotalHour"]);
+            ////        }
+            ////    }
 
+            ////}
+
+            DataRow drStudent = dtStudents.Rows.Find(1111111);
+            Console.WriteLine("\n\n\t\t\t\tCourse List");
+            Console.WriteLine("\n\n\t\t" + "Student : " + drStudent["StudentId"] + "," + drStudent["FirstName"] + "," + drStudent["LastName"]);
+            Console.WriteLine("\n\n\n\tCourse Code" + "\t\tCourse Title" + "\t\tTotal Hour");
+
+            foreach (DataRow dr in dtStudentCourses.Rows)
+            {
+                if (Convert.ToInt32(dr["StudentId"]) == 1111111)
+                {
+                    DataRow drCourse = dtCourses.Rows.Find(dr["CourseCode"]);
+                    Console.WriteLine("\n\t " + drCourse["CourseCode"] + "\t\t " + drCourse["CourseTitle"] + "\t\t " + drCourse["TotalHour"]);
+                }
             }
+
             
             
             
