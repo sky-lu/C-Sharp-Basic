@@ -1,0 +1,10 @@
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppDisconnectedMode\bin\Debug\WinFormAppDisconnectedMode.exe.config
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppDisconnectedMode\bin\Debug\WinFormAppDisconnectedMode.exe
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppDisconnectedMode\bin\Debug\WinFormAppDisconnectedMode.pdb
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppDisconnectedMode\obj\Debug\WinFormAppDisconnectedMode.csprojAssemblyReference.cache
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppDisconnectedMode\obj\Debug\WinFormAppDisconnectedMode.GUI.MainMenuForm.resources
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppDisconnectedMode\obj\Debug\WinFormAppDisconnectedMode.GUI.StudentForm.resources
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppDisconnectedMode\obj\Debug\WinFormAppDisconnectedMode.Properties.Resources.resources
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppDisconnectedMode\obj\Debug\WinFormAppDisconnectedMode.csproj.GenerateResource.cache
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppDisconnectedMode\obj\Debug\WinFormAppDisconnectedMode.exe
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppDisconnectedMode\obj\Debug\WinFormAppDisconnectedMode.pdb
