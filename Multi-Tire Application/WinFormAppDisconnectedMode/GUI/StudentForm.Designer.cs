@@ -30,28 +30,31 @@
         {
             this.btnClose = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxStuId = new System.Windows.Forms.TextBox();
-            this.textBoxFname = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxLname = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonModify = new System.Windows.Forms.Button();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonSearch = new System.Windows.Forms.Button();
-            this.buttonModify = new System.Windows.Forms.Button();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.textBoxLname = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxFname = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxStuId = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.buttonList = new System.Windows.Forms.Button();
             this.dataGridViewStudents = new System.Windows.Forms.DataGridView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.buttonListFromDS = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(628, 362);
+            this.btnClose.Location = new System.Drawing.Point(652, 373);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(89, 37);
             this.btnClose.TabIndex = 0;
@@ -81,53 +84,50 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Studennt Information";
             // 
-            // label1
+            // buttonUpdate
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(56, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Student ID";
+            this.buttonUpdate.Location = new System.Drawing.Point(529, 99);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(136, 29);
+            this.buttonUpdate.TabIndex = 12;
+            this.buttonUpdate.Text = "Update Database";
+            this.buttonUpdate.UseVisualStyleBackColor = true;
             // 
-            // textBoxStuId
+            // buttonDelete
             // 
-            this.textBoxStuId.Location = new System.Drawing.Point(59, 49);
-            this.textBoxStuId.Name = "textBoxStuId";
-            this.textBoxStuId.Size = new System.Drawing.Size(100, 25);
-            this.textBoxStuId.TabIndex = 1;
+            this.buttonDelete.Location = new System.Drawing.Point(410, 99);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(100, 29);
+            this.buttonDelete.TabIndex = 11;
+            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.UseVisualStyleBackColor = true;
             // 
-            // textBoxFname
+            // buttonModify
             // 
-            this.textBoxFname.Location = new System.Drawing.Point(187, 49);
-            this.textBoxFname.Name = "textBoxFname";
-            this.textBoxFname.Size = new System.Drawing.Size(104, 25);
-            this.textBoxFname.TabIndex = 3;
+            this.buttonModify.Location = new System.Drawing.Point(296, 99);
+            this.buttonModify.Name = "buttonModify";
+            this.buttonModify.Size = new System.Drawing.Size(100, 29);
+            this.buttonModify.TabIndex = 10;
+            this.buttonModify.Text = "Modify";
+            this.buttonModify.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // buttonSearch
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(184, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "First Name";
+            this.buttonSearch.Location = new System.Drawing.Point(178, 99);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(100, 29);
+            this.buttonSearch.TabIndex = 9;
+            this.buttonSearch.Text = "Search";
+            this.buttonSearch.UseVisualStyleBackColor = true;
             // 
-            // textBoxLname
+            // buttonAdd
             // 
-            this.textBoxLname.Location = new System.Drawing.Point(326, 49);
-            this.textBoxLname.Name = "textBoxLname";
-            this.textBoxLname.Size = new System.Drawing.Size(106, 25);
-            this.textBoxLname.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(323, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 15);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Last Name";
+            this.buttonAdd.Location = new System.Drawing.Point(59, 99);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(100, 29);
+            this.buttonAdd.TabIndex = 8;
+            this.buttonAdd.Text = "Add";
+            this.buttonAdd.UseVisualStyleBackColor = true;
             // 
             // textBoxEmail
             // 
@@ -145,50 +145,53 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Email";
             // 
-            // buttonAdd
+            // textBoxLname
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(59, 99);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(100, 29);
-            this.buttonAdd.TabIndex = 8;
-            this.buttonAdd.Text = "Add";
-            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.textBoxLname.Location = new System.Drawing.Point(326, 49);
+            this.textBoxLname.Name = "textBoxLname";
+            this.textBoxLname.Size = new System.Drawing.Size(106, 25);
+            this.textBoxLname.TabIndex = 5;
             // 
-            // buttonSearch
+            // label3
             // 
-            this.buttonSearch.Location = new System.Drawing.Point(178, 99);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(100, 29);
-            this.buttonSearch.TabIndex = 9;
-            this.buttonSearch.Text = "Search";
-            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(323, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 15);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Last Name";
             // 
-            // buttonModify
+            // textBoxFname
             // 
-            this.buttonModify.Location = new System.Drawing.Point(296, 99);
-            this.buttonModify.Name = "buttonModify";
-            this.buttonModify.Size = new System.Drawing.Size(100, 29);
-            this.buttonModify.TabIndex = 10;
-            this.buttonModify.Text = "Modify";
-            this.buttonModify.UseVisualStyleBackColor = true;
+            this.textBoxFname.Location = new System.Drawing.Point(187, 49);
+            this.textBoxFname.Name = "textBoxFname";
+            this.textBoxFname.Size = new System.Drawing.Size(104, 25);
+            this.textBoxFname.TabIndex = 3;
             // 
-            // buttonDelete
+            // label2
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(410, 99);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(100, 29);
-            this.buttonDelete.TabIndex = 11;
-            this.buttonDelete.Text = "Delete";
-            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(184, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 15);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "First Name";
             // 
-            // buttonUpdate
+            // textBoxStuId
             // 
-            this.buttonUpdate.Location = new System.Drawing.Point(529, 99);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(136, 29);
-            this.buttonUpdate.TabIndex = 12;
-            this.buttonUpdate.Text = "Update Database";
-            this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.textBoxStuId.Location = new System.Drawing.Point(59, 49);
+            this.textBoxStuId.Name = "textBoxStuId";
+            this.textBoxStuId.Size = new System.Drawing.Size(100, 25);
+            this.textBoxStuId.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(56, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Student ID";
             // 
             // buttonList
             // 
@@ -198,6 +201,7 @@
             this.buttonList.TabIndex = 9;
             this.buttonList.Text = "List students from DB";
             this.buttonList.UseVisualStyleBackColor = true;
+            this.buttonList.Click += new System.EventHandler(this.buttonList_Click);
             // 
             // dataGridViewStudents
             // 
@@ -206,23 +210,48 @@
             this.dataGridViewStudents.Name = "dataGridViewStudents";
             this.dataGridViewStudents.RowHeadersWidth = 51;
             this.dataGridViewStudents.RowTemplate.Height = 27;
-            this.dataGridViewStudents.Size = new System.Drawing.Size(510, 150);
+            this.dataGridViewStudents.Size = new System.Drawing.Size(553, 150);
             this.dataGridViewStudents.TabIndex = 10;
+            this.dataGridViewStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStudents_CellContentClick);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(76, 489);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 27;
+            this.dataGridView1.Size = new System.Drawing.Size(553, 150);
+            this.dataGridView1.TabIndex = 12;
+            // 
+            // buttonListFromDS
+            // 
+            this.buttonListFromDS.Location = new System.Drawing.Point(76, 436);
+            this.buttonListFromDS.Name = "buttonListFromDS";
+            this.buttonListFromDS.Size = new System.Drawing.Size(188, 38);
+            this.buttonListFromDS.TabIndex = 11;
+            this.buttonListFromDS.Text = "List students from DS";
+            this.buttonListFromDS.UseVisualStyleBackColor = true;
+            this.buttonListFromDS.Click += new System.EventHandler(this.buttonListFromDS_Click);
             // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 695);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.buttonListFromDS);
             this.Controls.Add(this.dataGridViewStudents);
             this.Controls.Add(this.buttonList);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnClose);
             this.Name = "StudentForm";
             this.Text = "Student Maintenance";
+            this.Load += new System.EventHandler(this.StudentForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -246,5 +275,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonList;
         private System.Windows.Forms.DataGridView dataGridViewStudents;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button buttonListFromDS;
     }
 }
