@@ -29,5 +29,12 @@ namespace WinFormAppDisconnectedMode.GUI
         {
             Application.Exit();
         }
+
+        private void courseFormToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CourseForm couForm = new CourseForm();
+            this.Hide();
+            couForm.ShowDialog();
+        }
     }
 }

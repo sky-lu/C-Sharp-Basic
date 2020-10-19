@@ -47,9 +47,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\Course.cs" />
     <Compile Include="BLL\Student.cs" />
+    <Compile Include="DAL\CourseDB.cs" />
     <Compile Include="DAL\StudentDB.cs" />
     <Compile Include="DAL\UtilityDB.cs" />
+    <Compile Include="GUI\CourseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CourseForm.Designer.cs">
+      <DependentUpon>CourseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\MainMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\CourseForm.resx">
+      <DependentUpon>CourseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\MainMenuForm.resx">
       <DependentUpon>MainMenuForm.cs</DependentUpon>
     </EmbeddedResource>

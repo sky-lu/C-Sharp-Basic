@@ -71,6 +71,7 @@
             this.courseFormToolStripMenuItem.Name = "courseFormToolStripMenuItem";
             this.courseFormToolStripMenuItem.Size = new System.Drawing.Size(259, 26);
             this.courseFormToolStripMenuItem.Text = "Course Form";
+            this.courseFormToolStripMenuItem.Click += new System.EventHandler(this.courseFormToolStripMenuItem_Click);
             // 
             // courseRegistraToolStripMenuItem
             // 

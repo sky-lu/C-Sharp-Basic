@@ -54,7 +54,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(652, 373);
+            this.btnClose.Location = new System.Drawing.Point(652, 602);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(89, 37);
             this.btnClose.TabIndex = 0;
@@ -92,6 +92,7 @@
             this.buttonUpdate.TabIndex = 12;
             this.buttonUpdate.Text = "Update Database";
             this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // buttonDelete
             // 
@@ -101,6 +102,7 @@
             this.buttonDelete.TabIndex = 11;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonModify
             // 
@@ -110,6 +112,7 @@
             this.buttonModify.TabIndex = 10;
             this.buttonModify.Text = "Modify";
             this.buttonModify.UseVisualStyleBackColor = true;
+            this.buttonModify.Click += new System.EventHandler(this.buttonModify_Click);
             // 
             // buttonSearch
             // 
@@ -119,6 +122,7 @@
             this.buttonSearch.TabIndex = 9;
             this.buttonSearch.Text = "Search";
             this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // buttonAdd
             // 
@@ -128,6 +132,7 @@
             this.buttonAdd.TabIndex = 8;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // textBoxEmail
             // 
