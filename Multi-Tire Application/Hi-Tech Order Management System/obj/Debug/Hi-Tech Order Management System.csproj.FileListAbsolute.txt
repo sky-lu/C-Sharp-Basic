@@ -1,0 +1,9 @@
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Hi-Tech Order Management System\bin\Debug\Hi-Tech Order Management System.exe.config
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Hi-Tech Order Management System\bin\Debug\Hi-Tech Order Management System.exe
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Hi-Tech Order Management System\bin\Debug\Hi-Tech Order Management System.pdb
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Hi-Tech Order Management System\obj\Debug\Hi-Tech Order Management System.csprojAssemblyReference.cache
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Hi-Tech Order Management System\obj\Debug\Hi_Tech_Order_Management_System.GUI.MIS_ManagerForm.resources
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Hi-Tech Order Management System\obj\Debug\Hi_Tech_Order_Management_System.Properties.Resources.resources
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Hi-Tech Order Management System\obj\Debug\Hi-Tech Order Management System.csproj.GenerateResource.cache
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Hi-Tech Order Management System\obj\Debug\Hi-Tech Order Management System.exe
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Hi-Tech Order Management System\obj\Debug\Hi-Tech Order Management System.pdb
