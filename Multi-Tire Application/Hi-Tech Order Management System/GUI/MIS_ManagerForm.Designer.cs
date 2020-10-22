@@ -99,6 +99,7 @@
             this.buttonListAllUsers.TabIndex = 25;
             this.buttonListAllUsers.Text = "&List all users";
             this.buttonListAllUsers.UseVisualStyleBackColor = true;
+            this.buttonListAllUsers.Click += new System.EventHandler(this.buttonListAllUsers_Click);
             // 
             // textBoxFirstName
             // 
