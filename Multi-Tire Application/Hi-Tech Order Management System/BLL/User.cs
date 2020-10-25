@@ -27,5 +27,10 @@ namespace Hi_Tech_Order_Management_System.BLL
         {
             return UserDB.GetRecordList();
         }
+
+        public void SaveUser(User aUser)
+        {
+            UserDB.SaveRecord(aUser);
+        }
     }
 }
