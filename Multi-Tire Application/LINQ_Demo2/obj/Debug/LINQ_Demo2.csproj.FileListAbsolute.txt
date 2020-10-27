@@ -1,0 +1,6 @@
+D:\Programs\Project\C#-Basic\Multi-Tire Application\LINQ_Demo2\bin\Debug\LINQ_Demo2.exe.config
+D:\Programs\Project\C#-Basic\Multi-Tire Application\LINQ_Demo2\bin\Debug\LINQ_Demo2.exe
+D:\Programs\Project\C#-Basic\Multi-Tire Application\LINQ_Demo2\bin\Debug\LINQ_Demo2.pdb
+D:\Programs\Project\C#-Basic\Multi-Tire Application\LINQ_Demo2\obj\Debug\LINQ_Demo2.csprojAssemblyReference.cache
+D:\Programs\Project\C#-Basic\Multi-Tire Application\LINQ_Demo2\obj\Debug\LINQ_Demo2.exe
+D:\Programs\Project\C#-Basic\Multi-Tire Application\LINQ_Demo2\obj\Debug\LINQ_Demo2.pdb

@@ -58,6 +58,7 @@
             this.buttonListCoursesFromDS.TabIndex = 17;
             this.buttonListCoursesFromDS.Text = "List courses from DS";
             this.buttonListCoursesFromDS.UseVisualStyleBackColor = true;
+            this.buttonListCoursesFromDS.Click += new System.EventHandler(this.buttonListCoursesFromDS_Click);
             // 
             // dataGridViewCoursesFromDB
             // 
@@ -77,6 +78,7 @@
             this.buttonUpdate.TabIndex = 12;
             this.buttonUpdate.Text = "Update Database";
             this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // buttonDelete
             // 
@@ -86,6 +88,7 @@
             this.buttonDelete.TabIndex = 11;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonModify
             // 
@@ -95,6 +98,7 @@
             this.buttonModify.TabIndex = 10;
             this.buttonModify.Text = "Modify";
             this.buttonModify.UseVisualStyleBackColor = true;
+            this.buttonModify.Click += new System.EventHandler(this.buttonModify_Click);
             // 
             // buttonSearch
             // 
@@ -104,6 +108,7 @@
             this.buttonSearch.TabIndex = 9;
             this.buttonSearch.Text = "Search";
             this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // buttonAdd
             // 
@@ -113,6 +118,7 @@
             this.buttonAdd.TabIndex = 8;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // textBoxTotalHour
             // 
@@ -227,6 +233,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CourseForm";
             this.Text = "Course Maintenance";
+            this.Load += new System.EventHandler(this.CourseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCoursesFromDB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFromDS)).EndInit();
             this.groupBox1.ResumeLayout(false);
