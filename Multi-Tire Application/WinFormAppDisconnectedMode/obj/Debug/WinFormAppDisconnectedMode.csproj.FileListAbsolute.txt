@@ -9,3 +9,4 @@ D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppDisconnectedMode\o
 D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppDisconnectedMode\obj\Debug\WinFormAppDisconnectedMode.exe
 D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppDisconnectedMode\obj\Debug\WinFormAppDisconnectedMode.pdb
 D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppDisconnectedMode\obj\Debug\WinFormAppDisconnectedMode.GUI.CourseForm.resources
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppDisconnectedMode\obj\Debug\WinFormAppDisconnectedMode.GUI.CourseRegistrationForm.resources

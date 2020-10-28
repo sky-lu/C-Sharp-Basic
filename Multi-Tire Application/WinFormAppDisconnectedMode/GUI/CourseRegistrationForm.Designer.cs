@@ -29,23 +29,20 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxStudentID = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.buttonStuInfo = new System.Windows.Forms.Button();
             this.labelStuInfo = new System.Windows.Forms.Label();
+            this.buttonStuInfo = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxStudentID = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.labelCourseInfo = new System.Windows.Forms.Label();
             this.buttonCourseInfo = new System.Windows.Forms.Button();
             this.textBoxCourseCode = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxRegisDate = new System.Windows.Forms.TextBox();
-            this.textBoxStartDate = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxEndDate = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.buttonRegister = new System.Windows.Forms.Button();
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
@@ -56,6 +53,10 @@
             this.dataGridViewListStudByCourse = new System.Windows.Forms.DataGridView();
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonSearch = new System.Windows.Forms.Button();
+            this.maskedTextBoxRegisDate = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxStartDate = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxEndDate = new System.Windows.Forms.MaskedTextBox();
+            this.buttonClear = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -79,21 +80,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Student Information";
             // 
-            // label1
+            // labelStuInfo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 18);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Student ID";
+            this.labelStuInfo.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.labelStuInfo.Location = new System.Drawing.Point(17, 120);
+            this.labelStuInfo.Name = "labelStuInfo";
+            this.labelStuInfo.Size = new System.Drawing.Size(255, 88);
+            this.labelStuInfo.TabIndex = 1;
             // 
-            // textBoxStudentID
+            // buttonStuInfo
             // 
-            this.textBoxStudentID.Location = new System.Drawing.Point(20, 54);
-            this.textBoxStudentID.Name = "textBoxStudentID";
-            this.textBoxStudentID.Size = new System.Drawing.Size(128, 24);
-            this.textBoxStudentID.TabIndex = 1;
+            this.buttonStuInfo.Location = new System.Drawing.Point(182, 54);
+            this.buttonStuInfo.Name = "buttonStuInfo";
+            this.buttonStuInfo.Size = new System.Drawing.Size(90, 29);
+            this.buttonStuInfo.TabIndex = 1;
+            this.buttonStuInfo.Text = "Get";
+            this.buttonStuInfo.UseVisualStyleBackColor = true;
+            this.buttonStuInfo.Click += new System.EventHandler(this.buttonStuInfo_Click);
             // 
             // label2
             // 
@@ -104,22 +107,21 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "( 7 digits )";
             // 
-            // buttonStuInfo
+            // textBoxStudentID
             // 
-            this.buttonStuInfo.Location = new System.Drawing.Point(182, 54);
-            this.buttonStuInfo.Name = "buttonStuInfo";
-            this.buttonStuInfo.Size = new System.Drawing.Size(90, 29);
-            this.buttonStuInfo.TabIndex = 1;
-            this.buttonStuInfo.Text = "Get";
-            this.buttonStuInfo.UseVisualStyleBackColor = true;
+            this.textBoxStudentID.Location = new System.Drawing.Point(20, 54);
+            this.textBoxStudentID.Name = "textBoxStudentID";
+            this.textBoxStudentID.Size = new System.Drawing.Size(128, 24);
+            this.textBoxStudentID.TabIndex = 1;
             // 
-            // labelStuInfo
+            // label1
             // 
-            this.labelStuInfo.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.labelStuInfo.Location = new System.Drawing.Point(17, 120);
-            this.labelStuInfo.Name = "labelStuInfo";
-            this.labelStuInfo.Size = new System.Drawing.Size(255, 88);
-            this.labelStuInfo.TabIndex = 1;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 18);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Student ID";
             // 
             // groupBox2
             // 
@@ -152,6 +154,7 @@
             this.buttonCourseInfo.TabIndex = 1;
             this.buttonCourseInfo.Text = "Get";
             this.buttonCourseInfo.UseVisualStyleBackColor = true;
+            this.buttonCourseInfo.Click += new System.EventHandler(this.buttonCourseInfo_Click);
             // 
             // textBoxCourseCode
             // 
@@ -171,11 +174,11 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBoxEndDate);
+            this.groupBox3.Controls.Add(this.maskedTextBoxEndDate);
+            this.groupBox3.Controls.Add(this.maskedTextBoxStartDate);
+            this.groupBox3.Controls.Add(this.maskedTextBoxRegisDate);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.textBoxStartDate);
             this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.textBoxRegisDate);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Location = new System.Drawing.Point(712, 42);
             this.groupBox3.Name = "groupBox3";
@@ -183,48 +186,6 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Course Registration";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 30);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 18);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Registration Date";
-            // 
-            // textBoxRegisDate
-            // 
-            this.textBoxRegisDate.Location = new System.Drawing.Point(24, 51);
-            this.textBoxRegisDate.Name = "textBoxRegisDate";
-            this.textBoxRegisDate.Size = new System.Drawing.Size(156, 24);
-            this.textBoxRegisDate.TabIndex = 1;
-            this.textBoxRegisDate.Text = "__/__/______";
-            // 
-            // textBoxStartDate
-            // 
-            this.textBoxStartDate.Location = new System.Drawing.Point(24, 109);
-            this.textBoxStartDate.Name = "textBoxStartDate";
-            this.textBoxStartDate.Size = new System.Drawing.Size(156, 24);
-            this.textBoxStartDate.TabIndex = 3;
-            this.textBoxStartDate.Text = "__/__/______";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 88);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 18);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Starting Date";
-            // 
-            // textBoxEndDate
-            // 
-            this.textBoxEndDate.Location = new System.Drawing.Point(24, 166);
-            this.textBoxEndDate.Name = "textBoxEndDate";
-            this.textBoxEndDate.Size = new System.Drawing.Size(156, 24);
-            this.textBoxEndDate.TabIndex = 5;
-            this.textBoxEndDate.Text = "__/__/______";
             // 
             // label6
             // 
@@ -235,6 +196,24 @@
             this.label6.TabIndex = 4;
             this.label6.Text = "Ending Date";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(21, 88);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(93, 18);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Starting Date";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(21, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(122, 18);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Registration Date";
+            // 
             // buttonRegister
             // 
             this.buttonRegister.Location = new System.Drawing.Point(73, 284);
@@ -243,6 +222,7 @@
             this.buttonRegister.TabIndex = 3;
             this.buttonRegister.Text = "Register";
             this.buttonRegister.UseVisualStyleBackColor = true;
+            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click_1);
             // 
             // buttonModify
             // 
@@ -252,6 +232,7 @@
             this.buttonModify.TabIndex = 4;
             this.buttonModify.Text = "Modify";
             this.buttonModify.UseVisualStyleBackColor = true;
+            this.buttonModify.Click += new System.EventHandler(this.buttonModify_Click);
             // 
             // buttonCancel
             // 
@@ -328,12 +309,51 @@
             this.buttonSearch.TabIndex = 12;
             this.buttonSearch.Text = "Search";
             this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // maskedTextBoxRegisDate
+            // 
+            this.maskedTextBoxRegisDate.Location = new System.Drawing.Point(24, 55);
+            this.maskedTextBoxRegisDate.Mask = "00/00/0000";
+            this.maskedTextBoxRegisDate.Name = "maskedTextBoxRegisDate";
+            this.maskedTextBoxRegisDate.Size = new System.Drawing.Size(156, 24);
+            this.maskedTextBoxRegisDate.TabIndex = 13;
+            this.maskedTextBoxRegisDate.ValidatingType = typeof(System.DateTime);
+            // 
+            // maskedTextBoxStartDate
+            // 
+            this.maskedTextBoxStartDate.Location = new System.Drawing.Point(24, 113);
+            this.maskedTextBoxStartDate.Mask = "00/00/0000";
+            this.maskedTextBoxStartDate.Name = "maskedTextBoxStartDate";
+            this.maskedTextBoxStartDate.Size = new System.Drawing.Size(156, 24);
+            this.maskedTextBoxStartDate.TabIndex = 14;
+            this.maskedTextBoxStartDate.ValidatingType = typeof(System.DateTime);
+            // 
+            // maskedTextBoxEndDate
+            // 
+            this.maskedTextBoxEndDate.Location = new System.Drawing.Point(24, 171);
+            this.maskedTextBoxEndDate.Mask = "00/00/0000";
+            this.maskedTextBoxEndDate.Name = "maskedTextBoxEndDate";
+            this.maskedTextBoxEndDate.Size = new System.Drawing.Size(156, 24);
+            this.maskedTextBoxEndDate.TabIndex = 15;
+            this.maskedTextBoxEndDate.ValidatingType = typeof(System.DateTime);
+            // 
+            // buttonClear
+            // 
+            this.buttonClear.Location = new System.Drawing.Point(280, 617);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(153, 41);
+            this.buttonClear.TabIndex = 13;
+            this.buttonClear.Text = "Clear All";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // CourseRegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(960, 688);
+            this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.dataGridViewListStudByCourse);
@@ -378,11 +398,8 @@
         private System.Windows.Forms.TextBox textBoxCourseCode;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBoxEndDate;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBoxStartDate;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxRegisDate;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonRegister;
         private System.Windows.Forms.Button buttonModify;
@@ -394,5 +411,9 @@
         private System.Windows.Forms.DataGridView dataGridViewListStudByCourse;
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxEndDate;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxStartDate;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxRegisDate;
+        private System.Windows.Forms.Button buttonClear;
     }
 }

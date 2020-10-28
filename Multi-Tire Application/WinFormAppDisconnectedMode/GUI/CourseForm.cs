@@ -17,7 +17,7 @@ namespace WinFormAppDisconnectedMode.GUI
     {
         SqlDataAdapter da;
         DataSet dsCollegeDB;
-        DataTable dtCourses;
+        static DataTable dtCourses;
         SqlCommandBuilder sqlBuilder;
         Course aCourse = new Course();
         public CourseForm()

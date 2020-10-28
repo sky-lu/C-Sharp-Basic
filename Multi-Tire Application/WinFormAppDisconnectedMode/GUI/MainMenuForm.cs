@@ -36,5 +36,12 @@ namespace WinFormAppDisconnectedMode.GUI
             this.Hide();
             couForm.ShowDialog();
         }
+
+        private void courseRegistraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CourseRegistrationForm courseRegisForm = new CourseRegistrationForm();
+            this.Hide();
+            courseRegisForm.ShowDialog();
+        }
     }
 }
