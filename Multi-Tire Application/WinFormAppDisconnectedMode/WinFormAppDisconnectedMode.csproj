@@ -51,6 +51,7 @@
     <Compile Include="BLL\Student.cs" />
     <Compile Include="BLL\StudentCourse.cs" />
     <Compile Include="DAL\CourseDB.cs" />
+    <Compile Include="DAL\StudentCourseDB.cs" />
     <Compile Include="DAL\StudentDB.cs" />
     <Compile Include="DAL\UtilityDB.cs" />
     <Compile Include="GUI\CourseForm.cs">

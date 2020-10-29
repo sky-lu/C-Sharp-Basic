@@ -15,12 +15,12 @@ namespace WinFormAppDisconnectedMode.GUI
 {
     public partial class CourseRegistrationForm : Form
     {
-        SqlDataAdapter da_s, da_c;
+        SqlDataAdapter da_s, da_c, da_sc;
         DataSet dsCollegeDB;
         DataTable dtStudentCourses;
         DataTable dtStudents;
         DataTable dtCourses;
-        SqlCommandBuilder sqlBuilder1, sqlBuilder2;
+        SqlCommandBuilder sqlBuilder1, sqlBuilder2, sqlBuilder3;
         StudentCourse StuCourse = new StudentCourse();
         public CourseRegistrationForm()
         {
@@ -29,7 +29,9 @@ namespace WinFormAppDisconnectedMode.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            string courseCode = textBoxCourseCode.Text.Trim();
+            StudentCourse sc = new StudentCourse();
+            dataGridViewListStudByCourse.DataSource = sc.GetStudentByCourse(courseCode);
         }
 
         private void buttonStuInfo_Click(object sender, EventArgs e)
@@ -95,7 +97,19 @@ namespace WinFormAppDisconnectedMode.GUI
 
         private void buttonModify_Click(object sender, EventArgs e)
         {
-
+            int studId = Convert.ToInt32(textBoxStudentID.Text.Trim());
+            string courseCode = textBoxCourseCode.Text.Trim();
+            string expression = $" StudentId = {studId} AND CourseCode = '{courseCode}'";
+            DataRow[] dr = dtStudentCourses.Select(expression);
+            if (dr != null)
+            {
+                dr[0]["StudentId"] = Convert.ToInt32(textBoxStudentID.Text.Trim());
+                dr[0]["CourseCode"] = textBoxCourseCode.Text.Trim();
+                dr[0]["RegistrationDate"] = Convert.ToDateTime(maskedTextBoxRegisDate.Text);
+                dr[0]["StartingDate"] = Convert.ToDateTime(maskedTextBoxStartDate.Text);
+                dr[0]["EndingDate"] = Convert.ToDateTime(maskedTextBoxEndDate.Text);
+                MessageBox.Show(dr[0].RowState.ToString());
+            }
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
@@ -115,6 +129,35 @@ namespace WinFormAppDisconnectedMode.GUI
                 MessageBox.Show("Course Registration not found!", "Invalid Registration", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+        }
+
+        private void buttonListCourseByStud_Click(object sender, EventArgs e)
+        {
+            Int32 studId = Convert.ToInt32(textBoxStudentID.Text.Trim());
+            StudentCourse sc = new StudentCourse();
+            dataGridViewListCourseByStud.DataSource = sc.GetCourseByStudent(studId);
+
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            int studId = Convert.ToInt32(textBoxStudentID.Text.Trim());
+            string courseCode = textBoxCourseCode.Text.Trim();
+            string expression = $" StudentId = {studId} AND CourseCode = '{courseCode}'";
+            DataRow[] dr = dtStudentCourses.Select(expression);
+            if (dr != null)
+            {
+                dr[0].Delete();
+                MessageBox.Show(dr[0].RowState.ToString());
+            }
+
+        }
+
+        private void buttonUpdateDB_Click(object sender, EventArgs e)
+        {
+            da_sc.Update(dsCollegeDB.Tables["StudentCourses"]);
+            MessageBox.Show("Database has been updated successfully.", "Confirmation");
+
         }
 
         private void CourseRegistrationForm_Load(object sender, EventArgs e)
@@ -160,6 +203,10 @@ namespace WinFormAppDisconnectedMode.GUI
             da_c = new SqlDataAdapter("SELECT * FROM Courses", UtilityDB.ConnectDB());
             sqlBuilder2 = new SqlCommandBuilder(da_c);
             da_c.Fill(dsCollegeDB.Tables["Courses"]);
+            da_sc = new SqlDataAdapter("SELECT * FROM StudentCourses", UtilityDB.ConnectDB());
+            sqlBuilder3 = new SqlCommandBuilder(da_sc);
+            da_sc.Fill(dsCollegeDB.Tables["StudentCourses"]);
+
 
         }
 
