@@ -1,0 +1,15 @@
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppEntityFramework\bin\Debug\WinFormAppEntityFramework.exe.config
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppEntityFramework\bin\Debug\WinFormAppEntityFramework.exe
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppEntityFramework\bin\Debug\WinFormAppEntityFramework.pdb
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppEntityFramework\bin\Debug\EntityFramework.dll
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppEntityFramework\bin\Debug\EntityFramework.SqlServer.dll
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppEntityFramework\bin\Debug\EntityFramework.xml
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppEntityFramework\bin\Debug\EntityFramework.SqlServer.xml
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppEntityFramework\obj\Debug\WinFormAppEntityFramework.csprojAssemblyReference.cache
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppEntityFramework\obj\Debug\WinFormAppEntityFramework.GUI.EFTestForm.resources
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppEntityFramework\obj\Debug\WinFormAppEntityFramework.GUI.EmployeeProjectForm.resources
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppEntityFramework\obj\Debug\WinFormAppEntityFramework.Properties.Resources.resources
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppEntityFramework\obj\Debug\WinFormAppEntityFramework.csproj.GenerateResource.cache
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppEntityFramework\obj\Debug\WinFormAppEntityFramework.csproj.CopyComplete
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppEntityFramework\obj\Debug\WinFormAppEntityFramework.exe
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppEntityFramework\obj\Debug\WinFormAppEntityFramework.pdb

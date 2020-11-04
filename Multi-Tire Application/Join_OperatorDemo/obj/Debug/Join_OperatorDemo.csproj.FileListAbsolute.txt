@@ -1,0 +1,6 @@
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Join_OperatorDemo\bin\Debug\Join_OperatorDemo.exe.config
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Join_OperatorDemo\bin\Debug\Join_OperatorDemo.exe
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Join_OperatorDemo\bin\Debug\Join_OperatorDemo.pdb
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Join_OperatorDemo\obj\Debug\Join_OperatorDemo.csprojAssemblyReference.cache
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Join_OperatorDemo\obj\Debug\Join_OperatorDemo.exe
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Join_OperatorDemo\obj\Debug\Join_OperatorDemo.pdb
