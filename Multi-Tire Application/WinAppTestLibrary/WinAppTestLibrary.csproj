@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F0154F9F-0FD8-46C9-8F45-5819AA815E1A}</ProjectGuid>
+    <ProjectGuid>{0A0DBD9C-3A76-4DB5-BF46-9771A425434D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Hi_Tech_Order_Management_System</RootNamespace>
-    <AssemblyName>Hi-Tech Order Management System</AssemblyName>
+    <RootNamespace>WinAppTestLibrary</RootNamespace>
+    <AssemblyName>WinAppTestLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,8 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Hi-TechLibrary">
+      <HintPath>..\Hi-TechLibrary\bin\Debug\Hi-TechLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -47,24 +49,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\Employee.cs" />
-    <Compile Include="BLL\Job.cs" />
-    <Compile Include="BLL\User.cs" />
-    <Compile Include="DAL\EmployeeDB.cs" />
-    <Compile Include="DAL\JobDB.cs" />
-    <Compile Include="DAL\UserDB.cs" />
-    <Compile Include="DAL\UtilityDB.cs" />
-    <Compile Include="GUI\User-Employee Management Form.cs">
+    <Compile Include="GUI\TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\User-Employee Management Form.Designer.cs">
-      <DependentUpon>User-Employee Management Form.cs</DependentUpon>
+    <Compile Include="GUI\TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VALIDATION\Validator.cs" />
-    <EmbeddedResource Include="GUI\User-Employee Management Form.resx">
-      <DependentUpon>User-Employee Management Form.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -88,6 +82,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

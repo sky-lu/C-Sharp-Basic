@@ -1,0 +1,12 @@
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinAppTestLibrary\bin\Debug\WinAppTestLibrary.exe.config
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinAppTestLibrary\bin\Debug\WinAppTestLibrary.exe
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinAppTestLibrary\bin\Debug\WinAppTestLibrary.pdb
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinAppTestLibrary\bin\Debug\Hi-TechLibrary.dll
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinAppTestLibrary\bin\Debug\Hi-TechLibrary.pdb
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinAppTestLibrary\obj\Debug\WinAppTestLibrary.csprojAssemblyReference.cache
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinAppTestLibrary\obj\Debug\WinAppTestLibrary.GUI.TestForm.resources
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinAppTestLibrary\obj\Debug\WinAppTestLibrary.Properties.Resources.resources
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinAppTestLibrary\obj\Debug\WinAppTestLibrary.csproj.GenerateResource.cache
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinAppTestLibrary\obj\Debug\WinAppTestLibrary.csproj.CopyComplete
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinAppTestLibrary\obj\Debug\WinAppTestLibrary.exe
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinAppTestLibrary\obj\Debug\WinAppTestLibrary.pdb

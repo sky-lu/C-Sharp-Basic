@@ -1,0 +1,5 @@
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Hi-TechLibrary\bin\Debug\Hi-TechLibrary.dll
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Hi-TechLibrary\bin\Debug\Hi-TechLibrary.pdb
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Hi-TechLibrary\obj\Debug\Hi-TechLibrary.csprojAssemblyReference.cache
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Hi-TechLibrary\obj\Debug\Hi-TechLibrary.dll
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Hi-TechLibrary\obj\Debug\Hi-TechLibrary.pdb

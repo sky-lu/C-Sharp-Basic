@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hi-TechLibrary", "Hi-TechLibrary.csproj", "{00A084C4-DDF0-4A99-9F0D-F90E7A643E3E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00A084C4-DDF0-4A99-9F0D-F90E7A643E3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00A084C4-DDF0-4A99-9F0D-F90E7A643E3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00A084C4-DDF0-4A99-9F0D-F90E7A643E3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00A084C4-DDF0-4A99-9F0D-F90E7A643E3E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3D157BC8-81FB-4EBE-ABF0-756613EC8072}
+	EndGlobalSection
+EndGlobal
