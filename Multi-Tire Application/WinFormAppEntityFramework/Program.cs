@@ -19,6 +19,8 @@ namespace WinFormAppEntityFramework
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new EmployeeProjectForm());
             //Application.Run(new EFTestForm());
+            //Application.Run(new TestForm2());
+
         }
     }
 }

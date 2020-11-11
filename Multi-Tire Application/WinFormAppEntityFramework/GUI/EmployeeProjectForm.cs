@@ -88,12 +88,12 @@ namespace WinFormAppEntityFramework.GUI
             }
 
             string phone = maskedTextBoxPhone.Text.Trim();
-            if (Validator.IsEmpty(phone))
-            {
-                MessageBox.Show("Phone Number cannot be empty", "Error");
-                maskedTextBoxPhone.Focus();
-                return;
-            }
+            //if (Validator.IsEmpty(phone))
+            //{
+            //    MessageBox.Show("Phone Number cannot be empty", "Error");
+            //    maskedTextBoxPhone.Focus();
+            //    return;
+            //}
             //if (!Validator.IsValidId(phone, 10))
             //{
             //    MessageBox.Show("Invalid Phone Number", "Error");
@@ -243,34 +243,426 @@ namespace WinFormAppEntityFramework.GUI
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            string empId = textBoxEmployeeId.Text.Trim();
+            int empId = Convert.ToInt32(textBoxEmployeeId.Text.Trim());
             Employee emp = new Employee();
-            emp = dbEntities.Employees.Find(Convert.ToInt32(empId));
+            emp = dbEntities.Employees.Find(empId);
 
             if (emp != null)
             {
                 var result = MessageBox.Show("Are you sure to delete this employee?", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                if (result == DialogResult.Yes) { 
-                    dbEntities.Employees.Remove(emp);
-                    dbEntities.SaveChanges();
-                    textBoxEmployeeId.Clear();
-                    textBoxFirstName.Clear();
-                    textBoxLastName.Clear();
-                    textBoxEmail.Clear();
-                    maskedTextBoxPhone.Clear();
+                if (result == DialogResult.Yes) {
+                    var lstPrjAssignment = from prjAssignment in dbEntities.ProjectAssignments.Where(x => x.EmployeeId == empId)
+                                           select prjAssignment;
+                    if (lstPrjAssignment.Count() == 0) 
+                    { 
+                        dbEntities.Employees.Remove(emp);
+                        dbEntities.SaveChanges();
+                        textBoxEmployeeId.Clear();
+                        textBoxFirstName.Clear();
+                        textBoxLastName.Clear();
+                        textBoxEmail.Clear();
+                        maskedTextBoxPhone.Clear();
 
-                    MessageBox.Show("Employee deleted successfully!", "Confirmation");
+                        MessageBox.Show("Employee deleted successfully!", "Confirmation");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please delete all assignments releted to this employee first.", "Requirements");
+
+                    }
                 }
-                else 
-                {
-                    return;
-                }
+                
             }
             else
             {
                 MessageBox.Show("Employee not found", "error");
                 return;
+            }
+        }
+
+        private void buttonExitP_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void buttonListP_Click(object sender, EventArgs e)
+        {
+            listViewProject.Items.Clear();
+            var listPrj = from prj in dbEntities.Projects
+                          select prj;
+            if (listPrj != null)
+            {
+                foreach (var prj in listPrj)
+                {
+                    ListViewItem item = new ListViewItem(prj.ProjectCode);
+                    item.SubItems.Add(prj.ProjectTitle);
+                    listViewProject.Items.Add(item);
+                }
+            }
+            else
+            {
+                MessageBox.Show("There is no project now!", "Confirmation");
+            }
+        }
+
+        private void buttonSaveP_Click(object sender, EventArgs e)
+        {
+            string prjCode = textBoxProjectCode.Text.Trim();
+            if (Validator.IsEmpty(prjCode))
+            {
+                MessageBox.Show("Please enter the project code !", "Empty Error");
+                textBoxProjectCode.Focus();
+                return;
+            }
+            Project prj = new Project();
+            prj = dbEntities.Projects.Find(prjCode);
+            if (prj != null)
+            {
+                MessageBox.Show("This Project Code already exists!", "Duplicate Project Code");
+                textBoxProjectCode.Clear();
+                textBoxProjectCode.Focus();
+                return;
+            }
+
+
+            string prjTitle = textBoxProjectTitle.Text.Trim();
+            if (Validator.IsEmpty(prjTitle))
+            {
+                MessageBox.Show("Please enter the project title !", "Empty Error");
+                textBoxProjectTitle.Focus();
+                return;
+            }
+
+            Project prj1 = new Project();
+            prj1.ProjectCode = textBoxProjectCode.Text.Trim();
+            prj1.ProjectTitle = textBoxProjectTitle.Text.Trim();
+            dbEntities.Projects.Add(prj1);
+            dbEntities.SaveChanges();
+            textBoxProjectCode.Clear();
+            textBoxProjectCode.Focus();
+            textBoxProjectTitle.Clear();
+
+            MessageBox.Show("The project has been saved successfully !", "Confirmation");
+
+        }
+
+        private void buttonUpdateP_Click(object sender, EventArgs e)
+        {
+            string prjCode = textBoxProjectCode.Text.Trim();
+            Project prj = new Project();
+            prj = dbEntities.Projects.Find(prjCode);
+            if (prj != null)
+            {
+                prj.ProjectCode = textBoxProjectCode.Text.Trim();
+                prj.ProjectTitle = textBoxProjectTitle.Text.Trim();
+                dbEntities.SaveChanges();
+                MessageBox.Show("Project has been updated successfully", "Confirmation");
+            }
+            else
+            {
+                MessageBox.Show("Project not found", "error");
+                return;
+            }
+        }
+
+        private void buttonDeleteP_Click(object sender, EventArgs e)
+        {
+            string prjCode = textBoxProjectCode.Text.Trim();
+            Project prj = new Project();
+            prj = dbEntities.Projects.Find(prjCode);
+
+            if (prj != null)
+            {
+                var result = MessageBox.Show("Are you sure to delete this project?", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    var lstPrjAssignment = from prjAssignment in dbEntities.ProjectAssignments.Where(x => x.ProjectCode == prjCode)
+                                           select prjAssignment;
+                    if (lstPrjAssignment.Count() == 0)
+                    { 
+                        dbEntities.Projects.Remove(prj);
+                        dbEntities.SaveChanges();
+                        textBoxProjectCode.Clear();
+                        textBoxProjectTitle.Clear();
+
+                        MessageBox.Show("Project has been deleted successfully!", "Confirmation");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please delete all assignments relatted to this project first.", "Requirement");
+                    }
+                    
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Project not found", "error");
+                return;
+            }
+        }
+
+        private void buttonSearchP_Click(object sender, EventArgs e)
+        {
+            textBoxProjectCode.Clear();
+            textBoxProjectTitle.Clear();
+            int indexSelected = comboBoxSearchP.SelectedIndex;
+            if (indexSelected == 0)
+            {
+                string prjCode = textBoxSearchP.Text.Trim();
+                if ( Validator.IsEmpty(prjCode))
+                {
+                    MessageBox.Show("Please enter the search information", "Empty Error");
+                    textBoxSearchP.Focus();
+                    return;
+                }
+                Project prj = new Project();
+                prj = dbEntities.Projects.Find(prjCode);
+                if (prj != null)
+                {
+                    textBoxProjectCode.Text = prj.ProjectCode;
+                    textBoxProjectTitle.Text = prj.ProjectTitle;
+                    textBoxSearchP.Clear();
+                    comboBoxSearchP.SelectedIndex = -1;
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("This Project Code doesn't exit!", "Confirmation");
+                }
+
+            }
+        }
+
+        private void buttonExitAssignProject_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void EmployeeProjectForm_Load(object sender, EventArgs e)
+        {
+            var listEmp = from emp in dbEntities.Employees
+                          select emp;
+            foreach (Employee emp in listEmp)
+            {
+                comboBoxEmployee.Items.Add(emp.EmployeeId);
+            }
+            var listProj = (from proj in dbEntities.Projects
+                            select proj).ToList<Project>();
+            foreach (Project proj in listProj)
+            {
+                comboBoxProject.Items.Add(proj.ProjectCode);
+            }
+        }
+
+        private void comboBoxEmployee_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxEmployee.SelectedIndex != -1) { 
+                int searchId = Convert.ToInt32(comboBoxEmployee.SelectedItem);
+                Employee emp = new Employee();
+
+                emp = dbEntities.Employees.Where(x => x.EmployeeId == searchId).FirstOrDefault();
+                labelEmpInfo.Text = emp.FirstName + "\n" + emp.LastName + "\n" + emp.PhoneNumber + "\n" + emp.Email + "\n";
+        
+            }
+        }
+        private void comboBoxProject_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxProject.SelectedIndex != -1) 
+            { 
+                string code = comboBoxProject.SelectedItem.ToString();
+                Project prj = new Project();
+                prj = dbEntities.Projects.Where(x => x.ProjectCode == code).FirstOrDefault();
+                labelProjInfo.Text = prj.ProjectTitle;
+            }
+        }
+
+        private void buttonListAssignedProject_Click(object sender, EventArgs e)
+        {
+            listViewAssignProject.Items.Clear();
+            var listPrjAssignment = from prjAssignment in dbEntities.ProjectAssignments
+                          select prjAssignment;
+            if (listPrjAssignment != null)
+            {
+                foreach (var prjAssignment in listPrjAssignment)
+                {
+                    ListViewItem item = new ListViewItem(prjAssignment.EmployeeId.ToString());
+                    item.SubItems.Add(prjAssignment.ProjectCode);
+                    item.SubItems.Add(prjAssignment.StartingDate.ToString("yyyy-MM-dd"));
+                    item.SubItems.Add(prjAssignment.EndingDate.ToString("yyyy-MM-dd"));
+                    listViewAssignProject.Items.Add(item);
+                }
+            }
+            else
+            {
+                MessageBox.Show("There is no project assignment now!", "Confirmation");
+            }
+        }
+
+        private void buttonAssign_Click(object sender, EventArgs e)
+        {
+            int empId = Convert.ToInt32(comboBoxEmployee.SelectedItem);
+            string prjCode = comboBoxProject.SelectedItem.ToString();
+            ProjectAssignment prjAssignment = new ProjectAssignment();
+            prjAssignment = dbEntities.ProjectAssignments.Where(x => x.EmployeeId == empId && x.ProjectCode == prjCode).FirstOrDefault();
+            if (prjAssignment != null)
+            {
+                MessageBox.Show("This Project has been assigned, select another project !", "Assignment Notification");
+                comboBoxEmployee.SelectedIndex = -1;
+                labelEmpInfo.Text = "";
+                comboBoxProject.SelectedIndex = -1;
+                labelProjInfo.Text = "";
+                maskedTextBoxStartDate.Clear();
+                maskedTextBoxEndDate.Clear();
+                return;
+            }
+            
+            ProjectAssignment prjAssignment1 = new ProjectAssignment();
+
+            prjAssignment1.EmployeeId = Convert.ToInt32(comboBoxEmployee.SelectedItem);
+            prjAssignment1.ProjectCode = comboBoxProject.SelectedItem.ToString();
+            prjAssignment1.StartingDate = Convert.ToDateTime(maskedTextBoxStartDate.Text);
+            prjAssignment1.EndingDate = Convert.ToDateTime(maskedTextBoxEndDate.Text);
+            dbEntities.ProjectAssignments.Add(prjAssignment1);
+            dbEntities.SaveChanges();
+            comboBoxEmployee.SelectedIndex = -1;
+            labelEmpInfo.Text = "";
+            comboBoxProject.SelectedIndex = -1;
+            labelProjInfo.Text = "";
+            maskedTextBoxStartDate.Clear();
+            maskedTextBoxEndDate.Clear();
+            MessageBox.Show("This project is assigned successfully !", "Confirmation");
+            
+        }
+
+        private void buttonSearchAssginment_Click(object sender, EventArgs e)
+        {
+            if (comboBoxEmployee.SelectedIndex != -1 && comboBoxProject.SelectedIndex == -1)
+            {
+                listViewAssignProject.Items.Clear();
+                int empId = Convert.ToInt32(comboBoxEmployee.SelectedItem);
+                var lstPrjAssignment = from prjAssignment in dbEntities.ProjectAssignments.Where(x => x.EmployeeId == empId)
+                                       select prjAssignment;
+                if (lstPrjAssignment.Count() == 0)
+                {
+                    MessageBox.Show("This employee does not have any project assignment now.", "Confirmation");
+                    return;
+                }
+
+                if (lstPrjAssignment != null)
+                {
+                    foreach (var prjAssignment in lstPrjAssignment)
+                    {
+                        ListViewItem item = new ListViewItem(prjAssignment.EmployeeId.ToString());
+                        item.SubItems.Add(prjAssignment.ProjectCode);
+                        item.SubItems.Add(prjAssignment.StartingDate.ToString("yyyy-MM-dd"));
+                        item.SubItems.Add(prjAssignment.EndingDate.ToString("yyyy-MM-dd"));
+                        listViewAssignProject.Items.Add(item);
+                    }
+                }
+                
+                                       
+                return;
+            }
+            if(comboBoxEmployee.SelectedIndex == -1 && comboBoxProject.SelectedIndex != -1)
+            {
+                listViewAssignProject.Items.Clear();
+                string prjCode = comboBoxProject.SelectedItem.ToString();
+                var lstPrjAssignment = from prjAssignment in dbEntities.ProjectAssignments.Where(x => x.ProjectCode == prjCode)
+                                       select prjAssignment;
+                if (lstPrjAssignment.Count() == 0)
+                {
+                    MessageBox.Show("This project has not been assigned to any employee.", "Confirmation");
+                    return;
+                }
+
+                if (lstPrjAssignment != null)
+                {
+                    foreach (var prjAssignment in lstPrjAssignment)
+                    {
+                        ListViewItem item = new ListViewItem(prjAssignment.EmployeeId.ToString());
+                        item.SubItems.Add(prjAssignment.ProjectCode);
+                        item.SubItems.Add(prjAssignment.StartingDate.ToString("yyyy-MM-dd"));
+                        item.SubItems.Add(prjAssignment.EndingDate.ToString("yyyy-MM-dd"));
+                        listViewAssignProject.Items.Add(item);
+                    }
+                }
+                return;
+            }
+            if(comboBoxEmployee.SelectedIndex != -1 && comboBoxProject.SelectedIndex != -1)
+            {
+                int empId = Convert.ToInt32(comboBoxEmployee.SelectedItem);
+                string prjCode = comboBoxProject.SelectedItem.ToString();
+                ProjectAssignment prjAssignment = new ProjectAssignment();
+                prjAssignment = dbEntities.ProjectAssignments.Where(x => x.EmployeeId == empId && x.ProjectCode == prjCode).FirstOrDefault();
+                if (prjAssignment != null)
+                {
+                    maskedTextBoxStartDate.Text = prjAssignment.StartingDate.ToString("MM-dd-yyyy");
+                    maskedTextBoxEndDate.Text = prjAssignment.EndingDate.ToString("MM-dd-yyyy");
+                }
+                else
+                {
+                    MessageBox.Show("This project has not been assigned to this employee !", "Error");
+                }
+                return;
+            }
+
+        }
+
+        private void buttonDeleteAssignmment_Click(object sender, EventArgs e)
+        {
+            int empId = Convert.ToInt32(comboBoxEmployee.SelectedItem);
+            string prjCode = comboBoxProject.SelectedItem.ToString();
+            ProjectAssignment prjAssignment = new ProjectAssignment();
+            prjAssignment = dbEntities.ProjectAssignments.Where(x => x.EmployeeId == empId && x.ProjectCode == prjCode).FirstOrDefault();
+            if (prjAssignment != null)
+            {
+                var result = MessageBox.Show("Are you sure to delete this assignment?", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes) { 
+                    dbEntities.ProjectAssignments.Remove(prjAssignment);
+                    dbEntities.SaveChanges();
+                    comboBoxEmployee.SelectedIndex = -1;
+                    labelEmpInfo.Text = "";
+                    comboBoxProject.SelectedIndex = -1;
+                    labelProjInfo.Text = "";
+                    maskedTextBoxStartDate.Clear();
+                    maskedTextBoxEndDate.Clear();
+                    MessageBox.Show("This project assignment has been deleted successfully!", "Confirmation");
+                }
+            }
+            else
+            {
+                MessageBox.Show("This project has not been assigned to this employee !", "Error");
+            }
+        }
+
+        private void buttonUpdateAssignment_Click(object sender, EventArgs e)
+        {
+            int empId = Convert.ToInt32(comboBoxEmployee.SelectedItem);
+            string prjCode = comboBoxProject.SelectedItem.ToString();
+            ProjectAssignment prjAssignment = new ProjectAssignment();
+            prjAssignment = dbEntities.ProjectAssignments.Where(x => x.EmployeeId == empId && x.ProjectCode == prjCode).FirstOrDefault();
+            if (prjAssignment != null)
+            {
+                prjAssignment.EmployeeId = Convert.ToInt32(comboBoxEmployee.SelectedItem);
+                prjAssignment.ProjectCode = comboBoxProject.SelectedItem.ToString();
+                prjAssignment.StartingDate = Convert.ToDateTime(maskedTextBoxStartDate.Text);
+                prjAssignment.EndingDate = Convert.ToDateTime(maskedTextBoxEndDate.Text);
+                dbEntities.SaveChanges();
+                comboBoxEmployee.SelectedIndex = -1;
+                labelEmpInfo.Text = "";
+                comboBoxProject.SelectedIndex = -1;
+                labelProjInfo.Text = "";
+                maskedTextBoxStartDate.Clear();
+                maskedTextBoxEndDate.Clear();
+                MessageBox.Show("This project Assignment has been updated !", "Confirmation");
+            }
+            else
+            {
+                MessageBox.Show("This project has not been assigned to this employee !", "Error");
             }
         }
     }

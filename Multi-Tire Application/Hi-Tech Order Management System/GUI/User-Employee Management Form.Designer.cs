@@ -62,6 +62,7 @@
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBoxSearchE = new System.Windows.Forms.TextBox();
             this.comboBoxSearchE = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -84,7 +85,6 @@
             this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -402,19 +402,16 @@
             // 
             // columnHeader9
             // 
-            this.columnHeader9.DisplayIndex = 1;
             this.columnHeader9.Text = "First Name";
             this.columnHeader9.Width = 108;
             // 
             // columnHeader10
             // 
-            this.columnHeader10.DisplayIndex = 2;
             this.columnHeader10.Text = "Last Name";
             this.columnHeader10.Width = 109;
             // 
             // columnHeader13
             // 
-            this.columnHeader13.DisplayIndex = 3;
             this.columnHeader13.Text = "Phone Number";
             this.columnHeader13.Width = 159;
             // 
@@ -422,6 +419,11 @@
             // 
             this.columnHeader14.Text = "Job Title";
             this.columnHeader14.Width = 233;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Email";
+            this.columnHeader8.Width = 145;
             // 
             // textBoxSearchE
             // 
@@ -530,6 +532,7 @@
             // 
             // comboBoxJob
             // 
+            this.comboBoxJob.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxJob.FormattingEnabled = true;
             this.comboBoxJob.Location = new System.Drawing.Point(493, 145);
             this.comboBoxJob.Name = "comboBoxJob";
@@ -639,12 +642,6 @@
             this.label14.Size = new System.Drawing.Size(88, 18);
             this.label14.TabIndex = 6;
             this.label14.Text = "Last Name :";
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.DisplayIndex = 4;
-            this.columnHeader8.Text = "Email";
-            this.columnHeader8.Width = 145;
             // 
             // MIS_ManagerForm
             // 

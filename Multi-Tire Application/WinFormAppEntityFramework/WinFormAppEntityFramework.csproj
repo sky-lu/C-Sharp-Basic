@@ -85,6 +85,12 @@
     <Compile Include="GUI\EmployeeProjectForm.Designer.cs">
       <DependentUpon>EmployeeProjectForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\TestForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\TestForm2.Designer.cs">
+      <DependentUpon>TestForm2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Project.cs">
       <DependentUpon>EmployeeProjectModel.tt</DependentUpon>
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\EmployeeProjectForm.resx">
       <DependentUpon>EmployeeProjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\TestForm2.resx">
+      <DependentUpon>TestForm2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

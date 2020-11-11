@@ -13,3 +13,4 @@ D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppEntityFramework\ob
 D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppEntityFramework\obj\Debug\WinFormAppEntityFramework.csproj.CopyComplete
 D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppEntityFramework\obj\Debug\WinFormAppEntityFramework.exe
 D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppEntityFramework\obj\Debug\WinFormAppEntityFramework.pdb
+D:\Programs\Project\C#-Basic\Multi-Tire Application\WinFormAppEntityFramework\obj\Debug\WinFormAppEntityFramework.GUI.TestForm2.resources
