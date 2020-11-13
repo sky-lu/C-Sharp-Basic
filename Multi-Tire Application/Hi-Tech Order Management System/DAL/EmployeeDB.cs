@@ -75,5 +75,45 @@ namespace Hi_Tech_Order_Management_System.DAL
             return listEmp;
         }
 
-}
+        public static List<Employee> GetEmployeeRecordList(string Lname)
+        {
+
+            List<Employee> listEmp = new List<Employee>();
+            SqlConnection connDB = UtilityDB.ConnectDB();
+            SqlCommand cmdSelect = new SqlCommand("SELECT * FROM Employees WHERE LastName = @LastName", connDB);
+            cmdSelect.Parameters.AddWithValue("@LastName", Lname);
+            SqlDataReader sqlReader = cmdSelect.ExecuteReader();
+            Employee emp;
+            while (sqlReader.Read())
+            {
+                emp = new Employee();
+                emp.EmployeeId = Convert.ToInt32(sqlReader["EmployeeId"]);
+                emp.FirstName = sqlReader["FirstName"].ToString();
+                emp.LastName = sqlReader["LastName"].ToString();
+                emp.PhoneNumber = sqlReader["PhoneNumber"].ToString();
+                emp.Email = sqlReader["Email"].ToString();
+                emp.JobId = Convert.ToInt32(sqlReader["JobId"]);
+                listEmp.Add(emp);
+            }
+            return listEmp;
+        }
+
+        public static void UpdateEmployeeRecord(Employee emp)
+        {
+            SqlConnection connDB = UtilityDB.ConnectDB();
+            SqlCommand cmdUpdate = new SqlCommand();
+            cmdUpdate.CommandText = "UPDATE Employees SET FirstName = @FirstName, LastName = @LastName, PhoneNumber = @PhoneNumber, Email = @Email, JobId = @JobId WHERE EmployeeId = @EmployeeId";
+            cmdUpdate.Parameters.AddWithValue("@EmployeeId", emp.EmployeeId);
+            cmdUpdate.Parameters.AddWithValue("@FirstName", emp.FirstName);
+            cmdUpdate.Parameters.AddWithValue("@LastName", emp.LastName);
+            cmdUpdate.Parameters.AddWithValue("@PhoneNumber", emp.PhoneNumber);
+            cmdUpdate.Parameters.AddWithValue("@Email", emp.Email);
+            cmdUpdate.Parameters.AddWithValue("@JobId", emp.JobId);
+
+            cmdUpdate.Connection = connDB;
+            cmdUpdate.ExecuteNonQuery();
+            connDB.Close();
+        }
+
+    }
 }

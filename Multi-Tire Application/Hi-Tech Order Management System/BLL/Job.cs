@@ -21,5 +21,10 @@ namespace Hi_Tech_Order_Management_System.BLL
         {
             return JobDB.GetJobRecords();
         }
+
+        public string GetJobTitle(int jobId)
+        {
+            return JobDB.GetJobTitleRecord(jobId);
+        }
     }
 }

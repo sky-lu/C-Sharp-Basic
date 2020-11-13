@@ -37,5 +37,15 @@ namespace Hi_Tech_Order_Management_System.BLL
         {
             return EmployeeDB.GetEmployeeRecordList();
         }
+
+        public List<Employee> GetEmployeeList(string name)
+        {
+            return EmployeeDB.GetEmployeeRecordList(name);
+        }
+
+        public void UpdateEmployee(Employee emp)
+        {
+            EmployeeDB.UpdateEmployeeRecord(emp);
+        }
     }
 }

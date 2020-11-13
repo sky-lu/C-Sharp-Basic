@@ -28,6 +28,24 @@ namespace Hi_Tech_Order_Management_System.DAL
             return lstJob;
         }
 
+        public static string GetJobTitleRecord(int jobId)
+        {
+            SqlConnection connDB = UtilityDB.ConnectDB();
+            SqlCommand cmdSelect = new SqlCommand("SELECT JobTitle FROM Jobs WHERE JobId = @JobId", connDB);
+            cmdSelect.Parameters.AddWithValue("@JobId", jobId);
+            SqlDataReader sqlReader = cmdSelect.ExecuteReader();
+            string jobTitle;
+            if (sqlReader.Read())
+            {
+                jobTitle = sqlReader["JobTitle"].ToString();
+            }
+            else
+            {
+                jobTitle = null;
+            }
+            return jobTitle;
+        }
+
         
     }
 }
