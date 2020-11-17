@@ -33,6 +33,14 @@ namespace Hi_Tech_Order_Management_System.GUI
             comboBoxJob.DisplayMember = "JobTitle";
             comboBoxJob.ValueMember = "JobId";
             comboBoxJob.SelectedIndex = -1;
+            List<Employee> lstEmp = new List<Employee>();
+            Employee emp = new Employee();
+            lstEmp = emp.GetEmployeeList();
+            foreach (Employee Emp in lstEmp)
+            {
+                comboBoxEmployeeId.Items.Add(Emp.EmployeeId);
+            }
+            
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -43,28 +51,7 @@ namespace Hi_Tech_Order_Management_System.GUI
         private void buttonListAllUsers_Click(object sender, EventArgs e)
         {
 
-            User user = new User();
-            List<User> listUser = new List<User>();
-            listUser = user.GetUserList();
-            listViewUsers.Items.Clear();
-            if (listUser != null)
-            {
-                foreach (User userItem in listUser)
-                {
-                    ListViewItem item = new ListViewItem(userItem.UserId.ToString());
-                    item.SubItems.Add(userItem.Password);
-                    item.SubItems.Add(userItem.FirstName);
-                    item.SubItems.Add(userItem.LastName);
-                    item.SubItems.Add(userItem.JobTitle);
-                    item.SubItems.Add(userItem.UserStatus);
-                    listViewUsers.Items.Add(item);
-                }
-            }
-            else
-            {
-                MessageBox.Show("There is no user now!", "Confirmation");
-            }
-
+            
             
         }
 
@@ -318,12 +305,215 @@ namespace Hi_Tech_Order_Management_System.GUI
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-
+            User auser = new User();
+            auser.UserId = Convert.ToInt32(textBoxUserId.Text.Trim());
+            auser.Password = textBoxPassword.Text.Trim();
+            auser.EmployeeId = Convert.ToInt32(comboBoxEmployeeId.SelectedItem);
+            auser.UpdateUser(auser);
+            textBoxUserId.Clear();
+            textBoxUserId.Focus();
+            textBoxPassword.Clear();
+            comboBoxEmployeeId.SelectedIndex = -1;
+            
+            MessageBox.Show("This User has been updated successfully!", "Confirmation");
         }
 
         private void buttonAddU_Click(object sender, EventArgs e)
         {
+            string userId = textBoxUserId.Text.Trim();
+            if (!Validator.IsValidId(userId, 3))
+            {
+                MessageBox.Show("Invalid User Number", "Error");
+                textBoxUserId.Clear();
+                textBoxUserId.Focus();
+                return;
+            }
+            User auser = new User();
+            auser = auser.GetUser(Convert.ToInt32(userId));
+            if (auser != null)
+            {
+                MessageBox.Show("This User Number already exists!", "Duplicate User Number");
+                textBoxUserId.Clear();
+                textBoxUserId.Focus();
+                return;
+            }
 
+
+            string passWord = textBoxPassword.Text.Trim();
+            if (Validator.IsEmpty(passWord))
+            {
+                MessageBox.Show("Password cannot be empty", "Error");
+                textBoxPassword.Focus();
+                return;
+            }
+            
+
+            int selectedIndex = comboBoxEmployeeId.SelectedIndex;
+            if (selectedIndex == -1)
+            {
+                MessageBox.Show("Please select EmployeeId for this user !", "Select Requirement");
+                return;
+            }
+
+
+            User user1 = new User();
+            user1.UserId = Convert.ToInt32(textBoxUserId.Text.Trim());
+            user1.Password = textBoxPassword.Text.Trim();
+            user1.EmployeeId = Convert.ToInt32(comboBoxEmployeeId.SelectedItem);
+            user1.SaveUser(user1);
+            textBoxUserId.Clear();
+            textBoxPassword.Clear();
+            labelUserInfo.Text = "";
+            comboBoxEmployeeId.SelectedIndex = -1;
+
+            MessageBox.Show("User info saved successfully", "Confirmation");
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonExitU_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Are you sure to close the form?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void comboBoxEmployeeId_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int indexSelected = comboBoxEmployeeId.SelectedIndex;
+            if (indexSelected != -1)
+            {
+                Job aJob = new Job();
+                Employee emp = new Employee();
+                int empId = Convert.ToInt32(comboBoxEmployeeId.SelectedItem);
+                emp = emp.GetEmployee(empId);
+                labelUserInfo.Text = "First Name:" + emp.FirstName + "\n" + "Last Name :" + emp.LastName + "\n"
+                                     + "Phone NUmber :" + emp.PhoneNumber + "\n" + "Email :" + emp.Email + "\n"
+                                     + "Job Title :" + aJob.GetJobTitle(emp.JobId);
+            }
+            else
+            {
+                labelUserInfo.Text = "";
+            }
+        }
+
+        private void comboBoxSearchU_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonListAllUsers_Click_1(object sender, EventArgs e)
+        {
+            User user = new User();
+            List<User> listUser = new List<User>();
+            listUser = user.GetUserList();
+            listViewUsers.Items.Clear();
+            if (listUser != null)
+            {
+                foreach (User userItem in listUser)
+                {
+                    ListViewItem item = new ListViewItem(userItem.UserId.ToString());
+                    item.SubItems.Add(userItem.Password);
+                    item.SubItems.Add(userItem.EmployeeId.ToString());
+                    listViewUsers.Items.Add(item);
+                }
+            }
+            if (listUser.Count == 0)
+            {
+                MessageBox.Show("There is no user now!", "Confirmation");
+            }
+
+        }
+
+        private void buttonSearchU_Click(object sender, EventArgs e)
+        {
+            int indexSelected = comboBoxSearchU.SelectedIndex;
+            if (indexSelected == 0)
+            {
+                string userId = textBoxSearchU.Text.Trim();
+                if (!Validator.IsValidId(userId, 3))
+                {
+                    MessageBox.Show("Invalid User Id", "Error");
+                    textBoxSearchU.Clear();
+                    textBoxSearchU.Focus();
+                    return;
+                }
+                User auser = new User();
+                auser = auser.GetUser((Convert.ToInt32(userId)));
+                if (auser != null)
+                {
+
+                    textBoxUserId.Text = auser.UserId.ToString();
+                    textBoxPassword.Text = auser.Password;
+                    comboBoxEmployeeId.SelectedIndex = comboBoxEmployeeId.FindStringExact(auser.EmployeeId.ToString());
+                    listViewUsers.Items.Clear();
+
+                }
+                else
+                {
+                    textBoxSearchU.Clear();
+                    textBoxSearchU.Focus();
+                    MessageBox.Show("This UserId doesn't exit!", "Confirmation");
+                }
+            }
+        }
+
+        private void buttonDeleteU_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Are you sure to delete this user?", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                int userId = Convert.ToInt32(textBoxUserId.Text.Trim());
+                User auser = new User();
+                auser.DeleteUser(userId);
+                textBoxUserId.Clear();
+                textBoxPassword.Clear();
+                comboBoxEmployeeId.SelectedIndex = -1;
+                MessageBox.Show("This user has been deleted!", "Confirmation");
+                return;
+            }
+            
+        }
+
+        private void buttonDeleteE_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Are you sure to delete this employee?", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                int empId = Convert.ToInt32(textBoxEmployeeId.Text.Trim());
+                Employee emp = new Employee();
+                User auser = new User();
+                 auser = auser.GetUserByEmpId(empId);
+                if (auser == null)
+                {
+                    emp.DeleteEmployee(empId);
+                    textBoxEmployeeId.Clear();
+                    textBoxFirstName.Clear();
+                    textBoxLastName.Clear();
+                    maskedTextBoxPhone.Clear();
+                    textBoxEmail.Clear();
+                    comboBoxJob.SelectedIndex = -1;
+                    MessageBox.Show("This employee has been deleted!", "Confirmation");
+
+                }
+                else
+                {
+                    MessageBox.Show("Please delete the user record related to this employee first", "Delete Error");
+                }
+                
+            }
+            
         }
     }
 }

@@ -268,6 +268,7 @@ namespace WinFormAppEntityFramework.GUI
                     }
                     else
                     {
+                        // consider RemoveRange method
                         MessageBox.Show("Please delete all assignments releted to this employee first.", "Requirements");
 
                     }

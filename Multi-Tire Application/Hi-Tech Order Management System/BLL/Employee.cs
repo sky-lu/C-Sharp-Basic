@@ -47,5 +47,10 @@ namespace Hi_Tech_Order_Management_System.BLL
         {
             EmployeeDB.UpdateEmployeeRecord(emp);
         }
+
+        public void DeleteEmployee(int empId)
+        {
+            EmployeeDB.DeleteEmployeeRecord(empId);
+        }
     }
 }

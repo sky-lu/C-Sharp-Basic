@@ -115,5 +115,18 @@ namespace Hi_Tech_Order_Management_System.DAL
             connDB.Close();
         }
 
+        public static void DeleteEmployeeRecord(int empId)
+        {
+            SqlConnection connDB = UtilityDB.ConnectDB();
+            SqlCommand cmdDelete = new SqlCommand();
+            cmdDelete.CommandText = "DELETE FROM Employees WHERE EmployeeId = @EmployeeId ";
+            cmdDelete.Parameters.AddWithValue("@EmployeeId", empId);
+            cmdDelete.Connection = connDB;
+            cmdDelete.ExecuteNonQuery();
+            connDB.Close();
+
+        }
+
+
     }
 }

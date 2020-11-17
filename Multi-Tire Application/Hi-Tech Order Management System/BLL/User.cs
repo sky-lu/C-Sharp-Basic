@@ -11,26 +11,40 @@ namespace Hi_Tech_Order_Management_System.BLL
     {
         private int userId;
         private string password;
-        private string firstName;
-        private string lastName;
-        private string jobTitle;
-        private string userStatus;
+        private int employeeId;
 
         public int UserId { get => userId; set => userId = value; }
         public string Password { get => password; set => password = value; }
-        public string FirstName { get => firstName; set => firstName = value; }
-        public string LastName { get => lastName; set => lastName = value; }
-        public string JobTitle { get => jobTitle; set => jobTitle = value; }
-        public string UserStatus { get => userStatus; set => userStatus = value; }
+        public int EmployeeId { get => employeeId; set => employeeId = value; }
 
         public List<User> GetUserList()
         {
-            return UserDB.GetRecordList();
+            return UserDB.GetUserRecordList();
         }
 
-        public void SaveUser(User aUser)
+        public void SaveUser(User auser)
         {
-            UserDB.SaveRecord(aUser);
+            UserDB.SaveUserRecord(auser);
+        }
+
+        public User GetUser(int userId)
+        {
+            return UserDB.GetUsrRecordByUserId(userId);
+        }
+
+        public void UpdateUser(User auser)
+        {
+            UserDB.UpdateUserRecord(auser);
+        }
+
+        public void DeleteUser(int userId)
+        {
+            UserDB.DeleteUserRecord(userId);
+        }
+
+        public User GetUserByEmpId(int empId)
+        {
+            return UserDB.GetUsrRecordByEmpId(empId);
         }
     }
 }
