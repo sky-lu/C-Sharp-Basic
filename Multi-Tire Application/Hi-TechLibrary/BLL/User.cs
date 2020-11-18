@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Hi_TechLibrary.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Hi_Tech_Order_Management_System.DAL;
 
-namespace Hi_Tech_Order_Management_System.BLL
+namespace Hi_TechLibrary.BLL
 {
     public class User
     {

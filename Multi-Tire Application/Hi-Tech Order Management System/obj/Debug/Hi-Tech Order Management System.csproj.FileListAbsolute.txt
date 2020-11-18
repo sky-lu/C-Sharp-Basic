@@ -7,3 +7,7 @@ D:\Programs\Project\C#-Basic\Multi-Tire Application\Hi-Tech Order Management Sys
 D:\Programs\Project\C#-Basic\Multi-Tire Application\Hi-Tech Order Management System\obj\Debug\Hi-Tech Order Management System.csproj.GenerateResource.cache
 D:\Programs\Project\C#-Basic\Multi-Tire Application\Hi-Tech Order Management System\obj\Debug\Hi-Tech Order Management System.exe
 D:\Programs\Project\C#-Basic\Multi-Tire Application\Hi-Tech Order Management System\obj\Debug\Hi-Tech Order Management System.pdb
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Hi-Tech Order Management System\bin\Debug\Hi-TechLibrary.dll
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Hi-Tech Order Management System\bin\Debug\Hi-TechLibrary.pdb
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Hi-Tech Order Management System\obj\Debug\Hi-Tech Order Management System.csproj.CopyComplete
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Hi-Tech Order Management System\obj\Debug\Hi_Tech_Order_Management_System.GUI.Customer_Management_Form.resources

@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Hi-TechLibrary">
+      <HintPath>..\Hi-TechLibrary\bin\Debug\Hi-TechLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -47,13 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\Employee.cs" />
-    <Compile Include="BLL\Job.cs" />
-    <Compile Include="BLL\User.cs" />
-    <Compile Include="DAL\EmployeeDB.cs" />
-    <Compile Include="DAL\JobDB.cs" />
-    <Compile Include="DAL\UserDB.cs" />
-    <Compile Include="DAL\UtilityDB.cs" />
+    <Compile Include="GUI\Customer Management Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Customer Management Form.Designer.cs">
+      <DependentUpon>Customer Management Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\User-Employee Management Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,7 +64,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VALIDATION\Validator.cs" />
+    <EmbeddedResource Include="GUI\Customer Management Form.resx">
+      <DependentUpon>Customer Management Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\User-Employee Management Form.resx">
       <DependentUpon>User-Employee Management Form.cs</DependentUpon>
     </EmbeddedResource>

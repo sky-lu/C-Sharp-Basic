@@ -5,13 +5,26 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Hi_TechLibrary.Validation
+namespace Hi_TechLibrary.VALIDATION
 {
     public static class Validator
     {
-        public static bool IsValidId(string input, int size)
+        
+            public static bool IsValidId(string input, int size)
+            {
+                if (!(Regex.IsMatch(input, @"^\d{" + size + "}$")))
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+
+        public static bool IsNumber(string input)
         {
-            if (!(Regex.IsMatch(input, @"^\d{" + size + "}$")))
+            if (!(Regex.IsMatch(input, @"^[0-9]+$")))
             {
                 return false;
             }
@@ -22,19 +35,44 @@ namespace Hi_TechLibrary.Validation
         }
 
         public static bool IsValidName(string input)
-        {
-            if (input == "")
             {
-                return false;
-            }
-            for (int i = 0; i < input.Length; i++)
-            {
-                if (!(Char.IsLetter(input[i])) && !(Char.IsWhiteSpace(input[i])))
+                if (input == "")
                 {
                     return false;
                 }
+                for (int i = 0; i < input.Length; i++)
+                {
+                    if (!(Char.IsLetter(input[i])) && !(Char.IsWhiteSpace(input[i])))
+                    {
+                        return false;
+                    }
+                }
+                return true;
             }
-            return true;
+
+            public static bool IsEmpty(string input)
+            {
+                if (input == "")
+                {
+                    return true;
+                }
+                return false;
+            }
+
+            public static bool IsValidEmail(string input)
+            {
+                string reg = "([a-zA-Z0-9_\\.\\-])+\\@(([a-zA-Z0-9\\-])+\\.)+([a-zA-Z0-9]{2,5})+";
+
+                if (Regex.IsMatch(input, reg))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+
         }
     }
-}

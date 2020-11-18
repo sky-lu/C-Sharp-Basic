@@ -1,4 +1,4 @@
-﻿using Hi_Tech_Order_Management_System.BLL;
+﻿using Hi_TechLibrary.BLL;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hi_Tech_Order_Management_System.DAL
+namespace Hi_TechLibrary.DAL
 {
-    class EmployeeDB
+    public class EmployeeDB
     {
         public static void SaveEmployeeRecord(Employee emp)
         {
@@ -126,7 +126,5 @@ namespace Hi_Tech_Order_Management_System.DAL
             connDB.Close();
 
         }
-
-
     }
 }

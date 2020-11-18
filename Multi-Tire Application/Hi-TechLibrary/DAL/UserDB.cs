@@ -1,4 +1,4 @@
-﻿using Hi_Tech_Order_Management_System.BLL;
+﻿using Hi_TechLibrary.BLL;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hi_Tech_Order_Management_System.DAL
+namespace Hi_TechLibrary.DAL
 {
-    class UserDB
+    public class UserDB
     {
         public static List<User> GetUserRecordList()
         {
@@ -29,7 +29,7 @@ namespace Hi_Tech_Order_Management_System.DAL
             return listUser;
         }
 
-        public static void SaveUserRecord (User aUser)
+        public static void SaveUserRecord(User aUser)
         {
             SqlConnection connDB = UtilityDB.ConnectDB();
             SqlCommand cmdInsert = new SqlCommand();
@@ -44,7 +44,7 @@ namespace Hi_Tech_Order_Management_System.DAL
 
         }
 
-        
+
         public static User GetUsrRecordByUserId(int userId)
         {
             SqlConnection connDB = UtilityDB.ConnectDB();
@@ -119,7 +119,5 @@ namespace Hi_Tech_Order_Management_System.DAL
             connDB.Close();
 
         }
-
-        
     }
 }

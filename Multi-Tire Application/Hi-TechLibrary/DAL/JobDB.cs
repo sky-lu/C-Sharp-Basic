@@ -1,4 +1,4 @@
-﻿using Hi_Tech_Order_Management_System.BLL;
+﻿using Hi_TechLibrary.BLL;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hi_Tech_Order_Management_System.DAL
+namespace Hi_TechLibrary.DAL
 {
-    class JobDB
+    public class JobDB
     {
         public static List<Job> GetJobRecords()
         {
@@ -46,6 +46,5 @@ namespace Hi_Tech_Order_Management_System.DAL
             return jobTitle;
         }
 
-        
     }
 }

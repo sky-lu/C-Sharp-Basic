@@ -1,7 +1,4 @@
-﻿using Hi_Tech_Order_Management_System.BLL;
-using Hi_Tech_Order_Management_System.DAL;
-using Hi_Tech_Order_Management_System.VALIDATION;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Hi_TechLibrary.BLL;
+using Hi_TechLibrary.VALIDATION;
+using Hi_TechLibrary.DAL;
 
 namespace Hi_Tech_Order_Management_System.GUI
 {
