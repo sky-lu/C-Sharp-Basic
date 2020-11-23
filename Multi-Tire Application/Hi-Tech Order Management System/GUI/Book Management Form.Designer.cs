@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.labelAuthorInfo = new System.Windows.Forms.Label();
             this.buttonAddAuthor = new System.Windows.Forms.Button();
             this.buttonPublisher = new System.Windows.Forms.Button();
@@ -63,7 +64,6 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonListBook = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,23 +94,34 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Crimson;
+            this.label9.Location = new System.Drawing.Point(4, 47);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(72, 18);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "(13 digits)";
+            // 
             // labelAuthorInfo
             // 
             this.labelAuthorInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelAuthorInfo.ForeColor = System.Drawing.Color.SteelBlue;
-            this.labelAuthorInfo.Location = new System.Drawing.Point(591, 25);
+            this.labelAuthorInfo.Location = new System.Drawing.Point(591, 16);
             this.labelAuthorInfo.Name = "labelAuthorInfo";
-            this.labelAuthorInfo.Size = new System.Drawing.Size(194, 111);
+            this.labelAuthorInfo.Size = new System.Drawing.Size(194, 120);
             this.labelAuthorInfo.TabIndex = 19;
             // 
             // buttonAddAuthor
             // 
-            this.buttonAddAuthor.Location = new System.Drawing.Point(620, 144);
+            this.buttonAddAuthor.Location = new System.Drawing.Point(620, 146);
             this.buttonAddAuthor.Name = "buttonAddAuthor";
             this.buttonAddAuthor.Size = new System.Drawing.Size(131, 41);
             this.buttonAddAuthor.TabIndex = 18;
             this.buttonAddAuthor.Text = "Add Book Author";
             this.buttonAddAuthor.UseVisualStyleBackColor = true;
+            this.buttonAddAuthor.Click += new System.EventHandler(this.buttonAddAuthor_Click);
             // 
             // buttonPublisher
             // 
@@ -120,6 +131,7 @@
             this.buttonPublisher.TabIndex = 15;
             this.buttonPublisher.Text = "Add Publisher";
             this.buttonPublisher.UseVisualStyleBackColor = true;
+            this.buttonPublisher.Click += new System.EventHandler(this.buttonPublisher_Click);
             // 
             // buttonAddCategory
             // 
@@ -129,6 +141,7 @@
             this.buttonAddCategory.TabIndex = 14;
             this.buttonAddCategory.Text = "Add Category";
             this.buttonAddCategory.UseVisualStyleBackColor = true;
+            this.buttonAddCategory.Click += new System.EventHandler(this.buttonAddCategory_Click);
             // 
             // comboBoxPublisherName
             // 
@@ -374,16 +387,6 @@
             this.buttonListBook.Text = "List All Books";
             this.buttonListBook.UseVisualStyleBackColor = true;
             this.buttonListBook.Click += new System.EventHandler(this.buttonListBook_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.Crimson;
-            this.label9.Location = new System.Drawing.Point(4, 47);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 18);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "(13 digits)";
             // 
             // Book_Management_Form
             // 

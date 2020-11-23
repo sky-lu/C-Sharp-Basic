@@ -59,6 +59,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\Add Author Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Add Author Form.Designer.cs">
+      <DependentUpon>Add Author Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Add Category Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Add Category Form.Designer.cs">
+      <DependentUpon>Add Category Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Add Publisher Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Add Publisher Form.Designer.cs">
+      <DependentUpon>Add Publisher Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Book Management Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +145,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\Add Author Form.resx">
+      <DependentUpon>Add Author Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Add Category Form.resx">
+      <DependentUpon>Add Category Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Add Publisher Form.resx">
+      <DependentUpon>Add Publisher Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Book Management Form.resx">
       <DependentUpon>Book Management Form.cs</DependentUpon>
     </EmbeddedResource>
