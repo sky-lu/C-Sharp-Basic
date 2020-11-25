@@ -384,6 +384,16 @@ namespace Hi_Tech_Order_Management_System.GUI
                 labelAuthorInfo.Text = labelAuthorInfo.Text + display;
             }
         }
+
+        private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }

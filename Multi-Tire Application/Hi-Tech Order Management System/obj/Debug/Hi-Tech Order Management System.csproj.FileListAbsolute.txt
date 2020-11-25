@@ -19,3 +19,4 @@ D:\Programs\Project\C#-Basic\Multi-Tire Application\Hi-Tech Order Management Sys
 D:\Programs\Project\C#-Basic\Multi-Tire Application\Hi-Tech Order Management System\obj\Debug\Hi_Tech_Order_Management_System.GUI.Add_Category_Form.resources
 D:\Programs\Project\C#-Basic\Multi-Tire Application\Hi-Tech Order Management System\obj\Debug\Hi_Tech_Order_Management_System.GUI.Add_Publisher_Form.resources
 D:\Programs\Project\C#-Basic\Multi-Tire Application\Hi-Tech Order Management System\obj\Debug\Hi_Tech_Order_Management_System.GUI.Add_Author_Form.resources
+D:\Programs\Project\C#-Basic\Multi-Tire Application\Hi-Tech Order Management System\obj\Debug\Hi_Tech_Order_Management_System.GUI.Order_Management_Form.resources
