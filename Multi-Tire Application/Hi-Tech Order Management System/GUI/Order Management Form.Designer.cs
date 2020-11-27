@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxOrderId = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.maskedTextBoxOrderDate = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBoxRequiredDate = new System.Windows.Forms.MaskedTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.maskedTextBoxShipDate = new System.Windows.Forms.MaskedTextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBoxOrderType = new System.Windows.Forms.ComboBox();
-            this.comboBoxOrderStatus = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBoxCustomerName = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.buttonAddBook = new System.Windows.Forms.Button();
+            this.labelBookInfo = new System.Windows.Forms.Label();
             this.comboBoxEmployeeId = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.labelBookInfo = new System.Windows.Forms.Label();
-            this.buttonAddBook = new System.Windows.Forms.Button();
+            this.comboBoxCustomerName = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBoxOrderStatus = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBoxOrderType = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.maskedTextBoxShipDate = new System.Windows.Forms.MaskedTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.maskedTextBoxRequiredDate = new System.Windows.Forms.MaskedTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.maskedTextBoxOrderDate = new System.Windows.Forms.MaskedTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxOrderId = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.buttonSearchOrder = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
@@ -62,10 +62,10 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.buttonListOrder = new System.Windows.Forms.Button();
-            this.buttonExit = new System.Windows.Forms.Button();
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonListOrder = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,97 +96,63 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Order Information";
             // 
-            // label1
+            // buttonAddBook
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Order Id :";
+            this.buttonAddBook.Location = new System.Drawing.Point(632, 148);
+            this.buttonAddBook.Name = "buttonAddBook";
+            this.buttonAddBook.Size = new System.Drawing.Size(140, 34);
+            this.buttonAddBook.TabIndex = 17;
+            this.buttonAddBook.Text = "Add book for order";
+            this.buttonAddBook.UseVisualStyleBackColor = true;
+            this.buttonAddBook.Click += new System.EventHandler(this.buttonAddBook_Click);
             // 
-            // textBoxOrderId
+            // labelBookInfo
             // 
-            this.textBoxOrderId.Location = new System.Drawing.Point(129, 30);
-            this.textBoxOrderId.Name = "textBoxOrderId";
-            this.textBoxOrderId.Size = new System.Drawing.Size(100, 24);
-            this.textBoxOrderId.TabIndex = 1;
+            this.labelBookInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelBookInfo.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.labelBookInfo.Location = new System.Drawing.Point(591, 30);
+            this.labelBookInfo.Name = "labelBookInfo";
+            this.labelBookInfo.Size = new System.Drawing.Size(222, 108);
+            this.labelBookInfo.TabIndex = 16;
             // 
-            // label2
+            // comboBoxEmployeeId
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 71);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 18);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Order Date :";
+            this.comboBoxEmployeeId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEmployeeId.FormattingEnabled = true;
+            this.comboBoxEmployeeId.Items.AddRange(new object[] {
+            "4444",
+            "5555"});
+            this.comboBoxEmployeeId.Location = new System.Drawing.Point(415, 152);
+            this.comboBoxEmployeeId.Name = "comboBoxEmployeeId";
+            this.comboBoxEmployeeId.Size = new System.Drawing.Size(121, 26);
+            this.comboBoxEmployeeId.TabIndex = 15;
             // 
-            // maskedTextBoxOrderDate
+            // label8
             // 
-            this.maskedTextBoxOrderDate.Location = new System.Drawing.Point(129, 68);
-            this.maskedTextBoxOrderDate.Mask = "00/00/0000";
-            this.maskedTextBoxOrderDate.Name = "maskedTextBoxOrderDate";
-            this.maskedTextBoxOrderDate.Size = new System.Drawing.Size(100, 24);
-            this.maskedTextBoxOrderDate.TabIndex = 3;
-            this.maskedTextBoxOrderDate.ValidatingType = typeof(System.DateTime);
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(283, 152);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(97, 18);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Employee Id :";
             // 
-            // maskedTextBoxRequiredDate
+            // comboBoxCustomerName
             // 
-            this.maskedTextBoxRequiredDate.Location = new System.Drawing.Point(129, 109);
-            this.maskedTextBoxRequiredDate.Mask = "00/00/0000";
-            this.maskedTextBoxRequiredDate.Name = "maskedTextBoxRequiredDate";
-            this.maskedTextBoxRequiredDate.Size = new System.Drawing.Size(100, 24);
-            this.maskedTextBoxRequiredDate.TabIndex = 5;
-            this.maskedTextBoxRequiredDate.ValidatingType = typeof(System.DateTime);
+            this.comboBoxCustomerName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCustomerName.FormattingEnabled = true;
+            this.comboBoxCustomerName.Location = new System.Drawing.Point(415, 112);
+            this.comboBoxCustomerName.Name = "comboBoxCustomerName";
+            this.comboBoxCustomerName.Size = new System.Drawing.Size(121, 26);
+            this.comboBoxCustomerName.TabIndex = 13;
             // 
-            // label3
+            // label7
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 112);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 18);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Required Date :";
-            // 
-            // maskedTextBoxShipDate
-            // 
-            this.maskedTextBoxShipDate.Location = new System.Drawing.Point(129, 149);
-            this.maskedTextBoxShipDate.Mask = "00/00/0000";
-            this.maskedTextBoxShipDate.Name = "maskedTextBoxShipDate";
-            this.maskedTextBoxShipDate.Size = new System.Drawing.Size(100, 24);
-            this.maskedTextBoxShipDate.TabIndex = 7;
-            this.maskedTextBoxShipDate.ValidatingType = typeof(System.DateTime);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 152);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 18);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Shipping Date :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(283, 33);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 18);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Order Type :";
-            // 
-            // comboBoxOrderType
-            // 
-            this.comboBoxOrderType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxOrderType.FormattingEnabled = true;
-            this.comboBoxOrderType.Items.AddRange(new object[] {
-            "Email",
-            "Phone",
-            "Fax"});
-            this.comboBoxOrderType.Location = new System.Drawing.Point(415, 30);
-            this.comboBoxOrderType.Name = "comboBoxOrderType";
-            this.comboBoxOrderType.Size = new System.Drawing.Size(121, 26);
-            this.comboBoxOrderType.TabIndex = 9;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(283, 115);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(126, 18);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Customer Name :";
             // 
             // comboBoxOrderStatus
             // 
@@ -210,61 +176,97 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Order Status :";
             // 
-            // comboBoxCustomerName
+            // comboBoxOrderType
             // 
-            this.comboBoxCustomerName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCustomerName.FormattingEnabled = true;
-            this.comboBoxCustomerName.Location = new System.Drawing.Point(415, 112);
-            this.comboBoxCustomerName.Name = "comboBoxCustomerName";
-            this.comboBoxCustomerName.Size = new System.Drawing.Size(121, 26);
-            this.comboBoxCustomerName.TabIndex = 13;
+            this.comboBoxOrderType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxOrderType.FormattingEnabled = true;
+            this.comboBoxOrderType.Items.AddRange(new object[] {
+            "Email",
+            "Phone",
+            "Fax"});
+            this.comboBoxOrderType.Location = new System.Drawing.Point(415, 30);
+            this.comboBoxOrderType.Name = "comboBoxOrderType";
+            this.comboBoxOrderType.Size = new System.Drawing.Size(121, 26);
+            this.comboBoxOrderType.TabIndex = 9;
             // 
-            // label7
+            // label5
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(283, 115);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(126, 18);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Customer Name :";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(283, 33);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(90, 18);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Order Type :";
             // 
-            // comboBoxEmployeeId
+            // maskedTextBoxShipDate
             // 
-            this.comboBoxEmployeeId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxEmployeeId.FormattingEnabled = true;
-            this.comboBoxEmployeeId.Items.AddRange(new object[] {
-            "4444",
-            "5555"});
-            this.comboBoxEmployeeId.Location = new System.Drawing.Point(415, 152);
-            this.comboBoxEmployeeId.Name = "comboBoxEmployeeId";
-            this.comboBoxEmployeeId.Size = new System.Drawing.Size(121, 26);
-            this.comboBoxEmployeeId.TabIndex = 15;
+            this.maskedTextBoxShipDate.Location = new System.Drawing.Point(129, 149);
+            this.maskedTextBoxShipDate.Mask = "00/00/0000";
+            this.maskedTextBoxShipDate.Name = "maskedTextBoxShipDate";
+            this.maskedTextBoxShipDate.Size = new System.Drawing.Size(100, 24);
+            this.maskedTextBoxShipDate.TabIndex = 7;
+            this.maskedTextBoxShipDate.ValidatingType = typeof(System.DateTime);
             // 
-            // label8
+            // label4
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(283, 152);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(97, 18);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Employee Id :";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 152);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(107, 18);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Shipping Date :";
             // 
-            // labelBookInfo
+            // maskedTextBoxRequiredDate
             // 
-            this.labelBookInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.labelBookInfo.Location = new System.Drawing.Point(591, 30);
-            this.labelBookInfo.Name = "labelBookInfo";
-            this.labelBookInfo.Size = new System.Drawing.Size(222, 108);
-            this.labelBookInfo.TabIndex = 16;
+            this.maskedTextBoxRequiredDate.Location = new System.Drawing.Point(129, 109);
+            this.maskedTextBoxRequiredDate.Mask = "00/00/0000";
+            this.maskedTextBoxRequiredDate.Name = "maskedTextBoxRequiredDate";
+            this.maskedTextBoxRequiredDate.Size = new System.Drawing.Size(100, 24);
+            this.maskedTextBoxRequiredDate.TabIndex = 5;
+            this.maskedTextBoxRequiredDate.ValidatingType = typeof(System.DateTime);
             // 
-            // buttonAddBook
+            // label3
             // 
-            this.buttonAddBook.Location = new System.Drawing.Point(632, 148);
-            this.buttonAddBook.Name = "buttonAddBook";
-            this.buttonAddBook.Size = new System.Drawing.Size(140, 34);
-            this.buttonAddBook.TabIndex = 17;
-            this.buttonAddBook.Text = "Add book for order";
-            this.buttonAddBook.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(17, 112);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(110, 18);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Required Date :";
+            // 
+            // maskedTextBoxOrderDate
+            // 
+            this.maskedTextBoxOrderDate.Location = new System.Drawing.Point(129, 68);
+            this.maskedTextBoxOrderDate.Mask = "00/00/0000";
+            this.maskedTextBoxOrderDate.Name = "maskedTextBoxOrderDate";
+            this.maskedTextBoxOrderDate.Size = new System.Drawing.Size(100, 24);
+            this.maskedTextBoxOrderDate.TabIndex = 3;
+            this.maskedTextBoxOrderDate.ValidatingType = typeof(System.DateTime);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(17, 71);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 18);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Order Date :";
+            // 
+            // textBoxOrderId
+            // 
+            this.textBoxOrderId.Location = new System.Drawing.Point(129, 30);
+            this.textBoxOrderId.Name = "textBoxOrderId";
+            this.textBoxOrderId.Size = new System.Drawing.Size(100, 24);
+            this.textBoxOrderId.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 18);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Order Id :";
             // 
             // label9
             // 
@@ -283,6 +285,7 @@
             this.buttonSearchOrder.TabIndex = 29;
             this.buttonSearchOrder.Text = "Search";
             this.buttonSearchOrder.UseVisualStyleBackColor = true;
+            this.buttonSearchOrder.Click += new System.EventHandler(this.buttonSearchOrder_Click);
             // 
             // textBoxSearch
             // 
@@ -319,6 +322,7 @@
             this.buttonDelete.TabIndex = 25;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonUpdate
             // 
@@ -328,6 +332,7 @@
             this.buttonUpdate.TabIndex = 24;
             this.buttonUpdate.Text = "Update";
             this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // buttonAdd
             // 
@@ -337,6 +342,7 @@
             this.buttonAdd.TabIndex = 23;
             this.buttonAdd.Text = "Add ";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // listViewOrder
             // 
@@ -389,6 +395,16 @@
             this.columnHeader6.Text = "Order Status";
             this.columnHeader6.Width = 99;
             // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Customer Id";
+            this.columnHeader7.Width = 95;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Employee Id";
+            this.columnHeader8.Width = 139;
+            // 
             // buttonListOrder
             // 
             this.buttonListOrder.Location = new System.Drawing.Point(698, 295);
@@ -408,16 +424,6 @@
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Customer Id";
-            this.columnHeader7.Width = 95;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Employee Id";
-            this.columnHeader8.Width = 139;
             // 
             // Order_Management_Form
             // 

@@ -65,6 +65,12 @@
     <Compile Include="GUI\Add Author Form.Designer.cs">
       <DependentUpon>Add Author Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Add Book For Order Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Add Book For Order Form.Designer.cs">
+      <DependentUpon>Add Book For Order Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Add Category Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\Add Author Form.resx">
       <DependentUpon>Add Author Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Add Book For Order Form.resx">
+      <DependentUpon>Add Book For Order Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Add Category Form.resx">
       <DependentUpon>Add Category Form.cs</DependentUpon>

@@ -34,6 +34,17 @@ namespace Hi_Tech_Order_Management_System.GUI
 
             Author author = new Author();
             AuthorsBook authorBook = new AuthorsBook();
+            authorBook = dbEntities.AuthorsBooks.Find(Convert.ToInt32(authorId), textBoxBookISBN.Text.Trim());
+            if (authorBook != null)
+            {
+                MessageBox.Show("This author has been added to this book", "Confirmation");
+                textBoxAuthorId.Clear();
+                textBoxFirstName.Clear();
+                textBoxLastName.Clear();
+                textBoxEmail.Clear();
+                return;
+            }
+            
             author = dbEntities.Authors.Find(Convert.ToInt32(authorId));
             if (author != null)
             {

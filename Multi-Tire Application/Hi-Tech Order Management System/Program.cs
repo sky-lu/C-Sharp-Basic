@@ -19,8 +19,8 @@ namespace Hi_Tech_Order_Management_System
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new MIS_ManagerForm());
             //Application.Run(new Customer_Management_Form());
-            //Application.Run(new Book_Management_Form());
-            Application.Run(new Order_Management_Form());
+            Application.Run(new Book_Management_Form());
+            //Application.Run(new Order_Management_Form());
         }
     }
 }
