@@ -95,6 +95,12 @@
     <Compile Include="GUI\Customer Management Form.Designer.cs">
       <DependentUpon>Customer Management Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Login Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Login Form.Designer.cs">
+      <DependentUpon>Login Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Order Management Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Customer Management Form.resx">
       <DependentUpon>Customer Management Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Login Form.resx">
+      <DependentUpon>Login Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Order Management Form.resx">
       <DependentUpon>Order Management Form.cs</DependentUpon>

@@ -378,7 +378,10 @@ namespace Hi_Tech_Order_Management_System.GUI
             var result = MessageBox.Show("Are you sure to close the form?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                Application.Exit();
+                //Application.Exit();
+                this.Hide();
+                Login_Form form_login = new Login_Form();
+                form_login.ShowDialog();
             }
             else
             {
