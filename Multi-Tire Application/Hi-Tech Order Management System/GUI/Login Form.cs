@@ -120,5 +120,18 @@ namespace Hi_Tech_Order_Management_System.GUI
                 return;
             }
         }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Are you sure to close the form?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }

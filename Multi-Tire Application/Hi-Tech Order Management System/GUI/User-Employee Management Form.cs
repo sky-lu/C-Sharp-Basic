@@ -136,6 +136,14 @@ namespace Hi_Tech_Order_Management_System.GUI
             textBoxEmail.Clear();
             comboBoxJob.SelectedIndex = -1;
 
+            List<Employee> lstEmp = new List<Employee>();
+            Employee emp2 = new Employee();
+            lstEmp = emp2.GetEmployeeList();
+            foreach (Employee Emp in lstEmp)
+            {
+                comboBoxEmployeeId.Items.Add(Emp.EmployeeId);
+            }
+
             MessageBox.Show("Employee info saved successfully", "Confirmation");
         }
 
@@ -516,6 +524,11 @@ namespace Hi_Tech_Order_Management_System.GUI
                 
             }
             
+        }
+
+        private void tabPageUser_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

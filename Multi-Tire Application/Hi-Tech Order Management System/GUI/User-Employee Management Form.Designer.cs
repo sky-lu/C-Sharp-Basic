@@ -125,6 +125,7 @@
             this.tabPageUser.TabIndex = 0;
             this.tabPageUser.Text = "User";
             this.tabPageUser.UseVisualStyleBackColor = true;
+            this.tabPageUser.Click += new System.EventHandler(this.tabPageUser_Click);
             // 
             // label10
             // 
