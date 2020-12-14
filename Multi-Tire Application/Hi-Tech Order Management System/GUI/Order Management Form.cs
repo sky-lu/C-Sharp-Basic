@@ -211,8 +211,9 @@ namespace Hi_Tech_Order_Management_System.GUI
                         foreach (string isbn in listBookId)
                         {
                             Book book = dbEntities.Books.Find(isbn);
+                            OrderLine orderLine = dbEntities.OrderLines.Find(textBoxOrderId.Text.Trim(), isbn);
                             string display;
-                            display = "Book Title : " + book.BookTitle + "\n" + "QOH :" + book.QOH.ToString()
+                            display = "Book Title : " + book.BookTitle + "\n" + "Quantity Ordered :" + orderLine.QuantityOrdered.ToString()
                                     + "\n" + "Unit Price : " + book.UnitPrice.ToString();
                             labelBookInfo.Text = labelBookInfo.Text + display;
                         }
@@ -314,8 +315,9 @@ namespace Hi_Tech_Order_Management_System.GUI
             labelBookInfo.Text = "";
             foreach (string isbn in listISBN)
             {
+                OrderLine orderLine = dbEntities.OrderLines.Find(textBoxOrderId.Text.Trim(), isbn);
                 Book book = dbEntities.Books.Find(isbn);
-                string display = "Book Title : " + book.BookTitle + "\n" + "QOH :" + book.QOH.ToString()
+                string display = "Book Title : " + book.BookTitle + "\n" + "Quantity Ordered :" + orderLine.QuantityOrdered.ToString()
                                     + "\n" + "Unit Price : " + book.UnitPrice.ToString();
                 labelBookInfo.Text = labelBookInfo.Text + display;
             }

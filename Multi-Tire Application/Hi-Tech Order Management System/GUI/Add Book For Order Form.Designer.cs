@@ -35,6 +35,8 @@
             this.labelBookInfo = new System.Windows.Forms.Label();
             this.buttonAddTOOrder = new System.Windows.Forms.Button();
             this.buttonAddNewBook = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxQuantityOrdered = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -82,7 +84,7 @@
             // 
             // buttonAddTOOrder
             // 
-            this.buttonAddTOOrder.Location = new System.Drawing.Point(37, 323);
+            this.buttonAddTOOrder.Location = new System.Drawing.Point(37, 366);
             this.buttonAddTOOrder.Name = "buttonAddTOOrder";
             this.buttonAddTOOrder.Size = new System.Drawing.Size(116, 41);
             this.buttonAddTOOrder.TabIndex = 5;
@@ -92,7 +94,8 @@
             // 
             // buttonAddNewBook
             // 
-            this.buttonAddNewBook.Location = new System.Drawing.Point(213, 323);
+            this.buttonAddNewBook.Enabled = false;
+            this.buttonAddNewBook.Location = new System.Drawing.Point(213, 366);
             this.buttonAddNewBook.Name = "buttonAddNewBook";
             this.buttonAddNewBook.Size = new System.Drawing.Size(116, 41);
             this.buttonAddNewBook.TabIndex = 6;
@@ -100,11 +103,30 @@
             this.buttonAddNewBook.UseVisualStyleBackColor = true;
             this.buttonAddNewBook.Click += new System.EventHandler(this.buttonAddNewBook_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(43, 314);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(124, 18);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Quantity Ordered:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // textBoxQuantityOrdered
+            // 
+            this.textBoxQuantityOrdered.Location = new System.Drawing.Point(183, 314);
+            this.textBoxQuantityOrdered.Name = "textBoxQuantityOrdered";
+            this.textBoxQuantityOrdered.Size = new System.Drawing.Size(146, 24);
+            this.textBoxQuantityOrdered.TabIndex = 8;
+            // 
             // Add_Book_For_Order_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(397, 399);
+            this.ClientSize = new System.Drawing.Size(397, 438);
+            this.Controls.Add(this.textBoxQuantityOrdered);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonAddNewBook);
             this.Controls.Add(this.buttonAddTOOrder);
             this.Controls.Add(this.labelBookInfo);
@@ -131,5 +153,7 @@
         private System.Windows.Forms.Label labelBookInfo;
         private System.Windows.Forms.Button buttonAddTOOrder;
         private System.Windows.Forms.Button buttonAddNewBook;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBoxQuantityOrdered;
     }
 }

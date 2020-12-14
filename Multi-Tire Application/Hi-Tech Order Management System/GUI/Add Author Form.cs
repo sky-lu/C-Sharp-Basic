@@ -48,9 +48,10 @@ namespace Hi_Tech_Order_Management_System.GUI
             author = dbEntities.Authors.Find(Convert.ToInt32(authorId));
             if (author != null)
             {
-                authorBook.AuthorId = Convert.ToInt32(textBoxAuthorId.Text.Trim());
-                authorBook.ISBN = textBoxBookISBN.Text.Trim();
-                dbEntities.AuthorsBooks.Add(authorBook);
+                AuthorsBook authorBook1 = new AuthorsBook();
+                authorBook1.AuthorId = Convert.ToInt32(textBoxAuthorId.Text.Trim());
+                authorBook1.ISBN = textBoxBookISBN.Text.Trim();
+                dbEntities.AuthorsBooks.Add(authorBook1);
                 dbEntities.SaveChanges();
                 MessageBox.Show("This author already exists and has been added to this book!", "Confirmation");
                 textBoxAuthorId.Clear();
@@ -94,20 +95,20 @@ namespace Hi_Tech_Order_Management_System.GUI
             author1.LastName = textBoxLastName.Text.Trim();
             author1.Email = textBoxEmail.Text.Trim();
             dbEntities.Authors.Add(author1);
+
             MessageBox.Show("This author has been saved and added to this book successfully !", "Confirmation");
+            AuthorsBook authorBook2 = new AuthorsBook();
+            authorBook2.AuthorId = Convert.ToInt32(textBoxAuthorId.Text.Trim());
+            authorBook2.ISBN = textBoxBookISBN.Text.Trim();
+            dbEntities.AuthorsBooks.Add(authorBook2);
+            dbEntities.SaveChanges();
+
             textBoxAuthorId.Clear();
             textBoxFirstName.Clear();
             textBoxLastName.Clear();
             textBoxEmail.Clear();
 
-            authorBook.AuthorId = Convert.ToInt32(textBoxAuthorId.Text.Trim());
-            authorBook.ISBN = textBoxBookISBN.Text.Trim();
-            dbEntities.AuthorsBooks.Add(authorBook);
-            
-            dbEntities.SaveChanges();
-
-
-            
+                  
         }
 
         private void Add_Author_Form_Load(object sender, EventArgs e)

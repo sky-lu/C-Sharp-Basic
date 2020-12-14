@@ -31,7 +31,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonAddBook = new System.Windows.Forms.Button();
             this.labelBookInfo = new System.Windows.Forms.Label();
-            this.comboBoxEmployeeId = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBoxCustomerName = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -66,11 +65,18 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonListOrder = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
+            this.comboBoxEmployeeId = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.buttonAddBook);
             this.groupBox1.Controls.Add(this.labelBookInfo);
             this.groupBox1.Controls.Add(this.comboBoxEmployeeId);
@@ -114,18 +120,6 @@
             this.labelBookInfo.Name = "labelBookInfo";
             this.labelBookInfo.Size = new System.Drawing.Size(222, 108);
             this.labelBookInfo.TabIndex = 16;
-            // 
-            // comboBoxEmployeeId
-            // 
-            this.comboBoxEmployeeId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxEmployeeId.FormattingEnabled = true;
-            this.comboBoxEmployeeId.Items.AddRange(new object[] {
-            "4444",
-            "5555"});
-            this.comboBoxEmployeeId.Location = new System.Drawing.Point(415, 152);
-            this.comboBoxEmployeeId.Name = "comboBoxEmployeeId";
-            this.comboBoxEmployeeId.Size = new System.Drawing.Size(121, 26);
-            this.comboBoxEmployeeId.TabIndex = 15;
             // 
             // label8
             // 
@@ -425,6 +419,51 @@
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
+            // comboBoxEmployeeId
+            // 
+            this.comboBoxEmployeeId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEmployeeId.FormattingEnabled = true;
+            this.comboBoxEmployeeId.Items.AddRange(new object[] {
+            "4444",
+            "5555"});
+            this.comboBoxEmployeeId.Location = new System.Drawing.Point(415, 152);
+            this.comboBoxEmployeeId.Name = "comboBoxEmployeeId";
+            this.comboBoxEmployeeId.Size = new System.Drawing.Size(121, 26);
+            this.comboBoxEmployeeId.TabIndex = 15;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Crimson;
+            this.label11.Location = new System.Drawing.Point(6, 89);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(113, 17);
+            this.label11.TabIndex = 34;
+            this.label11.Text = "（MM/DD/YYYY)";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Crimson;
+            this.label12.Location = new System.Drawing.Point(6, 130);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(113, 17);
+            this.label12.TabIndex = 35;
+            this.label12.Text = "（MM/DD/YYYY)";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Crimson;
+            this.label13.Location = new System.Drawing.Point(6, 173);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(113, 17);
+            this.label13.TabIndex = 36;
+            this.label13.Text = "（MM/DD/YYYY)";
+            // 
             // Order_Management_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -470,7 +509,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBoxOrderType;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBoxEmployeeId;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBoxCustomerName;
         private System.Windows.Forms.Label label7;
@@ -495,5 +533,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.Button buttonListOrder;
         private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.ComboBox comboBoxEmployeeId;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
     }
 }
