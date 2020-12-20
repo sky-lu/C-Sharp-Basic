@@ -105,3 +105,6 @@ D:\Programs\Project\C#-Basic\prjASPC.MVC\SchoolManagement_ASP.NET(MVC)\SchoolMan
 D:\Programs\Project\C#-Basic\prjASPC.MVC\SchoolManagement_ASP.NET(MVC)\SchoolManagement\obj\Debug\SchoolManagement.csproj.CopyComplete
 D:\Programs\Project\C#-Basic\prjASPC.MVC\SchoolManagement_ASP.NET(MVC)\SchoolManagement\obj\Debug\SchoolManagement.dll
 D:\Programs\Project\C#-Basic\prjASPC.MVC\SchoolManagement_ASP.NET(MVC)\SchoolManagement\obj\Debug\SchoolManagement.pdb
+D:\Programs\Project\C#-Basic\prjASPC.MVC\SchoolManagement_ASP.NET(MVC)\SchoolManagement\obj\Debug\SchoolManagement.Migrations.InitialCreate.resources
+D:\Programs\Project\C#-Basic\prjASPC.MVC\SchoolManagement_ASP.NET(MVC)\SchoolManagement\obj\Debug\SchoolManagement.csproj.GenerateResource.cache
+D:\Programs\Project\C#-Basic\prjASPC.MVC\SchoolManagement_ASP.NET(MVC)\SchoolManagement\obj\Debug\SchoolManagement.Migrations.AddedBirthdate.resources
