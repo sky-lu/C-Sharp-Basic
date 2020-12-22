@@ -3,6 +3,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin;
 using Owin;
 using SchoolManagement.Models;
+using System;
 
 [assembly: OwinStartupAttribute(typeof(SchoolManagement.Startup))]
 namespace SchoolManagement
@@ -12,6 +13,7 @@ namespace SchoolManagement
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+            createRolesandUsers();
         }
 
         public void createRolesandUsers()
@@ -30,7 +32,8 @@ namespace SchoolManagement
                 var user = new ApplicationUser
                 {
                     UserName = "admin",
-                    Email = "admin@schmng.com"
+                    Email = "admin@schmng.com",
+                    BirthDate = DateTime.Now
                 };
 
                 var password = "password";
@@ -40,6 +43,21 @@ namespace SchoolManagement
                 {
                     var result = userManager.AddToRole(user.Id, "Admin");
                 }
+
+            }
+
+            if (!roleManager.RoleExists("Teacher"))
+            {
+                var role = new IdentityRole();
+                role.Name = "Teacher";
+                roleManager.Create(role);
+
+            }
+            if (!roleManager.RoleExists("Supervisor"))
+            {
+                var role = new IdentityRole();
+                role.Name = "Supervisor";
+                roleManager.Create(role);
 
             }
         }
