@@ -22,6 +22,15 @@ namespace SchoolManagement.Controllers
             return View(await enrollments.ToListAsync());
         }
 
+        public PartialViewResult _enrollmentPartial(int? courseid)
+        {
+            var enrollments = db.Enrollments.Where(q => q.CourseID == courseid)
+                .Include(e => e.Course)
+                .Include(e => e.Student);
+
+            return PartialView(enrollments.ToList());
+        }
+
         // GET: Enrollments/Details/5
         public async Task<ActionResult> Details(int? id)
         {
@@ -84,6 +93,28 @@ namespace SchoolManagement.Controllers
             return View(enrollment);
         }
 
+        [HttpPost]
+        public async Task<JsonResult> AddStudent([Bind(Include = "CourseID,StudentID")] Enrollment enrollment)
+        {
+            try
+            {
+                var isEnrolled = db.Enrollments.Any(q => q.CourseID == enrollment.CourseID && q.StudentID == enrollment.StudentID);
+                if (ModelState.IsValid && isEnrolled == false)
+                {
+                    db.Enrollments.Add(enrollment);
+                    await db.SaveChangesAsync();
+                    return Json(new { IsSuccess = true, Message = "Student added successfully"}, JsonRequestBehavior.AllowGet);
+                }
+                return Json(new { IsSuccess = false, Message = "Student is already enrolled" }, JsonRequestBehavior.AllowGet);
+
+            }
+            catch (Exception)
+            {
+                return Json(new { IsSuccess = false, Message = "System Failure: Please contact your Adminstrator" }, JsonRequestBehavior.AllowGet);
+
+            }
+        }
+
         // POST: Enrollments/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -102,6 +133,8 @@ namespace SchoolManagement.Controllers
             ViewBag.LecturerID = new SelectList(db.Lecturers, "Id", "First_Name", enrollment.LecturerID);
             return View(enrollment);
         }
+
+        
 
         // GET: Enrollments/Delete/5
         public async Task<ActionResult> Delete(int? id)
