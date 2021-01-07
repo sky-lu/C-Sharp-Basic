@@ -1,0 +1,8 @@
+D:\Programs\Project\C#-Basic\prjASPC.MVC\Uplift_ASPNETCore_MVC\Uplift.Utility\bin\Debug\netcoreapp3.1\Uplift.Utility.deps.json
+D:\Programs\Project\C#-Basic\prjASPC.MVC\Uplift_ASPNETCore_MVC\Uplift.Utility\bin\Debug\netcoreapp3.1\Uplift.Utility.dll
+D:\Programs\Project\C#-Basic\prjASPC.MVC\Uplift_ASPNETCore_MVC\Uplift.Utility\bin\Debug\netcoreapp3.1\Uplift.Utility.pdb
+D:\Programs\Project\C#-Basic\prjASPC.MVC\Uplift_ASPNETCore_MVC\Uplift.Utility\obj\Debug\netcoreapp3.1\Uplift.Utility.csprojAssemblyReference.cache
+D:\Programs\Project\C#-Basic\prjASPC.MVC\Uplift_ASPNETCore_MVC\Uplift.Utility\obj\Debug\netcoreapp3.1\Uplift.Utility.AssemblyInfoInputs.cache
+D:\Programs\Project\C#-Basic\prjASPC.MVC\Uplift_ASPNETCore_MVC\Uplift.Utility\obj\Debug\netcoreapp3.1\Uplift.Utility.AssemblyInfo.cs
+D:\Programs\Project\C#-Basic\prjASPC.MVC\Uplift_ASPNETCore_MVC\Uplift.Utility\obj\Debug\netcoreapp3.1\Uplift.Utility.dll
+D:\Programs\Project\C#-Basic\prjASPC.MVC\Uplift_ASPNETCore_MVC\Uplift.Utility\obj\Debug\netcoreapp3.1\Uplift.Utility.pdb
